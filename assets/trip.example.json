@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "trip": {
+    "title": "Example two-base cultural trip",
+    "start_date": "2030-05-01",
+    "end_date": "2030-05-05",
+    "travelers": 2,
+    "currency": "EUR",
+    "timezone": "Europe/Lisbon"
+  },
+  "preferences": {
+    "pace": "moderate",
+    "interests": ["art", "architecture", "local food"],
+    "mobility": "No known limitations",
+    "nightly_budget": 220,
+    "room": "one double room"
+  },
+  "segments": [
+    {
+      "id": "lisbon",
+      "base": "Lisbon",
+      "start_date": "2030-05-01",
+      "end_date": "2030-05-03",
+      "nights": 2
+    },
+    {
+      "id": "cascais",
+      "base": "Cascais",
+      "start_date": "2030-05-03",
+      "end_date": "2030-05-05",
+      "nights": 2
+    }
+  ],
+  "anchors": [
+    {
+      "id": "gallery-entry",
+      "name": "Reserved gallery entry",
+      "date": "2030-05-02",
+      "time": "10:00",
+      "rigidity": "hard",
+      "booking_id": "gallery-ticket"
+    },
+    {
+      "id": "coast-train",
+      "name": "Transfer to the coast",
+      "date": "2030-05-03",
+      "time": "11:00",
+      "rigidity": "soft"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "gallery-ticket",
+      "item": "Reserved gallery entry",
+      "status": "bookable",
+      "intended_date": "2030-05-02",
+      "intended_time": "10:00",
+      "travelers": 2,
+      "source_url": "https://example.com/official-ticket-page",
+      "checked_at": "2030-01-15T09:00:00+00:00",
+      "next_check_at": "2030-02-15T09:00:00+00:00",
+      "fallback": "Use the contemporary art center on the same route"
+    },
+    {
+      "id": "market-lunch",
+      "item": "Market lunch",
+      "status": "walk_in",
+      "intended_date": "2030-05-01",
+      "travelers": 2
+    }
+  ],
+  "days": [
+    {
+      "date": "2030-05-01",
+      "base": "Lisbon",
+      "outcome": "Recover from arrival and learn the historic center",
+      "anchor_ids": [],
+      "items": ["Hotel bag drop", "Riverside orientation walk", "Market lunch"],
+      "first_cut": "Sunset viewpoint"
+    },
+    {
+      "date": "2030-05-02",
+      "base": "Lisbon",
+      "outcome": "Focused art and architecture day",
+      "anchor_ids": ["gallery-entry"],
+      "items": ["Reserved gallery entry", "Garden recovery break", "Neighborhood dinner"],
+      "first_cut": "Design shop detour"
+    },
+    {
+      "date": "2030-05-03",
+      "base": "Cascais",
+      "outcome": "Make a low-risk base transfer",
+      "anchor_ids": ["coast-train"],
+      "items": ["Hotel checkout", "Transfer to the coast", "Seafront walk"],
+      "first_cut": "Lighthouse extension"
+    },
+    {
+      "date": "2030-05-04",
+      "base": "Cascais",
+      "outcome": "Explore the coast at an easy pace",
+      "anchor_ids": [],
+      "items": ["Coastal museum", "Long lunch", "Beach or indoor weather branch"],
+      "first_cut": "Clifftop extension"
+    },
+    {
+      "date": "2030-05-05",
+      "base": "Cascais",
+      "outcome": "Depart without schedule risk",
+      "anchor_ids": [],
+      "items": ["Breakfast near hotel", "Short promenade", "Onward transfer"],
+      "first_cut": "Promenade"
+    }
+  ],
+  "decisions": [
+    {
+      "date": "2030-01-15",
+      "decision": "Use two bases and protect the reserved gallery date",
+      "reason": "Reduces backtracking while keeping the hard anchor fixed"
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "Gallery inventory was available for the intended date",
+      "source_url": "https://example.com/official-ticket-page",
+      "checked_at": "2030-01-15T09:00:00+00:00",
+      "applies_to": "2030-05-02",
+      "next_check_at": "2030-02-15T09:00:00+00:00"
+    }
+  ]
+}

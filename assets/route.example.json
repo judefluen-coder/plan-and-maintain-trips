@@ -1,0 +1,40 @@
+{
+  "title": "Example 3-day route map",
+  "subtitle": "Lisbon · Sintra · Cascais | schematic overview",
+  "disclaimer": "Example only. Verify opening hours, tickets, and live navigation before travel.",
+  "days": [
+    {
+      "day": 1,
+      "date": "2030-05-01",
+      "label": "Historic center",
+      "color": "#B33A3A",
+      "stops": [
+        {"name": "Praça do Comércio", "lat": 38.7077, "lon": -9.1365, "duration": "45 min"},
+        {"name": "Chiado", "lat": 38.7108, "lon": -9.1427, "duration": "90 min", "mode_from_previous": "walk"},
+        {"name": "Estrela Garden", "lat": 38.7148, "lon": -9.1607, "duration": "60 min", "mode_from_previous": "transit"}
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2030-05-02",
+      "label": "West Lisbon",
+      "color": "#167C5A",
+      "stops": [
+        {"name": "Jerónimos area", "lat": 38.6979, "lon": -9.2065, "duration": "2 hr"},
+        {"name": "MAAT riverside", "lat": 38.6959, "lon": -9.1942, "duration": "90 min", "mode_from_previous": "walk"},
+        {"name": "Time Out Market", "lat": 38.7070, "lon": -9.1457, "duration": "75 min", "mode_from_previous": "transit"}
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2030-05-03",
+      "label": "Coast transfer",
+      "color": "#D38300",
+      "stops": [
+        {"name": "Cais do Sodré", "lat": 38.7060, "lon": -9.1447, "duration": "20 min"},
+        {"name": "Cascais station", "lat": 38.7008, "lon": -9.4173, "duration": "45 min", "mode_from_previous": "rail"},
+        {"name": "Cascais seafront", "lat": 38.6968, "lon": -9.4204, "duration": "90 min", "mode_from_previous": "walk"}
+      ]
+    }
+  ]
+}

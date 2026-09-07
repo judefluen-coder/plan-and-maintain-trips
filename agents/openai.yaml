@@ -1,0 +1,4 @@
+interface:
+  display_name: "旅行总策划"
+  short_description: "从需求到订票、路线图、每日执行卡和最终审计的通用旅行工作流"
+  default_prompt: "Use $plan-and-maintain-trips to build and maintain an executable trip plan for my destination."
