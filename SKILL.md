@@ -128,6 +128,8 @@ Create one mobile-first card for every calendar day, including arrival, transfer
 
 Leave explicit fill-in fields for unknown hotel, flight, terminal, booking number, insurance, or emergency-contact details. Never invent them.
 
+When the user wants a visual execution pack, export each card as a screenshot-friendly SVG or high-resolution PNG and keep a searchable text equivalent. Use `assets/readme-day-card.svg` only as a visual reference; replace every example value with project facts and verify that no label is clipped.
+
 ### 6. Create route maps
 
 Create one map per compact geographic segment, normally no more than six days. Use a different color per day, numbered stops, solid lines for walking, dashed lines for transit, and short day cards.

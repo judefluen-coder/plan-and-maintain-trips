@@ -42,6 +42,8 @@ Keep each card mobile-first and screenshot-friendly:
 
 Use explicit blanks for unknown flight, terminal, hotel, booking number, insurance, or emergency contact. Fill them only from user-provided confirmations.
 
+When a visual execution pack is requested, create one SVG or high-resolution PNG per day and preserve a searchable text version. Inspect each image at phone width for clipped text, illegible type, excessive blank space, and stale itinerary details.
+
 ## Route map
 
 Use geographic coordinates when available, but describe the map as schematic unless it uses a verified navigation engine. Prefer one map per base or compact region and no more than six day colors per map.
