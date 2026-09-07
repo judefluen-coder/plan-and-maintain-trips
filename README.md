@@ -66,15 +66,17 @@ flowchart LR
 
 ## 输出范例
 
-下面使用虚构的葡萄牙双基地文化旅行演示输出形态；它不包含任何真实用户数据。
+下面使用虚构的葡萄牙文化旅行演示输出形态；它不包含任何真实用户数据。
 
 ### 1. 高清多日路线图
 
 <p align="center">
-  <img src="assets/route.example.svg" alt="A three-day schematic route map with a different color for each day" width="720">
+  <a href="assets/readme-route-sample.svg">
+    <img src="assets/readme-route-sample.png" alt="A detailed six-day Lisbon route atlas with numbered stops, day cards, distances, booking anchors and pace notes" width="900">
+  </a>
 </p>
 
-路线图保留 SVG 无损源文件，默认画布为 `2480 × 3508`。适合继续导出高清 PNG、插入文档或打印。地图是行程结构示意，不冒充逐向导航。
+这个展示样例同时提供 GitHub 兼容的高清 PNG 和可无限放大的 SVG 源文件。它把多日路线、编号站点、步行/公共交通、每日里程、强度、固定预约和删减策略放在同一张图里。点击图片可查看无损版本；地图是行程结构示意，不冒充逐向导航。
 
 ### 2. 预约控制台
 
@@ -211,7 +213,8 @@ plan-and-maintain-trips/
 ├── assets/
 │   ├── trip.example.json            # 规范状态示例
 │   ├── route.example.json           # 路线图数据示例
-│   ├── route.example.svg            # 真实渲染结果
+│   ├── readme-route-sample.png      # GitHub 高清展示图
+│   ├── readme-route-sample.svg      # 展示图无损源文件
 │   └── guide-template.md             # 最终攻略模板
 ├── references/
 │   ├── state-model.md               # 唯一事实源的数据模型

@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Lisbon arts and coast six-day route example</title>
+  <desc id="desc">A detailed atlas-style itinerary map with six color-coded days, numbered stops, transit lines, day cards, walking distances, booking anchors, and practical notes.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBFAF6"/>
+      <stop offset="1" stop-color="#F3EFE5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#173654" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="streets" width="92" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)">
+      <path d="M0 18 H92 M0 54 H92 M24 0 V72 M68 0 V72" fill="none" stroke="#D8D6CF" stroke-width="1.4" opacity="0.72"/>
+      <path d="M0 36 H92 M46 0 V72" fill="none" stroke="#C9CDD0" stroke-width="2.2" opacity="0.65"/>
+    </pattern>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+      .navy { fill: #183A60; }
+      .muted { fill: #66788B; }
+      .small { font-size: 14px; }
+      .label { font-size: 15px; font-weight: 650; fill: #24415F; }
+      .micro { font-size: 12px; font-weight: 600; fill: #6A7B8B; letter-spacing: .4px; }
+      .route { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 8; }
+      .halo { fill: none; stroke: #FFFFFF; stroke-linecap: round; stroke-linejoin: round; stroke-width: 16; opacity: .94; }
+      .pin { stroke: #FFFFFF; stroke-width: 4; }
+      .num { fill: #FFFFFF; font-size: 13px; font-weight: 800; text-anchor: middle; }
+      .card-title { font-size: 17px; font-weight: 760; fill: #183A60; }
+      .card-copy { font-size: 13px; font-weight: 520; fill: #596E82; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1200" fill="url(#paper)"/>
+
+  <g class="sans">
+    <text x="64" y="72" font-size="16" font-weight="760" letter-spacing="2.6" fill="#168270">EXAMPLE OUTPUT · ROUTE ATLAS</text>
+    <text x="64" y="126" font-size="43" font-weight="780" class="navy">Lisbon Arts &amp; Coast · 6 Days</text>
+    <text x="64" y="158" font-size="17" font-weight="520" class="muted">One map for orientation · six executable day routes · booking and pace cues included</text>
+
+    <g transform="translate(1210 52)">
+      <rect width="164" height="38" rx="19" fill="#E9F2EF"/>
+      <text x="82" y="25" text-anchor="middle" font-size="13" font-weight="700" fill="#14705F">09:00–20:30 / day</text>
+      <rect x="176" width="134" height="38" rx="19" fill="#F7EED9"/>
+      <text x="243" y="25" text-anchor="middle" font-size="13" font-weight="700" fill="#986000">6 color routes</text>
+      <rect x="322" width="204" height="38" rx="19" fill="#E9EEF4"/>
+      <text x="424" y="25" text-anchor="middle" font-size="13" font-weight="700" fill="#315579">schematic · not navigation</text>
+      <g transform="translate(8 68)">
+        <path d="M0 0 H36" stroke="#405D7A" stroke-width="5" stroke-linecap="round"/>
+        <text x="48" y="5" class="micro">WALK</text>
+        <path d="M115 0 H151" stroke="#405D7A" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 7"/>
+        <text x="163" y="5" class="micro">TRANSIT</text>
+        <circle cx="268" cy="0" r="9" fill="#F7EED9" stroke="#D38600" stroke-width="3"/>
+        <text x="289" y="5" class="micro">BOOKING ANCHOR</text>
+      </g>
+    </g>
+
+    <!-- Atlas surface -->
+    <rect x="58" y="194" width="1160" height="784" rx="28" fill="#FFFFFF" stroke="#B5C3D0" stroke-width="2" filter="url(#shadow)"/>
+
+    <!-- Central Lisbon -->
+    <g transform="translate(82 222)">
+      <rect width="696" height="724" rx="22" fill="#F8F8F4" stroke="#D5DDE2" stroke-width="2"/>
+      <rect width="696" height="724" rx="22" fill="url(#streets)" opacity="0.7"/>
+      <path d="M0 560 C120 520 210 594 330 554 C470 506 570 522 696 476 V724 H0 Z" fill="#93D0E3"/>
+      <path d="M0 568 C120 528 216 602 334 562 C474 516 575 531 696 486" fill="none" stroke="#55A9C2" stroke-width="4" opacity="0.8"/>
+      <path d="M70 92 L224 72 L244 174 L92 190 Z" fill="#DDEBD4"/>
+      <path d="M468 128 L644 98 L662 236 L506 250 Z" fill="#DDEBD4"/>
+      <path d="M86 338 L228 324 L244 430 L110 452 Z" fill="#E3EEDB"/>
+      <path d="M386 322 L500 292 L526 394 L402 414 Z" fill="#E3EEDB"/>
+      <path d="M28 264 C154 248 260 274 382 238 S594 218 680 252" fill="none" stroke="#A9B7C5" stroke-width="7" opacity="0.75"/>
+      <path d="M208 40 C250 154 286 276 340 390 S438 532 508 590" fill="none" stroke="#D5B272" stroke-width="5" opacity="0.58"/>
+      <path d="M42 488 C176 456 304 470 444 428 S610 382 678 340" fill="none" stroke="#C4CBD1" stroke-width="5" opacity="0.7"/>
+
+      <rect x="18" y="16" width="194" height="38" rx="19" fill="#183A60"/>
+      <text x="115" y="41" text-anchor="middle" font-size="14" font-weight="750" fill="#FFFFFF">CENTRAL LISBON · D1 / D3</text>
+      <text x="526" y="688" font-size="16" font-style="italic" font-weight="650" fill="#3C91AA">TAGUS RIVER</text>
+      <text x="84" y="122" class="micro">GULBENKIAN</text>
+      <text x="514" y="178" class="micro">ALFAMA</text>
+      <text x="100" y="390" class="micro">ESTRELA</text>
+      <text x="346" y="458" class="micro">CHIADO</text>
+      <text x="480" y="536" class="micro">BAIXA</text>
+
+      <!-- Day 1 route -->
+      <path class="halo" d="M390 590 C414 538 462 508 500 458 S548 356 594 276"/>
+      <path class="route" d="M390 590 C414 538 462 508 500 458 S548 356 594 276" stroke="#B93B48"/>
+      <g>
+        <circle class="pin" cx="390" cy="590" r="17" fill="#B93B48"/><text class="num" x="390" y="595">1</text>
+        <circle class="pin" cx="458" cy="510" r="17" fill="#B93B48"/><text class="num" x="458" y="515">2</text>
+        <circle class="pin" cx="518" cy="430" r="17" fill="#B93B48"/><text class="num" x="518" y="435">3</text>
+        <circle class="pin" cx="594" cy="276" r="17" fill="#B93B48"/><text class="num" x="594" y="281">4</text>
+      </g>
+      <g>
+        <rect x="254" y="600" width="188" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="269" y="622" class="label">Praça do Comércio</text>
+        <rect x="478" y="481" width="156" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="493" y="503" class="label">Lisbon Cathedral</text>
+        <rect x="538" y="402" width="104" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="553" y="424" class="label">Alfama</text>
+        <rect x="478" y="238" width="178" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="493" y="260" class="label">Sunset viewpoint</text>
+      </g>
+
+      <!-- Day 3 route -->
+      <path class="halo" d="M150 132 C230 154 286 194 324 270 S296 398 350 468"/>
+      <path class="route" d="M150 132 C230 154 286 194 324 270 S296 398 350 468" stroke="#D38600"/>
+      <g>
+        <circle class="pin" cx="150" cy="132" r="17" fill="#D38600"/><text class="num" x="150" y="137">1</text>
+        <circle class="pin" cx="278" cy="204" r="17" fill="#D38600"/><text class="num" x="278" y="209">2</text>
+        <circle class="pin" cx="324" cy="326" r="17" fill="#D38600"/><text class="num" x="324" y="331">3</text>
+        <circle class="pin" cx="350" cy="468" r="17" fill="#D38600"/><text class="num" x="350" y="473">4</text>
+      </g>
+      <g>
+        <rect x="172" y="105" width="132" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="187" y="127" class="label">Art museum</text>
+        <rect x="300" y="176" width="124" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="315" y="198" class="label">City garden</text>
+        <rect x="346" y="300" width="144" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="361" y="322" class="label">Design district</text>
+        <rect x="206" y="441" width="118" height="34" rx="12" fill="#FFFFFF" stroke="#D7DEE3"/><text x="221" y="463" class="label">Estrela</text>
+      </g>
+    </g>
+
+    <!-- West and East Lisbon inset -->
+    <g transform="translate(800 222)">
+      <rect width="392" height="344" rx="22" fill="#F8F8F4" stroke="#D5DDE2" stroke-width="2"/>
+      <rect width="392" height="344" rx="22" fill="url(#streets)" opacity="0.68"/>
+      <path d="M0 262 C90 236 178 284 268 248 S338 226 392 214 V344 H0 Z" fill="#A2D8E7"/>
+      <rect x="16" y="15" width="190" height="34" rx="17" fill="#183A60"/>
+      <text x="111" y="38" text-anchor="middle" font-size="13" font-weight="750" fill="#FFFFFF">WEST + EAST · D2 / D6</text>
+
+      <path class="halo" d="M54 216 C100 178 142 164 188 186 S252 236 316 190"/>
+      <path class="route" d="M54 216 C100 178 142 164 188 186 S252 236 316 190" stroke="#168368"/>
+      <circle class="pin" cx="54" cy="216" r="15" fill="#168368"/><text class="num" x="54" y="221">1</text>
+      <circle class="pin" cx="132" cy="174" r="15" fill="#168368"/><text class="num" x="132" y="179">2</text>
+      <circle class="pin" cx="218" cy="204" r="15" fill="#168368"/><text class="num" x="218" y="209">3</text>
+      <circle class="pin" cx="316" cy="190" r="15" fill="#168368"/><text class="num" x="316" y="195">4</text>
+      <text x="34" y="250" class="micro">BELÉM</text>
+
+      <path class="halo" d="M112 88 C168 70 234 80 280 112 S330 132 354 100"/>
+      <path class="route" d="M112 88 C168 70 234 80 280 112 S330 132 354 100" stroke="#008F8F" stroke-dasharray="11 10"/>
+      <circle class="pin" cx="112" cy="88" r="15" fill="#008F8F"/><text class="num" x="112" y="93">1</text>
+      <circle class="pin" cx="224" cy="82" r="15" fill="#008F8F"/><text class="num" x="224" y="87">2</text>
+      <circle class="pin" cx="300" cy="122" r="15" fill="#008F8F"/><text class="num" x="300" y="127">3</text>
+      <circle class="pin" cx="354" cy="100" r="15" fill="#008F8F"/><text class="num" x="354" y="105">4</text>
+      <text x="264" y="68" class="micro">PARQUE DAS NAÇÕES</text>
+    </g>
+
+    <!-- Day trips inset -->
+    <g transform="translate(800 590)">
+      <rect width="392" height="356" rx="22" fill="#F8F8F4" stroke="#D5DDE2" stroke-width="2"/>
+      <path d="M0 0 H190 V356 H0 Z" fill="#E9E5DA"/>
+      <path d="M202 0 H392 V356 H202 Z" fill="#EDF2EA"/>
+      <path d="M202 242 C244 218 300 246 392 208 V356 H202 Z" fill="#9FD5E5"/>
+      <path d="M24 76 L74 34 L142 58 L174 126 L124 174 L56 154 Z" fill="#D9E8D1"/>
+      <path d="M226 52 L362 28 L378 162 L242 180 Z" fill="#DCEBD5"/>
+      <rect x="16" y="15" width="174" height="34" rx="17" fill="#183A60"/>
+      <text x="103" y="38" text-anchor="middle" font-size="13" font-weight="750" fill="#FFFFFF">DAY TRIPS · D4 / D5</text>
+      <text x="58" y="326" class="micro">SINTRA</text>
+      <text x="278" y="326" class="micro">CASCAIS</text>
+
+      <path class="halo" d="M44 252 C72 206 58 160 96 126 S138 86 160 68"/>
+      <path class="route" d="M44 252 C72 206 58 160 96 126 S138 86 160 68" stroke="#226DA8"/>
+      <circle class="pin" cx="44" cy="252" r="15" fill="#226DA8"/><text class="num" x="44" y="257">1</text>
+      <circle class="pin" cx="72" cy="190" r="15" fill="#226DA8"/><text class="num" x="72" y="195">2</text>
+      <circle class="pin" cx="112" cy="112" r="15" fill="#226DA8"/><text class="num" x="112" y="117">3</text>
+      <circle class="pin" cx="160" cy="68" r="15" fill="#226DA8"/><text class="num" x="160" y="73">4</text>
+
+      <path class="halo" d="M228 92 C272 106 300 144 318 194 S330 254 362 278"/>
+      <path class="route" d="M228 92 C272 106 300 144 318 194 S330 254 362 278" stroke="#7354A5"/>
+      <circle class="pin" cx="228" cy="92" r="15" fill="#7354A5"/><text class="num" x="228" y="97">1</text>
+      <circle class="pin" cx="296" cy="154" r="15" fill="#7354A5"/><text class="num" x="296" y="159">2</text>
+      <circle class="pin" cx="324" cy="220" r="15" fill="#7354A5"/><text class="num" x="324" y="225">3</text>
+      <circle class="pin" cx="362" cy="278" r="15" fill="#7354A5"/><text class="num" x="362" y="283">4</text>
+    </g>
+
+    <!-- Day cards -->
+    <g transform="translate(1244 194)">
+      <rect width="498" height="784" rx="28" fill="#173A60" filter="url(#shadow)"/>
+      <text x="30" y="45" font-size="14" font-weight="740" letter-spacing="2.1" fill="#A9C4DB">DAILY ROUTES</text>
+      <text x="30" y="78" font-size="23" font-weight="720" fill="#FFFFFF">At a glance</text>
+
+      <g transform="translate(22 102)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#B93B48"/>
+        <circle cx="38" cy="31" r="18" fill="#B93B48"/><text class="num" x="38" y="36">1</text>
+        <text x="70" y="29" class="card-title">Old City + sunset</text>
+        <text x="70" y="54" class="card-copy">Praça → Cathedral → Alfama → Viewpoint</text>
+        <text x="70" y="77" class="micro">5.2 KM · MEDIUM · FIRST CUT: VIEWPOINT</text>
+      </g>
+      <g transform="translate(22 208)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#168368"/>
+        <circle cx="38" cy="31" r="18" fill="#168368"/><text class="num" x="38" y="36">2</text>
+        <text x="70" y="29" class="card-title">Belém monuments</text>
+        <text x="70" y="54" class="card-copy">Monastery → Pastry stop → MAAT → Tower</text>
+        <text x="70" y="77" class="micro">3.8 KM · LOW · 10:00 TIMED ENTRY</text>
+      </g>
+      <g transform="translate(22 314)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#D38600"/>
+        <circle cx="38" cy="31" r="18" fill="#D38600"/><text class="num" x="38" y="36">3</text>
+        <text x="70" y="29" class="card-title">Art + gardens</text>
+        <text x="70" y="54" class="card-copy">Museum → Garden → Design district → Estrela</text>
+        <text x="70" y="77" class="micro">4.6 KM · MEDIUM · 45 MIN RECOVERY BLOCK</text>
+      </g>
+      <g transform="translate(22 420)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#226DA8"/>
+        <circle cx="38" cy="31" r="18" fill="#226DA8"/><text class="num" x="38" y="36">4</text>
+        <text x="70" y="29" class="card-title">Sintra day trip</text>
+        <text x="70" y="54" class="card-copy">Station → Old town → Castle → Palace</text>
+        <text x="70" y="77" class="micro">6.1 KM · HIGH · TRAIN BUFFER: 25 MIN</text>
+      </g>
+      <g transform="translate(22 526)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#7354A5"/>
+        <circle cx="38" cy="31" r="18" fill="#7354A5"/><text class="num" x="38" y="36">5</text>
+        <text x="70" y="29" class="card-title">Cascais coast</text>
+        <text x="70" y="54" class="card-copy">Station → Old town → Cliffs → Seafront</text>
+        <text x="70" y="77" class="micro">4.2 KM · LOW · WEATHER FLEXIBLE</text>
+      </g>
+      <g transform="translate(22 632)">
+        <rect width="454" height="94" rx="18" fill="#FFFFFF"/>
+        <rect width="8" height="94" rx="4" fill="#008F8F"/>
+        <circle cx="38" cy="31" r="18" fill="#008F8F"/><text class="num" x="38" y="36">6</text>
+        <text x="70" y="29" class="card-title">Modern Lisbon</text>
+        <text x="70" y="54" class="card-copy">Oriente → Oceanarium → Cable car → River</text>
+        <text x="70" y="77" class="micro">3.6 KM · LOW · AIRPORT-FRIENDLY FINISH</text>
+      </g>
+    </g>
+
+    <!-- Operations footer -->
+    <g transform="translate(58 1006)">
+      <rect width="1684" height="136" rx="24" fill="#FFFFFF" stroke="#CBD5DE" stroke-width="2"/>
+      <g transform="translate(28 26)">
+        <rect width="500" height="84" rx="16" fill="#F4F7F8"/>
+        <text x="20" y="29" font-size="14" font-weight="760" fill="#183A60">PROTECT</text>
+        <text x="20" y="55" font-size="15" font-weight="620" fill="#405971">D2 10:00 timed entry · D4 08:40 train</text>
+        <text x="20" y="75" class="micro">arrive 25 min early · tickets saved offline</text>
+      </g>
+      <g transform="translate(546 26)">
+        <rect width="500" height="84" rx="16" fill="#F4F7F8"/>
+        <text x="20" y="29" font-size="14" font-weight="760" fill="#183A60">PACE</text>
+        <text x="20" y="55" font-size="15" font-weight="620" fill="#405971">One high day · two low days · recovery built in</text>
+        <text x="20" y="75" class="micro">first-cut item is named before every departure</text>
+      </g>
+      <g transform="translate(1064 26)">
+        <rect width="592" height="84" rx="16" fill="#F4F7F8"/>
+        <text x="20" y="29" font-size="14" font-weight="760" fill="#183A60">MOVE</text>
+        <text x="20" y="55" font-size="15" font-weight="620" fill="#405971">Walk under 18 min · transit when it saves energy</text>
+        <text x="20" y="75" class="micro">solid = walk · dashed = transit · verify live conditions</text>
+      </g>
+    </g>
+  </g>
+</svg>
