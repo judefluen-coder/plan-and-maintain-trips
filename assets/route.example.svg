@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<rect width="100%" height="100%" fill="#F8F5EC"/>
+<rect x="136.4" y="368.3" width="2207.2" height="1859.2" rx="28" fill="#FCFBF7" stroke="#9AB0C5" stroke-width="3"/>
+<text x="1240.0" y="182.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="64" font-weight="700" fill="#17355F" text-anchor="middle">Example 3-day route map</text>
+<text x="1240.0" y="277.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="500" fill="#3F5877" text-anchor="middle">Lisbon · Sintra · Cascais | schematic overview</text>
+<line x1="357.1" y1="368.3" x2="357.1" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="577.8" y1="368.3" x2="577.8" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="798.6" y1="368.3" x2="798.6" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="1019.3" y1="368.3" x2="1019.3" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="1240.0" y1="368.3" x2="1240.0" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="1460.7" y1="368.3" x2="1460.7" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="1681.4" y1="368.3" x2="1681.4" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="1902.2" y1="368.3" x2="1902.2" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="2122.9" y1="368.3" x2="2122.9" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="633.9" x2="2343.6" y2="633.9" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="899.6" x2="2343.6" y2="899.6" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="1165.2" x2="2343.6" y2="1165.2" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="1430.8" x2="2343.6" y2="1430.8" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="1696.4" x2="2343.6" y2="1696.4" stroke="#E6E4DE" stroke-width="2"/>
+<line x1="136.4" y1="1962.0" x2="2343.6" y2="1962.0" stroke="#E6E4DE" stroke-width="2"/>
+<path d="M 2281.6 1095.1 L 2236.1 839.0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2281.6 1095.1 L 2236.1 839.0" fill="none" stroke="#B33A3A" stroke-width="10" stroke-linecap="round"/>
+<path d="M 2236.1 839.0 L 2104.0 508.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2236.1 839.0 L 2104.0 508.7" fill="none" stroke="#B33A3A" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 12"/>
+<rect x="1786.6" y="1047.1" width="495.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2281.6" cy="1095.1" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2281.6" y="1105.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1808.6" y="1088.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Praça do Comércio</text>
+<rect x="2041.6" y="791.0" width="240.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2236.1" cy="839.0" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2236.1" y="849.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="2063.6" y="832.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Chiado</text>
+<rect x="1861.6" y="508.7" width="420.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2104.0" cy="508.7" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2104.0" y="518.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1883.6" y="549.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Estrela Garden</text>
+<path d="M 1768.0 1904.5 L 1858.2 2069.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 1768.0 1904.5 L 1858.2 2069.7" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
+<path d="M 1858.2 2069.7 L 2214.1 1152.9" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 1858.2 2069.7 L 2214.1 1152.9" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 12"/>
+<rect x="1806.0" y="1856.5" width="420.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="1768.0" cy="1904.5" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="1768.0" y="1914.5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1828.0" y="1897.5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Jerónimos area</text>
+<rect x="1861.6" y="2007.7" width="420.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="1858.2" cy="2069.7" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="1858.2" y="2079.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="1883.6" y="2048.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">MAAT riverside</text>
+<rect x="1836.6" y="1170.9" width="445.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2214.1" cy="1152.9" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2214.1" y="1162.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1858.6" y="1211.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Time Out Market</text>
+<path d="M 2221.4 1235.5 L 221.1 1665.0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2221.4 1235.5 L 221.1 1665.0" fill="none" stroke="#D38300" stroke-width="10" stroke-linecap="round" stroke-dasharray="6 10"/>
+<path d="M 221.1 1665.0 L 198.4 1995.4" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 221.1 1665.0 L 198.4 1995.4" fill="none" stroke="#D38300" stroke-width="10" stroke-linecap="round"/>
+<rect x="1886.6" y="1253.5" width="395.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2221.4" cy="1235.5" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2221.4" y="1245.5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1908.6" y="1294.5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Cais do Sodré</text>
+<rect x="259.1" y="1617.0" width="445.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="221.1" cy="1665.0" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
+<text x="221.1" y="1675.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="281.1" y="1658.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Cascais station</text>
+<rect x="236.4" y="1947.4" width="470.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="198.4" cy="1995.4" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
+<text x="198.4" y="2005.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="258.4" y="1988.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Cascais seafront</text>
+<rect x="136.4" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#B33A3A" stroke-width="3"/>
+<rect x="136.4" y="2315.3" width="712.6" height="68" rx="26" fill="#B33A3A"/>
+<rect x="136.4" y="2355.3" width="712.6" height="28" fill="#B33A3A"/>
+<text x="160.4" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 1 · 2030-05-01 · Historic center</text>
+<circle cx="168.4" cy="2420.3" r="17" fill="#B33A3A"/>
+<text x="168.4" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="197.4" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Praça do Comércio · 45 min</text>
+<circle cx="168.4" cy="2468.3" r="17" fill="#B33A3A"/>
+<text x="168.4" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="197.4" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Chiado · 90 min</text>
+<circle cx="168.4" cy="2516.3" r="17" fill="#B33A3A"/>
+<text x="168.4" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="197.4" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Estrela Garden · 60 min</text>
+<rect x="883.7" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#167C5A" stroke-width="3"/>
+<rect x="883.7" y="2315.3" width="712.6" height="68" rx="26" fill="#167C5A"/>
+<rect x="883.7" y="2355.3" width="712.6" height="28" fill="#167C5A"/>
+<text x="907.7" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 2 · 2030-05-02 · West Lisbon</text>
+<circle cx="915.7" cy="2420.3" r="17" fill="#167C5A"/>
+<text x="915.7" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="944.7" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Jerónimos area · 2 hr</text>
+<circle cx="915.7" cy="2468.3" r="17" fill="#167C5A"/>
+<text x="915.7" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="944.7" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">MAAT riverside · 90 min</text>
+<circle cx="915.7" cy="2516.3" r="17" fill="#167C5A"/>
+<text x="915.7" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="944.7" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Time Out Market · 75 min</text>
+<rect x="1631.0" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#D38300" stroke-width="3"/>
+<rect x="1631.0" y="2315.3" width="712.6" height="68" rx="26" fill="#D38300"/>
+<rect x="1631.0" y="2355.3" width="712.6" height="28" fill="#D38300"/>
+<text x="1655.0" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 3 · 2030-05-03 · Coast transfer</text>
+<circle cx="1663.0" cy="2420.3" r="17" fill="#D38300"/>
+<text x="1663.0" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1692.0" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Cais do Sodré · 20 min</text>
+<circle cx="1663.0" cy="2468.3" r="17" fill="#D38300"/>
+<text x="1663.0" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="1692.0" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Cascais station · 45 min</text>
+<circle cx="1663.0" cy="2516.3" r="17" fill="#D38300"/>
+<text x="1663.0" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1692.0" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Cascais seafront · 90 min</text>
+<text x="1240.0" y="3465.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#65778C" text-anchor="middle">Example only. Verify opening hours, tickets, and live navigation before travel.</text>
+</svg>
