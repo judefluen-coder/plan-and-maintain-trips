@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="assets/readme-hero.svg" alt="Plan & Maintain Trips — from scattered ideas to an executable trip" width="100%">
+  <a href="assets/readme-hero.svg">
+    <img src="assets/readme-hero.png" alt="旅行总策划——从零散想法到可执行旅程" width="100%">
+  </a>
 </p>
 
 <h1 align="center">Plan & Maintain Trips</h1>
@@ -9,10 +11,10 @@
 </p>
 
 <p align="center">
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-163A63?style=flat-square">
-  <img alt="Any destination" src="https://img.shields.io/badge/Destination-Anywhere-16856B?style=flat-square">
-  <img alt="Visual field cards" src="https://img.shields.io/badge/Output-Visual%20field%20cards-D88700?style=flat-square">
-  <img alt="Multi-document publishing" src="https://img.shields.io/badge/Publish-Multi--document-7354A5?style=flat-square">
+  <img alt="Codex 旅行总策划 Skill" src="https://img.shields.io/badge/Codex-%E6%97%85%E8%A1%8C%E6%80%BB%E7%AD%96%E5%88%92-163A63?style=flat-square">
+  <img alt="目的地覆盖全球" src="https://img.shields.io/badge/%E7%9B%AE%E7%9A%84%E5%9C%B0-%E5%85%A8%E7%90%83-16856B?style=flat-square">
+  <img alt="输出每日攻略图" src="https://img.shields.io/badge/%E8%BE%93%E5%87%BA-%E6%AF%8F%E6%97%A5%E6%94%BB%E7%95%A5%E5%9B%BE-D88700?style=flat-square">
+  <img alt="支持多文档发布" src="https://img.shields.io/badge/%E5%8F%91%E5%B8%83-%E5%A4%9A%E6%96%87%E6%A1%A3-7354A5?style=flat-square">
 </p>
 
 > 不是再生成一份“景点清单”。所有日程、预约、餐厅、路线图和当天执行卡，都由同一份行程状态派生；改动一个决定，其余产物会跟着同步。
@@ -25,7 +27,7 @@
 
 <p align="center">
   <a href="assets/readme-route-sample.svg">
-    <img src="assets/readme-route-sample.png" alt="Six-day route atlas with numbered stops, day cards, distances and booking anchors" width="100%">
+    <img src="assets/readme-route-sample.png" alt="六日路线图，包含编号站点、每日路线、距离与预约锚点" width="100%">
   </a>
 </p>
 
@@ -37,7 +39,7 @@
 
 <p align="center">
   <a href="assets/readme-day-card.svg">
-    <img src="assets/readme-day-card.png" alt="Day-of travel field card with timeline, ticket wallet, route, pace and fallback decisions" width="100%">
+    <img src="assets/readme-day-card.png" alt="包含时间线、票夹、路线、强度与备选方案的每日执行攻略卡" width="100%">
   </a>
 </p>
 
@@ -54,7 +56,7 @@
 
 <p align="center">
   <a href="assets/readme-publishing.svg">
-    <img src="assets/readme-publishing.png" alt="One canonical trip project publishing to Feishu Lark, Markdown, Notion, Google Docs, DOCX and PDF" width="100%">
+    <img src="assets/readme-publishing.png" alt="一份旅行项目发布到飞书、Markdown、Notion、Google Docs、DOCX 和 PDF" width="100%">
   </a>
 </p>
 
@@ -169,6 +171,7 @@ plan-and-maintain-trips/
 │   ├── trip.example.json
 │   ├── route.example.json
 │   ├── guide-template.md
+│   ├── readme-hero.{png,svg}
 │   ├── readme-route-sample.{png,svg}
 │   ├── readme-day-card.{png,svg}
 │   └── readme-publishing.{png,svg}
@@ -197,6 +200,6 @@ plan-and-maintain-trips/
 ---
 
 <p align="center">
-  <strong>Plan beautifully. Book deliberately. Travel calmly.</strong><br>
-  <sub>漂亮地规划，克制地预约，从容地出发。</sub>
+  <strong>漂亮地规划，克制地预约，从容地出发。</strong><br>
+  <sub>Plan beautifully. Book deliberately. Travel calmly.</sub>
 </p>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1500" viewBox="0 0 1800 1125" role="img" aria-labelledby="title desc">
-  <title id="title">Mobile-first day-of travel execution card</title>
-  <desc id="desc">A detailed daily travel card showing a protected booking, timeline, movement, tickets, route, pace, late rule, rain fallback, and one-tap links.</desc>
+  <title id="title">适合手机保存的当日旅行执行卡</title>
+  <desc id="desc">中文每日攻略卡，包含固定预约、时间线、交通、票夹、路线、强度、迟到规则、雨天备选和一键地点。</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#FBF9F3"/>
@@ -17,7 +17,7 @@
       <path d="M0 12 H60 M0 36 H60 M18 0 V48 M46 0 V48" fill="none" stroke="#D8D9D4" stroke-width="1.2"/>
     </pattern>
     <style>
-      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+      .sans { font-family: "PingFang SC", "Microsoft YaHei", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
       .navy { fill: #173A60; }
       .muted { fill: #647789; }
       .label { font-size: 14px; font-weight: 720; letter-spacing: 1.4px; }
@@ -30,28 +30,28 @@
   <rect width="1800" height="1125" fill="url(#bg)"/>
 
   <g class="sans">
-    <text x="62" y="68" class="label" fill="#168270">DAY-OF FIELD CARD · EXAMPLE OUTPUT</text>
-    <text x="62" y="124" font-size="43" font-weight="780" class="navy">Day 02 · Art, architecture &amp; a protected entry</text>
-    <text x="62" y="159" font-size="17" font-weight="520" class="muted">Lisbon · Friday, 2 May · designed to save before leaving the hotel</text>
+    <text x="62" y="68" class="label" fill="#168270">每日执行攻略卡 · 输出样例</text>
+    <text x="62" y="124" font-size="43" font-weight="780" class="navy">第 2 天 · 艺术、建筑与固定预约</text>
+    <text x="62" y="159" font-size="17" font-weight="520" class="muted">里斯本 · 5月2日 星期五 · 出门前保存到手机</text>
 
     <g transform="translate(1270 70)">
       <rect width="132" height="40" rx="20" fill="#E6F1ED"/>
-      <text x="66" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#13705E">MEDIUM</text>
+      <text x="66" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#13705E">中等强度</text>
       <rect x="144" width="116" height="40" rx="20" fill="#E7EEF5"/>
-      <text x="202" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#31587C">5.2 KM</text>
+      <text x="202" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#31587C">5.2 公里</text>
       <rect x="272" width="198" height="40" rx="20" fill="#F7EED8"/>
-      <text x="371" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#986100">1 HARD ANCHOR</text>
+      <text x="371" y="26" text-anchor="middle" font-size="14" font-weight="720" fill="#986100">1 个固定预约</text>
     </g>
 
     <!-- Main timeline -->
     <rect x="58" y="194" width="1110" height="855" rx="28" fill="#FFFFFF" stroke="#C3CFD8" stroke-width="2" filter="url(#shadow)"/>
     <rect x="58" y="194" width="1110" height="112" rx="28" fill="url(#header)"/>
     <path d="M58 278 H1168 V306 H58 Z" fill="url(#header)"/>
-    <text x="92" y="238" font-size="14" font-weight="720" letter-spacing="1.6" fill="#BFD5E6">TODAY'S NON-NEGOTIABLE</text>
-    <text x="92" y="277" font-size="26" font-weight="760" fill="#FFFFFF">Be at the museum security line by 09:35</text>
+    <text x="92" y="238" font-size="14" font-weight="720" letter-spacing="1.6" fill="#BFD5E6">今天不可妥协</text>
+    <text x="92" y="277" font-size="26" font-weight="760" fill="#FFFFFF">09:35 前抵达博物馆安检队伍</text>
     <rect x="866" y="222" width="264" height="54" rx="16" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.34"/>
-    <text x="998" y="246" text-anchor="middle" font-size="13" font-weight="650" fill="#DDEAF2">TIMED ENTRY</text>
-    <text x="998" y="267" text-anchor="middle" font-size="17" font-weight="760" fill="#FFFFFF">10:00 · 2 tickets</text>
+    <text x="998" y="246" text-anchor="middle" font-size="13" font-weight="650" fill="#DDEAF2">预约入场</text>
+    <text x="998" y="267" text-anchor="middle" font-size="17" font-weight="760" fill="#FFFFFF">10:00 · 2 张票</text>
 
     <line x1="167" y1="354" x2="167" y2="837" stroke="#D1D9DF" stroke-width="5"/>
 
@@ -59,67 +59,67 @@
     <g transform="translate(92 334)">
       <circle cx="75" cy="28" r="18" fill="#168270" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">08:30</text>
-      <text x="112" y="26" class="item">Breakfast + ticket check</text>
-      <text x="112" y="50" class="meta">45 min · save QR codes offline · check venue and transit alerts</text>
+      <text x="112" y="26" class="item">早餐与票据检查</text>
+      <text x="112" y="50" class="meta">45 分钟 · 离线保存二维码 · 检查场馆及交通通知</text>
       <rect x="824" y="8" width="150" height="35" rx="17" fill="#E7F2EE"/>
-      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#14705E">PRE-FLIGHT CHECK</text>
+      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#14705E">出发前检查</text>
     </g>
     <g transform="translate(92 416)">
       <circle cx="75" cy="28" r="18" fill="#315E85" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">09:05</text>
-      <text x="112" y="26" class="item">Metro to the museum district</text>
-      <text x="112" y="50" class="meta">20 min ride + 10 min walk · one transfer · use exit B</text>
+      <text x="112" y="26" class="item">乘地铁前往博物馆区</text>
+      <text x="112" y="50" class="meta">车程 20 分钟 + 步行 10 分钟 · 换乘 1 次 · B 口出站</text>
       <path d="M824 25 H918" fill="none" stroke="#315E85" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 8"/>
-      <text x="936" y="31" font-size="13" font-weight="700" fill="#315E85">TRANSIT</text>
+      <text x="936" y="31" font-size="13" font-weight="700" fill="#315E85">公共交通</text>
     </g>
     <g transform="translate(92 498)">
       <rect x="-14" y="-6" width="1000" height="70" rx="18" fill="#F9F0D9" stroke="#E9C56F"/>
       <circle cx="75" cy="28" r="20" fill="#D38600" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">09:35</text>
-      <text x="112" y="26" class="item">Arrive for security · protect this buffer</text>
-      <text x="112" y="50" class="meta">Entry at 10:00 · do not move this anchor without approval</text>
+      <text x="112" y="26" class="item">抵达安检 · 保护这段缓冲</text>
+      <text x="112" y="50" class="meta">10:00 入场 · 未经确认不要移动这个固定锚点</text>
       <rect x="820" y="10" width="140" height="36" rx="18" fill="#D38600"/>
-      <text x="890" y="34" text-anchor="middle" font-size="13" font-weight="760" fill="#FFFFFF">HARD ANCHOR</text>
+      <text x="890" y="34" text-anchor="middle" font-size="13" font-weight="760" fill="#FFFFFF">固定预约</text>
     </g>
     <g transform="translate(92 584)">
       <circle cx="75" cy="28" r="18" fill="#B93B48" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">10:00</text>
-      <text x="112" y="26" class="item">Museum visit</text>
-      <text x="112" y="50" class="meta">2 hr · focus list: main collection + temporary exhibition</text>
+      <text x="112" y="26" class="item">博物馆参观</text>
+      <text x="112" y="50" class="meta">2 小时 · 重点：常设展 + 临时展</text>
       <rect x="824" y="8" width="150" height="35" rx="17" fill="#F6E8E9"/>
-      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#A83340">TICKET IN WALLET</text>
+      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#A83340">票已存好</text>
     </g>
     <g transform="translate(92 666)">
       <circle cx="75" cy="28" r="18" fill="#168270" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">12:20</text>
-      <text x="112" y="26" class="item">Route-linked lunch</text>
-      <text x="112" y="50" class="meta">75 min · primary is 4 min away · switch if the queue exceeds 15 min</text>
+      <text x="112" y="26" class="item">路线关联午餐</text>
+      <text x="112" y="50" class="meta">75 分钟 · 首选距此 4 分钟 · 排队超过 15 分钟即换备选</text>
       <rect x="824" y="8" width="150" height="35" rx="17" fill="#E7F2EE"/>
-      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#14705E">BACKUP READY</text>
+      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#14705E">备选已确认</text>
     </g>
     <g transform="translate(92 748)">
       <circle cx="75" cy="28" r="18" fill="#7354A5" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">14:00</text>
-      <text x="112" y="26" class="item">Design district walk</text>
-      <text x="112" y="50" class="meta">90 min · today's first-cut item if late or tired</text>
+      <text x="112" y="26" class="item">设计街区散步</text>
+      <text x="112" y="50" class="meta">90 分钟 · 迟到或疲劳时首先删减</text>
       <rect x="824" y="8" width="150" height="35" rx="17" fill="#EFEAF6"/>
-      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#674996">FIRST CUT</text>
+      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#674996">首先删减</text>
     </g>
     <g transform="translate(92 830)">
       <circle cx="75" cy="28" r="18" fill="#008F8F" stroke="#FFFFFF" stroke-width="4"/>
       <text x="0" y="34" class="time">16:00</text>
-      <text x="112" y="26" class="item">Garden recovery block</text>
-      <text x="112" y="50" class="meta">45 min seated · water + weather check before the evening</text>
+      <text x="112" y="26" class="item">花园休息恢复</text>
+      <text x="112" y="50" class="meta">坐下休息 45 分钟 · 补水并检查晚间天气</text>
       <rect x="824" y="8" width="150" height="35" rx="17" fill="#E4F2F2"/>
-      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#087777">RECOVERY</text>
+      <text x="899" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#087777">休息恢复</text>
     </g>
 
     <!-- Route strip -->
     <g transform="translate(88 922)">
       <rect width="1020" height="92" rx="20" fill="#F5F6F3"/>
       <rect x="18" y="16" width="134" height="60" rx="15" fill="#173A60"/>
-      <text x="85" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#BFD5E6">ROUTE</text>
-      <text x="85" y="61" text-anchor="middle" font-size="15" font-weight="760" fill="#FFFFFF">5.2 km</text>
+      <text x="85" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#BFD5E6">路线</text>
+      <text x="85" y="61" text-anchor="middle" font-size="15" font-weight="760" fill="#FFFFFF">5.2 公里</text>
       <path d="M196 48 C256 12 314 80 380 42 S510 20 580 52 S716 76 788 34 S892 22 970 50" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
       <path d="M196 48 C256 12 314 80 380 42 S510 20 580 52 S716 76 788 34 S892 22 970 50" fill="none" stroke="#B93B48" stroke-width="6" stroke-linecap="round"/>
       <circle cx="196" cy="48" r="13" fill="#B93B48" stroke="#FFFFFF" stroke-width="3"/>
@@ -127,61 +127,61 @@
       <circle cx="580" cy="52" r="13" fill="#168270" stroke="#FFFFFF" stroke-width="3"/>
       <circle cx="788" cy="34" r="13" fill="#7354A5" stroke="#FFFFFF" stroke-width="3"/>
       <circle cx="970" cy="50" r="13" fill="#008F8F" stroke="#FFFFFF" stroke-width="3"/>
-      <text x="196" y="77" text-anchor="middle" class="micro">HOTEL</text>
-      <text x="380" y="77" text-anchor="middle" class="micro">MUSEUM</text>
-      <text x="580" y="77" text-anchor="middle" class="micro">LUNCH</text>
-      <text x="788" y="77" text-anchor="middle" class="micro">DESIGN</text>
-      <text x="970" y="77" text-anchor="middle" class="micro">GARDEN</text>
+      <text x="196" y="77" text-anchor="middle" class="micro">酒店</text>
+      <text x="380" y="77" text-anchor="middle" class="micro">博物馆</text>
+      <text x="580" y="77" text-anchor="middle" class="micro">午餐</text>
+      <text x="788" y="77" text-anchor="middle" class="micro">设计街区</text>
+      <text x="970" y="77" text-anchor="middle" class="micro">花园</text>
     </g>
 
     <!-- Right action rail -->
     <g transform="translate(1202 194)">
       <rect width="540" height="855" rx="28" fill="#173A60" filter="url(#shadow)"/>
-      <text x="30" y="44" class="label" fill="#AFC8DC">ACTION RAIL</text>
-      <text x="30" y="80" font-size="24" font-weight="740" fill="#FFFFFF">Only what matters on the day</text>
+      <text x="30" y="44" class="label" fill="#AFC8DC">当日操作栏</text>
+      <text x="30" y="80" font-size="24" font-weight="740" fill="#FFFFFF">只保留今天真正需要的</text>
 
       <g transform="translate(24 108)">
         <rect width="492" height="118" rx="20" fill="#FFFFFF"/>
-        <text x="22" y="31" class="label" fill="#B03A46">TICKET WALLET</text>
-        <text x="22" y="63" font-size="18" font-weight="720" class="navy">Museum · 10:00 · 2 adults</text>
+        <text x="22" y="31" class="label" fill="#B03A46">票夹</text>
+        <text x="22" y="63" font-size="18" font-weight="720" class="navy">博物馆 · 10:00 · 成人 2 人</text>
         <circle cx="36" cy="91" r="10" fill="#168270"/>
-        <text x="56" y="97" font-size="14" font-weight="600" fill="#536B80">QR saved offline · confirmation verified</text>
+        <text x="56" y="97" font-size="14" font-weight="600" fill="#536B80">二维码已离线保存 · 确认信息已核对</text>
       </g>
 
       <g transform="translate(24 242)">
         <rect width="492" height="128" rx="20" fill="#F9F0D9"/>
-        <text x="22" y="31" class="label" fill="#9A6200">IF LATE</text>
-        <text x="22" y="64" font-size="18" font-weight="720" class="navy">Protect the 10:00 entry.</text>
-        <text x="22" y="91" font-size="15" font-weight="540" fill="#5E7080">Skip the design walk first; never steal</text>
-        <text x="22" y="112" font-size="15" font-weight="540" fill="#5E7080">time from security or the lunch buffer.</text>
+        <text x="22" y="31" class="label" fill="#9A6200">如果迟到</text>
+        <text x="22" y="64" font-size="18" font-weight="720" class="navy">优先保护 10:00 入场。</text>
+        <text x="22" y="91" font-size="15" font-weight="540" fill="#5E7080">先删设计街区散步；不要挤占</text>
+        <text x="22" y="112" font-size="15" font-weight="540" fill="#5E7080">安检时间和午餐缓冲。</text>
       </g>
 
       <g transform="translate(24 386)">
         <rect width="492" height="128" rx="20" fill="#E7F1F4"/>
-        <text x="22" y="31" class="label" fill="#22647A">IF RAIN / CLOSED</text>
-        <text x="22" y="64" font-size="18" font-weight="720" class="navy">Use the indoor design center.</text>
-        <text x="22" y="91" font-size="15" font-weight="540" fill="#5E7080">Same transit corridor · no new booking ·</text>
-        <text x="22" y="112" font-size="15" font-weight="540" fill="#5E7080">arrive at the garden only if weather clears.</text>
+        <text x="22" y="31" class="label" fill="#22647A">雨天 / 闭馆</text>
+        <text x="22" y="64" font-size="18" font-weight="720" class="navy">改去同线路的室内设计中心。</text>
+        <text x="22" y="91" font-size="15" font-weight="540" fill="#5E7080">无需新增预约；天气转好后</text>
+        <text x="22" y="112" font-size="15" font-weight="540" fill="#5E7080">再决定是否前往花园。</text>
       </g>
 
       <g transform="translate(24 530)">
         <rect width="492" height="128" rx="20" fill="#E7F2EE"/>
-        <text x="22" y="31" class="label" fill="#14705E">PACE</text>
-        <text x="22" y="67" font-size="18" font-weight="720" class="navy">3 hr standing · 5.2 km walking</text>
+        <text x="22" y="31" class="label" fill="#14705E">强度</text>
+        <text x="22" y="67" font-size="18" font-weight="720" class="navy">站立约 3 小时 · 步行约 5.2 公里</text>
         <rect x="22" y="88" width="448" height="10" rx="5" fill="#CBDDD7"/>
         <rect x="22" y="88" width="278" height="10" rx="5" fill="#168270"/>
-        <text x="22" y="119" font-size="13" font-weight="620" fill="#536B80">Recovery at 16:00 · water before leaving lunch</text>
+        <text x="22" y="119" font-size="13" font-weight="620" fill="#536B80">16:00 安排恢复时间 · 午餐离开前补水</text>
       </g>
 
       <g transform="translate(24 674)">
         <rect width="492" height="76" rx="20" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.22"/>
-        <text x="22" y="29" class="label" fill="#BFD5E6">ONE-TAP LINKS</text>
-        <text x="22" y="55" font-size="15" font-weight="640" fill="#FFFFFF">Museum entrance · lunch · backup · garden</text>
+        <text x="22" y="29" class="label" fill="#BFD5E6">一键地点</text>
+        <text x="22" y="55" font-size="15" font-weight="640" fill="#FFFFFF">博物馆入口 · 午餐 · 备选餐厅 · 花园</text>
       </g>
 
       <g transform="translate(24 770)">
         <rect width="492" height="54" rx="18" fill="#168270"/>
-        <text x="246" y="34" text-anchor="middle" font-size="15" font-weight="760" fill="#FFFFFF">PROTECT 09:35 · EVERYTHING ELSE CAN FLEX</text>
+        <text x="246" y="34" text-anchor="middle" font-size="15" font-weight="760" fill="#FFFFFF">保护 09:35 抵达 · 其余均可调整</text>
       </g>
     </g>
   </g>

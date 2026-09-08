@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title description">
-  <title id="title">Plan and Maintain Trips</title>
-  <desc id="description">A dark blue travel planning banner with a colorful route and a day-of itinerary card.</desc>
+  <title id="title">旅行总策划</title>
+  <desc id="description">深蓝色旅行规划横幅，包含彩色路线和中文当日执行卡。</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#102C50"/>
@@ -15,7 +15,7 @@
       <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#071B2D" flood-opacity="0.35"/>
     </filter>
     <style>
-      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .sans { font-family: "PingFang SC", "Microsoft YaHei", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     </style>
   </defs>
 
@@ -32,11 +32,11 @@
 
   <g class="sans">
     <rect x="86" y="74" width="330" height="42" rx="21" fill="#E8F4F1" opacity="0.96"/>
-    <text x="251" y="102" text-anchor="middle" font-size="18" font-weight="750" letter-spacing="2.4" fill="#136B60">PLAN · VERIFY · BOOK · GO</text>
+    <text x="251" y="102" text-anchor="middle" font-size="18" font-weight="750" letter-spacing="2.4" fill="#136B60">规划 · 核验 · 预约 · 出发</text>
 
-    <text x="86" y="202" font-size="66" font-weight="780" fill="#FFFFFF">Plan &amp; Maintain Trips</text>
-    <text x="86" y="250" font-size="27" font-weight="520" fill="#CFE0EF">From scattered ideas to one executable, auditable journey.</text>
-    <text x="86" y="302" font-size="25" font-weight="520" fill="#F5E9CF">从灵感、预约与路线，到旅行当天真正能照着走的执行系统。</text>
+    <text x="86" y="202" font-size="66" font-weight="780" fill="#FFFFFF">旅行总策划</text>
+    <text x="86" y="250" font-size="27" font-weight="520" fill="#CFE0EF">从零散想法，到一份可执行、可复查的旅行方案。</text>
+    <text x="86" y="302" font-size="25" font-weight="520" fill="#F5E9CF">路线、预约、餐厅与执行卡，一处维护，全程同步。</text>
 
     <g transform="translate(88 378)">
       <path d="M0 18 C90 -38 142 68 236 14 S385 52 476 2 S610 20 690 -22" fill="none" stroke="#FFFFFF" stroke-opacity="0.48" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 13"/>
@@ -48,9 +48,9 @@
         <circle cx="566" cy="-4" r="17" fill="#7653A9" stroke="#FFFFFF" stroke-width="5"/>
         <circle cx="690" cy="-22" r="17" fill="#009090" stroke="#FFFFFF" stroke-width="5"/>
       </g>
-      <text x="0" y="72" font-size="18" fill="#BAD0E2">one source of truth</text>
-      <text x="256" y="72" font-size="18" fill="#BAD0E2">controlled changes</text>
-      <text x="536" y="72" font-size="18" fill="#BAD0E2">calm execution</text>
+      <text x="0" y="72" font-size="18" fill="#BAD0E2">唯一事实源</text>
+      <text x="256" y="72" font-size="18" fill="#BAD0E2">受控变更</text>
+      <text x="536" y="72" font-size="18" fill="#BAD0E2">从容执行</text>
     </g>
   </g>
 
@@ -58,21 +58,21 @@
     <rect width="386" height="376" rx="28" fill="#FAF8F1"/>
     <rect width="386" height="82" rx="28" fill="#D88700"/>
     <path d="M0 54 H386 V82 H0 Z" fill="#D88700"/>
-    <text x="28" y="34" font-size="16" font-weight="750" letter-spacing="2" fill="#FFF5DD">DAY 03 · FIELD CARD</text>
-    <text x="28" y="64" font-size="22" font-weight="760" fill="#FFFFFF">Protect the 09:30 entry</text>
+    <text x="28" y="34" font-size="16" font-weight="750" letter-spacing="2" fill="#FFF5DD">第 03 天 · 当日执行卡</text>
+    <text x="28" y="64" font-size="22" font-weight="760" fill="#FFFFFF">保护 09:30 入场</text>
 
     <line x1="50" y1="119" x2="50" y2="286" stroke="#D9D9D2" stroke-width="4"/>
     <circle cx="50" cy="126" r="15" fill="#B83B45"/>
     <circle cx="50" cy="194" r="15" fill="#16866B"/>
     <circle cx="50" cy="262" r="15" fill="#1D6CAA"/>
-    <text x="84" y="122" font-size="16" font-weight="720" fill="#173A62">09:05 · arrive for security</text>
-    <text x="84" y="146" font-size="14" fill="#68798A">ticket saved offline</text>
-    <text x="84" y="190" font-size="16" font-weight="720" fill="#173A62">09:30 · timed entry</text>
-    <text x="84" y="214" font-size="14" fill="#68798A">hard anchor · 2 hr</text>
-    <text x="84" y="258" font-size="16" font-weight="720" fill="#173A62">12:15 · route-linked lunch</text>
-    <text x="84" y="282" font-size="14" fill="#68798A">backup is 4 min away</text>
+    <text x="84" y="122" font-size="16" font-weight="720" fill="#173A62">09:05 · 抵达安检</text>
+    <text x="84" y="146" font-size="14" fill="#68798A">票已离线保存</text>
+    <text x="84" y="190" font-size="16" font-weight="720" fill="#173A62">09:30 · 预约入场</text>
+    <text x="84" y="214" font-size="14" fill="#68798A">固定锚点 · 2 小时</text>
+    <text x="84" y="258" font-size="16" font-weight="720" fill="#173A62">12:15 · 路线关联午餐</text>
+    <text x="84" y="282" font-size="14" fill="#68798A">备选餐厅距此 4 分钟</text>
 
     <rect x="26" y="316" width="334" height="38" rx="19" fill="#E8F3EF"/>
-    <text x="193" y="341" text-anchor="middle" font-size="15" font-weight="700" fill="#146D5D">RAIN PLAN READY · LINKS CHECKED</text>
+    <text x="193" y="341" text-anchor="middle" font-size="15" font-weight="700" fill="#146D5D">雨天预案已就绪 · 链接已复核</text>
   </g>
 </svg>
