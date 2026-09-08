@@ -7,6 +7,10 @@
 <h1 align="center">Plan & Maintain Trips</h1>
 
 <p align="center">
+  <strong>简体中文</strong> · <a href="./README.en.md">English</a>
+</p>
+
+<p align="center">
   <strong>把一次旅行，从零散想法变成可以预约、执行、调整和复查的完整项目。</strong>
 </p>
 
@@ -179,16 +183,15 @@ PASS: 5 days, 2 segments, 2 anchors, 2 bookings; 0 errors, 0 warnings
 
 ```text
 plan-and-maintain-trips/
+├── README.md / README.en.md
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
 │   ├── guide-template.md
-│   ├── readme-hero.{png,svg}
-│   ├── readme-route-sample.{png,svg}
-│   ├── readme-day-card.{png,svg}
-│   └── readme-publishing.{png,svg}
+│   ├── readme-*.{png,svg}       # 中文视觉稿
+│   └── readme-*.en.{png,svg}    # English visuals
 ├── references/
 │   ├── state-model.md
 │   ├── research-and-evidence.md
