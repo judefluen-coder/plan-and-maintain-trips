@@ -74,7 +74,7 @@
 
 ## 打开完整示例
 
-[Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)包含一份可直接在浏览器打开的离线路线页，以及同源生成的 SVG 地图、KML、ICS 和五日文字攻略。示例是虚构数据，用来展示文件如何配合，不提供真实票务信息。
+[在线打开示例路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；[Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)还包含同源生成的 SVG 地图、KML、ICS 和五日文字攻略。示例是虚构数据，用来展示文件如何配合，不提供真实票务信息。
 
 想比较其他开源方案，可看[同类项目功能与取舍](docs/alternatives.zh-CN.md)。
 

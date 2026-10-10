@@ -74,7 +74,7 @@ Supported outputs:
 
 ## Open a complete example
 
-The [Lisbon → Cascais output package](examples/lisbon-coast/README.md) includes a browser-openable offline route page, an SVG atlas, KML, ICS, and a five-day written guide generated from the same sample state. The data is fictional and is not a ticketing recommendation.
+[Open the live route-page example](https://judefluen-coder.github.io/plan-and-maintain-trips/). The [Lisbon → Cascais output package](examples/lisbon-coast/README.md) also includes the SVG atlas, KML, ICS, and a five-day written guide generated from the same sample state. The data is fictional and is not a ticketing recommendation.
 
 For other open-source options, see the [feature and trade-off comparison](docs/alternatives.en.md).
 
