@@ -76,8 +76,6 @@
 
 [在线打开示例路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；[Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)还包含同源生成的 SVG 地图、KML、ICS 和五日文字攻略。示例是虚构数据，用来展示文件如何配合，不提供真实票务信息。
 
-想比较其他开源方案，可看[同类项目功能与取舍](docs/alternatives.zh-CN.md)。
-
 版本变化见 [Changelog](CHANGELOG.md)。
 
 ## 完整能力与交付一览
@@ -96,7 +94,9 @@
 | 持续调整 | 每次改日期、酒店或景点时，检查受影响的预约、路线、餐厅与地图 | 变更记录 + 同步更新后的全套产物 |
 | 最终交付 | 审计日期、晚数、硬锚点、链接、预算和版本一致性，再按需发布 | Markdown / 飞书 / Notion / Google Docs / DOCX / PDF |
 
-## 它为什么不容易“越改越乱”
+## 为什么选 Plan & Maintain Trips
+
+旅行计划最难的不是列出景点，而是订票、路线和临时变动之后，整份攻略仍然能用。这个 Skill 着重解决以下问题：
 
 🧭 **一个事实源**　日期、住宿、交通、预约和排除项都保存在同一份规范状态里。
 
@@ -107,6 +107,8 @@
 🔁 **每次修改都有影响分析**　同步检查相关日期、门票、酒店、交通、餐厅、地图、预算和每日卡片。
 
 🌧️ **每天都有现场决策**　明确写出必须保护什么、迟到先删什么、下雨或闭馆去哪里。
+
+📦 **交付不绑平台**　先生成可保存、可离线查看的本地文件；有相应授权时，再发布到飞书等文档平台。
 
 ## 工作方式
 
@@ -210,7 +212,6 @@ plan-and-maintain-trips/
 ├── SKILL.md
 ├── .github/workflows/        # CI 与示例预览发布
 ├── agents/openai.yaml
-├── docs/                     # 同类项目对比
 ├── examples/lisbon-coast/    # 可打开的完整示例输出
 ├── assets/
 │   ├── trip.example.json

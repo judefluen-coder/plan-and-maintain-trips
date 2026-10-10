@@ -76,8 +76,6 @@ Supported outputs:
 
 [Open the live route-page example](https://judefluen-coder.github.io/plan-and-maintain-trips/). The [Lisbon → Cascais output package](examples/lisbon-coast/README.md) also includes the SVG atlas, KML, ICS, and a five-day written guide generated from the same sample state. The data is fictional and is not a ticketing recommendation.
 
-For other open-source options, see the [feature and trade-off comparison](docs/alternatives.en.md).
-
 See the [changelog](CHANGELOG.md) for version history.
 
 ## Capabilities and deliverables
@@ -96,7 +94,9 @@ The visuals above show the finished artifacts. This table shows what the Skill d
 | Controlled revisions | Traces each date, hotel, or attraction change into bookings, routes, restaurants, and maps | Change log + synchronized deliverables |
 | Final delivery | Audits dates, nights, hard anchors, links, budget, and cross-format consistency before publishing | Markdown / Feishu / Notion / Google Docs / DOCX / PDF |
 
-## Why it does not drift out of sync
+## Why choose Plan & Maintain Trips
+
+The hard part of trip planning is not listing places. It is keeping the guide usable after reservations, route changes, and disruptions. This Skill focuses on that work:
 
 🧭 **One source of truth** — dates, lodging, transport, reservations, and exclusions live in one canonical state.
 
@@ -107,6 +107,8 @@ The visuals above show the finished artifacts. This table shows what the Skill d
 🔁 **Impact analysis for every revision** — checks affected dates, tickets, hotels, transport, restaurants, maps, budgets, and field cards.
 
 🌧️ **Day-of decisions built in** — states what must be protected, what to cut first, and what to do during rain or closures.
+
+📦 **Portable delivery** — produces local files you can keep and use offline first, then publishes to Feishu or other document platforms when authorized tools are available.
 
 ## How it works
 
@@ -212,7 +214,6 @@ plan-and-maintain-trips/
 ├── SKILL.md
 ├── .github/workflows/        # CI and example preview deployment
 ├── agents/openai.yaml
-├── docs/                     # alternative project comparison
 ├── examples/lisbon-coast/    # browser-openable complete output example
 ├── assets/
 │   ├── trip.example.json
