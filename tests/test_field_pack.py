@@ -9,6 +9,7 @@ from xml.etree import ElementTree as ET
 
 from scripts.export_field_pack import calendar, kml, load, page
 from scripts.replan_day import propose
+from scripts.render_route_map import route_from_trip
 from scripts.suggest_food import candidates
 from scripts.validate_trip import validate
 
@@ -32,6 +33,11 @@ class FieldPackTests(unittest.TestCase):
         namespace = {"k": "http://www.opengis.net/kml/2.2"}
         self.assertEqual(len(root.findall(".//k:Point", namespace)), 7)
         self.assertEqual(len(root.findall(".//k:LineString", namespace)), 3)
+
+    def test_svg_route_uses_canonical_trip_items(self):
+        route = route_from_trip(str(EXAMPLE), None, None)
+        self.assertEqual([day["date"] for day in route["days"]], ["2030-05-01", "2030-05-02", "2030-05-03"])
+        self.assertEqual(route["days"][1]["stops"][0]["name"], self.days[1]["items"][0]["name"])
 
     def test_offline_page_embeds_all_days_without_remote_assets(self):
         output = page(self.data, self.days)

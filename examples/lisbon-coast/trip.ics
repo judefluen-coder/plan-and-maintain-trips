@@ -1,0 +1,91 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//plan-and-maintain-trips//field-pack//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Example two-base cultural trip
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-01-bag-drop@plan-and-maintain-trips.loca
+ l
+DTSTAMP:20261010T085139Z
+DTSTART:20300501T090000Z
+DTEND:20300501T093000Z
+SUMMARY:Hotel bag drop
+DESCRIPTION:Day: Lisbon
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-01-riverside@plan-and-maintain-trips.loc
+ al
+DTSTAMP:20261010T085139Z
+DTSTART:20300501T100000Z
+DTEND:20300501T104500Z
+SUMMARY:Riverside orientation walk
+DESCRIPTION:Day: Lisbon
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-01-market-lunch@plan-and-maintain-trips.
+ local
+DTSTAMP:20261010T085139Z
+DTSTART:20300501T111500Z
+DTEND:20300501T123000Z
+SUMMARY:Market lunch
+DESCRIPTION:Day: Lisbon\nBooking status: walk_in
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-02-gallery@plan-and-maintain-trips.local
+DTSTAMP:20261010T085139Z
+DTSTART:20300502T090000Z
+DTEND:20300502T110000Z
+SUMMARY:Reserved gallery entry
+DESCRIPTION:Day: Lisbon\nBooking status: bookable\nOfficial link: https:/
+ /example.com/official-ticket-page
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+DESCRIPTION:Reserved gallery entry
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-02-garden@plan-and-maintain-trips.local
+DTSTAMP:20261010T085139Z
+DTSTART:20300502T113000Z
+DTEND:20300502T120000Z
+SUMMARY:Garden recovery break
+DESCRIPTION:Day: Lisbon
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-02-dinner@plan-and-maintain-trips.local
+DTSTAMP:20261010T085139Z
+DTSTART:20300502T180000Z
+DTEND:20300502T190000Z
+SUMMARY:Neighborhood dinner
+DESCRIPTION:Day: Lisbon
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-03-checkout@plan-and-maintain-trips.loca
+ l
+DTSTAMP:20261010T085139Z
+DTSTART:20300503T080000Z
+DTEND:20300503T083000Z
+SUMMARY:Hotel checkout
+DESCRIPTION:Day: Cascais
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-03-coast-train@plan-and-maintain-trips.l
+ ocal
+DTSTAMP:20261010T085139Z
+DTSTART:20300503T100000Z
+DTEND:20300503T104500Z
+SUMMARY:Transfer to the coast
+DESCRIPTION:Day: Cascais
+END:VEVENT
+BEGIN:VEVENT
+UID:lisbon-coast-example-2030-05-03-seafront@plan-and-maintain-trips.loca
+ l
+DTSTAMP:20261010T085139Z
+DTSTART:20300503T111500Z
+DTEND:20300503T120000Z
+SUMMARY:Seafront walk
+DESCRIPTION:Day: Cascais
+END:VEVENT
+END:VCALENDAR

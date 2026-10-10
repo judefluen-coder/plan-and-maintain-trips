@@ -72,6 +72,14 @@
 - **DOCX / PDF：** 文档工具可用时生成可编辑版或打印归档版；
 - **平台不可用时：** 核心攻略仍然完整交付，不会因为没有 CLI、账号或连接器而停住。
 
+## 打开完整示例
+
+[Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)包含一份可直接在浏览器打开的离线路线页，以及同源生成的 SVG 地图、KML、ICS 和五日文字攻略。示例是虚构数据，用来展示文件如何配合，不提供真实票务信息。
+
+想比较其他开源方案，可看[同类项目功能与取舍](docs/alternatives.zh-CN.md)。
+
+版本变化见 [Changelog](CHANGELOG.md)。
+
 ## 完整能力与交付一览
 
 上面的图片展示了最终成品；这张表说明它在旅行规划过程中具体会做什么。
@@ -165,8 +173,8 @@ gh repo clone judefluen-coder/plan-and-maintain-trips \
 # 检查日期、住宿晚数、硬锚点、预约证据和未解决占位符
 python3 scripts/validate_trip.py trip.json --strict
 
-# 从经纬度数据生成 2480×3508 的无损 SVG 路线图
-python3 scripts/render_route_map.py route.json route-map.svg
+# 从同一份 trip.json 生成 2480×3508 的无损 SVG 路线图
+python3 scripts/render_route_map.py trip.json route-map.svg --from-trip
 
 # 检查攻略里的购票与预约链接
 python3 scripts/check_links.py guide.md
@@ -198,8 +206,12 @@ PASS: 5 days, 2 segments, 2 anchors, 2 bookings; 0 errors, 0 warnings
 ```text
 plan-and-maintain-trips/
 ├── README.md / README.en.md
+├── CHANGELOG.md
 ├── SKILL.md
+├── .github/workflows/        # CI 与示例预览发布
 ├── agents/openai.yaml
+├── docs/                     # 同类项目对比
+├── examples/lisbon-coast/    # 可打开的完整示例输出
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
@@ -213,13 +225,14 @@ plan-and-maintain-trips/
 │   ├── scheduling-and-change-control.md
 │   ├── deliverables-and-publishing.md
 │   └── quality-gates.md
-└── scripts/
+├── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py
     └── check_links.py
+└── tests/                    # 行为测试
 ```
 
 </details>

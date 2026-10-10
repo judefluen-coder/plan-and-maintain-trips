@@ -7,6 +7,7 @@ import argparse
 import json
 import math
 import sys
+from datetime import date, datetime
 from html import escape
 from pathlib import Path
 from typing import Any
@@ -47,6 +48,65 @@ def load_route(path: str) -> dict[str, Any]:
             if not isinstance(stop.get("name"), str) or not stop["name"].strip():
                 raise ValueError(f"days[{day_index}].stops[{stop_index}].name is required")
     return data
+
+
+def route_from_trip(path: str, start_date: str | None, end_date: str | None) -> dict[str, Any]:
+    """Derive a compact schematic map without maintaining a second route file."""
+    for value in (start_date, end_date):
+        if value:
+            try:
+                date.fromisoformat(value)
+            except ValueError as exc:
+                raise ValueError(f"invalid date filter: {value!r}") from exc
+    if start_date and end_date and start_date > end_date:
+        raise ValueError("--start-date must not follow --end-date")
+    try:
+        with Path(path).open(encoding="utf-8") as handle:
+            trip_data = json.load(handle)
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"cannot read valid trip JSON: {exc}") from exc
+    trip = trip_data.get("trip", {})
+    days = trip_data.get("days", [])
+    if not isinstance(days, list):
+        raise ValueError("trip.days must be a list")
+    selected = []
+    for day_number, day in enumerate(days, start=1):
+        if not isinstance(day, dict) or not isinstance(day.get("date"), str):
+            raise ValueError("each trip day needs an ISO date")
+        try:
+            date.fromisoformat(day["date"])
+        except ValueError as exc:
+            raise ValueError(f"invalid trip day date: {day['date']!r}") from exc
+        if (start_date and day["date"] < start_date) or (end_date and day["date"] > end_date):
+            continue
+        stops = []
+        for item in day.get("items", []):
+            if not isinstance(item, dict) or "lat" not in item or "lon" not in item:
+                continue
+            if not isinstance(item.get("name"), str):
+                raise ValueError(f"{day['date']}: geocoded item needs a name")
+            if any(not isinstance(item[key], (int, float)) or isinstance(item[key], bool) or not math.isfinite(item[key]) for key in ("lat", "lon")) or not (-90 <= item["lat"] <= 90 and -180 <= item["lon"] <= 180):
+                raise ValueError(f"{day['date']} {item['name']}: invalid coordinates")
+            stop = {"name": item["name"], "lat": item["lat"], "lon": item["lon"]}
+            if item.get("start") and item.get("end"):
+                start = datetime.strptime(item["start"], "%H:%M")
+                end = datetime.strptime(item["end"], "%H:%M")
+                if end <= start:
+                    raise ValueError(f"{day['date']} {item['name']}: end must follow start")
+                stop["duration"] = f"{int((end - start).total_seconds() // 60)} min"
+            if item.get("mode_from_previous"):
+                stop["mode_from_previous"] = item["mode_from_previous"]
+            stops.append(stop)
+        if stops:
+            selected.append({"day": day_number, "date": day["date"], "label": day.get("title") or day.get("base", ""), "color": DEFAULT_COLORS[(day_number - 1) % len(DEFAULT_COLORS)], "stops": stops})
+    if not 1 <= len(selected) <= 6:
+        raise ValueError("select between one and six days with geocoded stops using --start-date and --end-date")
+    return {
+        "title": trip.get("title", "Trip route map"),
+        "subtitle": f"{selected[0]['date']} – {selected[-1]['date']} | schematic overview",
+        "disclaimer": "Order and coordinates only; verify live navigation, opening hours, and tickets.",
+        "days": selected,
+    }
 
 
 def svg_text(x: float, y: float, value: str, size: int, *, weight: int = 400, fill: str = "#17355F", anchor: str = "start") -> str:
@@ -210,11 +270,14 @@ def main() -> int:
     parser.add_argument("output", help="output SVG path")
     parser.add_argument("--width", type=int, default=2480)
     parser.add_argument("--height", type=int, default=3508)
+    parser.add_argument("--from-trip", action="store_true", help="derive routes from structured trip.json items")
+    parser.add_argument("--start-date", help="first trip date to include, YYYY-MM-DD")
+    parser.add_argument("--end-date", help="last trip date to include, YYYY-MM-DD")
     args = parser.parse_args()
     if args.width < 800 or args.height < 1000:
         parser.error("width must be at least 800 and height at least 1000")
     try:
-        data = load_route(args.input)
+        data = route_from_trip(args.input, args.start_date, args.end_date) if args.from_trip else load_route(args.input)
         svg = render(data, args.width, args.height)
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)

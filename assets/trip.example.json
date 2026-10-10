@@ -2,6 +2,7 @@
   "schema_version": 1,
   "trip": {
     "id": "lisbon-coast-example",
+    "demo": true,
     "title": "Example two-base cultural trip",
     "start_date": "2030-05-01",
     "end_date": "2030-05-05",

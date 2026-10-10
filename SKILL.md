@@ -135,11 +135,13 @@ When the user wants a visual execution pack, export each card as a screenshot-fr
 
 Create one map per compact geographic segment, normally no more than six days. Use a different color per day, numbered stops, solid lines for walking, dashed lines for transit, and short day cards.
 
-When latitude/longitude data is available, copy `assets/route.example.json`, replace its data, and run:
+When structured `trip.json` items have verified latitude/longitude, derive the SVG from that same state:
 
 ```bash
-python3 scripts/render_route_map.py route.json route.svg
+python3 scripts/render_route_map.py trip.json route.svg --from-trip
 ```
+
+For more than six geocoded days, render compact date ranges with `--start-date` and `--end-date`. The older `route.json` input remains available for a separately supplied route, but cross-check it against `trip.json` before delivery.
 
 Inspect the SVG visually before delivery. Convert to a high-resolution PNG only if a renderer is available; preserve the SVG as the lossless source. Label a schematic map honestly and do not imply turn-by-turn accuracy.
 

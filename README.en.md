@@ -72,6 +72,14 @@ Supported outputs:
 - **DOCX / PDF:** create an editable or print-ready archive when document tools are available;
 - **No platform connected:** still deliver the complete core guide without blocking on a CLI, account, or connector.
 
+## Open a complete example
+
+The [Lisbon → Cascais output package](examples/lisbon-coast/README.md) includes a browser-openable offline route page, an SVG atlas, KML, ICS, and a five-day written guide generated from the same sample state. The data is fictional and is not a ticketing recommendation.
+
+For other open-source options, see the [feature and trade-off comparison](docs/alternatives.en.md).
+
+See the [changelog](CHANGELOG.md) for version history.
+
 ## Capabilities and deliverables
 
 The visuals above show the finished artifacts. This table shows what the Skill does throughout the planning process.
@@ -167,8 +175,8 @@ The scripts use only the Python standard library:
 # Check dates, hotel nights, hard anchors, booking evidence, and unresolved placeholders
 python3 scripts/validate_trip.py trip.json --strict
 
-# Render a lossless 2480×3508 SVG route map from latitude and longitude data
-python3 scripts/render_route_map.py route.json route-map.svg
+# Render a lossless 2480×3508 SVG route map from the same trip.json
+python3 scripts/render_route_map.py trip.json route-map.svg --from-trip
 
 # Check booking and reservation links in a guide
 python3 scripts/check_links.py guide.md
@@ -200,8 +208,12 @@ PASS: 5 days, 2 segments, 2 anchors, 2 bookings; 0 errors, 0 warnings
 ```text
 plan-and-maintain-trips/
 ├── README.md / README.en.md
+├── CHANGELOG.md
 ├── SKILL.md
+├── .github/workflows/        # CI and example preview deployment
 ├── agents/openai.yaml
+├── docs/                     # alternative project comparison
+├── examples/lisbon-coast/    # browser-openable complete output example
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
@@ -215,13 +227,14 @@ plan-and-maintain-trips/
 │   ├── scheduling-and-change-control.md
 │   ├── deliverables-and-publishing.md
 │   └── quality-gates.md
-└── scripts/
+├── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py
     └── check_links.py
+└── tests/                    # behavioral tests
 ```
 
 </details>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Example two-base cultural trip · 离线路线</title>
+<style>
+:root{--ink:#173253;--muted:#597088;--paper:#f7f3eb;--card:#fff;--line:#dce3e7}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"PingFang SC",sans-serif}header{padding:22px 18px 12px;max-width:980px;margin:auto}h1{font-size:clamp(24px,5vw,38px);margin:0}header p,.note{color:var(--muted);margin:5px 0}main{max-width:980px;margin:auto;padding:0 14px 40px}.tabs{display:flex;gap:7px;overflow:auto;padding:10px 0 14px}button{font:inherit;cursor:pointer}.tabs button{border:1px solid var(--line);border-radius:999px;background:white;padding:8px 13px;white-space:nowrap}.tabs button[aria-selected=true]{background:var(--ink);color:white}.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,1fr);gap:14px}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}.map-wrap{height:550px;touch-action:none;overflow:hidden;background:linear-gradient(90deg,#edf2ed 1px,transparent 1px),linear-gradient(#edf2ed 1px,transparent 1px),#fbfcf9;background-size:40px 40px}svg{width:100%;height:100%}.info{padding:16px}.stops{list-style:none;padding:0;margin:0}.stops li{border-top:1px solid var(--line);padding:12px 0}.stops a{color:#166d89;margin-right:12px}.time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px}.badge{display:inline-block;border-radius:99px;padding:1px 7px;background:#e9f2f1;color:#235e61;font-size:12px}.map-caption{padding:9px 14px;color:var(--muted);font-size:13px}@media(max-width:700px){.layout{grid-template-columns:1fr}.map-wrap{height:360px}}
+.map-wrap{touch-action:pan-y}.demo-notice{background:#fff1d8;color:#754612;border-radius:10px;padding:9px 12px}@media(max-width:700px){.map-wrap{height:300px}}</style></head><body><header><h1>Example two-base cultural trip</h1><p>离线路线册 · 地点、顺序和时间来自同一份 trip.json</p><p class="demo-notice">演示数据：地点、餐厅与票务并非可直接预订的真实攻略。</p></header><main><nav class="tabs" id="tabs" aria-label="选择日期"></nav><section class="layout"><div class="panel"><div class="map-wrap"><svg id="map" viewBox="0 0 800 600" role="img" aria-label="当日地点示意图"></svg></div><div class="map-caption">示意连线仅表示游览顺序，不代表可通行道路。地点和计划离线可看；点击导航需要网络。</div></div><div class="panel info"><h2 id="daytitle"></h2><p class="note" id="outcome"></p><ol class="stops" id="stops"></ol><p class="note" id="fallback"></p></div></section></main>
+<script type="application/json" id="trip-data">{"days": [{"date": "2030-05-01", "base": "Lisbon", "outcome": "Recover from arrival and learn the historic center", "anchor_ids": [], "items": [{"id": "bag-drop", "name": "Hotel bag drop", "start": "10:00", "end": "10:30"}, {"id": "riverside", "name": "Riverside orientation walk", "start": "11:00", "end": "11:45", "lat": 38.7077, "lon": -9.1365, "weather_sensitive": true}, {"id": "market-lunch", "name": "Market lunch", "start": "12:15", "end": "13:30", "lat": 38.707, "lon": -9.1457, "meal": "lunch", "booking_id": "market-lunch"}], "first_cut": "Sunset viewpoint"}, {"date": "2030-05-02", "base": "Lisbon", "outcome": "Focused art and architecture day", "anchor_ids": ["gallery-entry"], "items": [{"id": "gallery", "name": "Reserved gallery entry", "start": "10:00", "end": "12:00", "lat": 38.7108, "lon": -9.1427, "anchor_id": "gallery-entry", "booking_id": "gallery-ticket", "rigidity": "hard"}, {"id": "garden", "name": "Garden recovery break", "start": "12:30", "end": "13:00", "lat": 38.7148, "lon": -9.1607, "weather_sensitive": true, "rigidity": "optional"}, {"id": "dinner", "name": "Neighborhood dinner", "start": "19:00", "end": "20:00", "lat": 38.7108, "lon": -9.1427, "meal": "dinner"}], "weather_fallback": "Skip the garden and take an indoor café break", "first_cut": "Design shop detour"}, {"date": "2030-05-03", "base": "Cascais", "outcome": "Make a low-risk base transfer", "anchor_ids": ["coast-train"], "items": [{"id": "checkout", "name": "Hotel checkout", "start": "09:00", "end": "09:30"}, {"id": "coast-train", "name": "Transfer to the coast", "start": "11:00", "end": "11:45", "lat": 38.7008, "lon": -9.4173, "anchor_id": "coast-train", "mode_from_previous": "rail"}, {"id": "seafront", "name": "Seafront walk", "start": "12:15", "end": "13:00", "lat": 38.6968, "lon": -9.4204, "weather_sensitive": true}], "first_cut": "Lighthouse extension"}, {"date": "2030-05-04", "base": "Cascais", "outcome": "Explore the coast at an easy pace", "anchor_ids": [], "items": ["Coastal museum", "Long lunch", "Beach or indoor weather branch"], "first_cut": "Clifftop extension"}, {"date": "2030-05-05", "base": "Cascais", "outcome": "Depart without schedule risk", "anchor_ids": [], "items": ["Breakfast near hotel", "Short promenade", "Onward transfer"], "first_cut": "Promenade"}], "bookings": [{"id": "gallery-ticket", "item": "Reserved gallery entry", "status": "bookable", "intended_date": "2030-05-02", "intended_time": "10:00", "travelers": 2, "source_url": "https://example.com/official-ticket-page", "checked_at": "2030-01-15T09:00:00+00:00", "next_check_at": "2030-02-15T09:00:00+00:00", "fallback": "Use the contemporary art center on the same route"}, {"id": "market-lunch", "item": "Market lunch", "status": "walk_in", "intended_date": "2030-05-01", "travelers": 2}]}</script><script>
+const data=JSON.parse(document.getElementById('trip-data').textContent),tabs=document.getElementById('tabs'),svg=document.getElementById('map'),list=document.getElementById('stops');
+const NS='http://www.w3.org/2000/svg',colors=["#be4b49", "#248569", "#d58a13", "#3971b8", "#7958a6", "#138f93"];
+function node(name,attrs={}){let e=document.createElementNS(NS,name);for(let [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e}
+function show(index){
+  const day=data.days[index],color=colors[index%colors.length];
+  const points=day.items.filter(x=>typeof x==='object'&&Number.isFinite(x.lat)&&Number.isFinite(x.lon));
+  tabs.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-selected',i===index));
+  document.getElementById('daytitle').textContent=day.date+' · '+(day.title||day.base||'');
+  document.getElementById('outcome').textContent=day.outcome||day.primary_outcome||'';
+  document.getElementById('fallback').textContent=day.weather_fallback?'雨天/中断：'+day.weather_fallback:'';
+  list.replaceChildren();svg.replaceChildren();
+  if(points.length){
+    const lats=points.map(p=>p.lat),lons=points.map(p=>p.lon);
+    const minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons);
+    const latSpan=maxLat-minLat,lonSpan=maxLon-minLon;
+    const coords=points.map(p=>[lonSpan?80+(p.lon-minLon)/lonSpan*640:400,latSpan?520-(p.lat-minLat)/latSpan*440:300]);
+    if(coords.length>1)svg.append(node('polyline',{points:coords.map(p=>p.join(',')).join(' '),fill:'none',stroke:color,'stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round'}));
+    points.forEach((p,i)=>{
+      const [x,y]=coords[i],g=node('g',{tabindex:0,role:'link','aria-label':p.name});
+      const c=node('circle',{cx:x,cy:y,r:18,fill:color,stroke:'white','stroke-width':3});
+      const t=node('text',{x,y:y+5,'text-anchor':'middle',fill:'white','font-size':15,'font-weight':'bold'});
+      const labelX=x>560?x-12:x<240?x+12:x;
+      const labelAnchor=x>560?'end':x<240?'start':'middle';
+      const label=node('text',{x:labelX,y:y-31,'text-anchor':labelAnchor,fill:'#173253','font-size':24,'font-weight':600,'paint-order':'stroke',stroke:'white','stroke-width':7});
+      t.textContent=i+1;label.textContent=p.name;g.append(c,t,label);
+      g.addEventListener('click',()=>open('https://www.google.com/maps/search/?api=1&query='+p.lat+','+p.lon,'_blank'));
+      svg.append(g);
+    });
+  }else{
+    const message=node('text',{x:400,y:300,'text-anchor':'middle',fill:'#597088','font-size':24});
+    message.textContent='这一天还没有已核实的地点坐标';svg.append(message);
+  }
+  day.items.forEach(item=>{
+    const p=typeof item==='string'?{name:item}:item,li=document.createElement('li'),strong=document.createElement('strong');
+    strong.textContent=p.name;li.append(strong);
+    if(p.start){const time=document.createElement('div');time.className='time';time.textContent=p.start+'–'+p.end+(p.mode_from_previous?' · '+p.mode_from_previous:'');li.append(time)}
+    if(Number.isFinite(p.lat)&&Number.isFinite(p.lon)){const a=document.createElement('a');a.href='https://www.google.com/maps/search/?api=1&query='+p.lat+','+p.lon;a.target='_blank';a.rel='noopener';a.textContent='导航';li.append(a)}
+    if(p.address){const span=document.createElement('span');span.className='time';span.textContent=p.address;li.append(span)}
+    list.append(li);
+  });
+}
+data.days.forEach((d,i)=>{let b=document.createElement('button');b.textContent=d.date+' · '+(d.title||d.base||'Day '+(i+1));b.addEventListener('click',()=>show(i));tabs.append(b)});show(0);
+</script></body></html>
