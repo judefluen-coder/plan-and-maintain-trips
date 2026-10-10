@@ -111,6 +111,29 @@ Each day should include:
 - `weather_fallback`;
 - `field_card_status`.
 
+For exportable maps, calendars, food matching, and day-of replanning, use structured `items` instead of plain strings:
+
+```json
+{
+  "id": "gallery",
+  "name": "Reserved gallery entry",
+  "start": "10:00",
+  "end": "12:00",
+  "lat": 38.7108,
+  "lon": -9.1427,
+  "anchor_id": "gallery-entry",
+  "booking_id": "gallery-ticket",
+  "rigidity": "hard",
+  "mode_from_previous": "walk"
+}
+```
+
+Use local wall-clock times in the trip's IANA `timezone`; the calendar exporter converts them to UTC. Coordinates are WGS84 decimal degrees for the actual entrance or meeting point, not the venue centroid when these differ. Add `address`, `note`, `meal` (`lunch` or `dinner`), or `weather_sensitive` only when known. Text items remain valid for older plans but cannot become calendar events or map points. Never fabricate coordinates or times to fill an export.
+
+Optionally store researched food candidates in top-level `restaurants` with stable `id`, `name`, `base`, WGS84 `lat` and `lon`, `meals`, `price_level`, `reservation`, `source_url`, and `checked_at`. `closed_weekdays` uses lowercase English three-letter weekday names. These are candidates, not confirmed bookings; keep current opening hours and availability in the evidence or booking state. The food helper uses straight-line proximity only and never claims a walking time.
+
+For reuse across trips, keep the same `restaurants` array in a separate city catalog JSON such as `assets/restaurants.example.json` and pass it with `--catalog`. A candidate with the same `id` in `trip.json` overrides the catalog entry. Do not carry old opening-hour or price claims into a new trip without rechecking their dates.
+
 ## Decisions and exclusions
 
 Append decisions rather than rewriting history:

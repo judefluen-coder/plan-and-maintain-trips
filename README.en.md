@@ -83,6 +83,8 @@ The visuals above show the finished artifacts. This table shows what the Skill d
 | Route scheduling | Balances geography, visit duration, security queues, transfers, recovery, and physical load | Executable day-by-day schedule with concrete times |
 | Restaurant fit | Selects food around the actual route, booking gaps, opening hours, and queue risk | Primary and backup restaurants with route-specific reasoning |
 | Maps and field execution | Encodes days with colors and numbered stops, then extracts the decisions that matter on site | High-resolution route atlas + daily field cards |
+| Offline and reminders | Exports a phone route page, map points, and calendar events from geocoded timed items | Single-file offline HTML + KML + ICS |
+| Live replan and food | Proposes changes for delays, closures, or rain; ranks researched restaurants along the route | Non-destructive proposal + nearby food shortlist |
 | Controlled revisions | Traces each date, hotel, or attraction change into bookings, routes, restaurants, and maps | Change log + synchronized deliverables |
 | Final delivery | Audits dates, nights, hard anchors, links, budget, and cross-format consistency before publishing | Markdown / Feishu / Notion / Google Docs / DOCX / PDF |
 
@@ -170,6 +172,18 @@ python3 scripts/render_route_map.py route.json route-map.svg
 
 # Check booking and reservation links in a guide
 python3 scripts/check_links.py guide.md
+
+# Derive an offline route page, map points, and calendar from trip.json
+python3 scripts/export_field_pack.py trip.json output/
+
+# Propose a same-day change without modifying the canonical state
+python3 scripts/replan_day.py trip.json --date 2030-05-02 --delay-minutes 45 --rain
+
+# Rank researched lunch candidates near the day's route
+python3 scripts/suggest_food.py trip.json --date 2030-05-01 --meal lunch
+
+# Optionally load a reusable city food catalog
+python3 scripts/suggest_food.py trip.json --date 2030-05-01 --meal lunch --catalog city-restaurants.json
 ```
 
 Example of a successful state validation:
@@ -191,6 +205,7 @@ plan-and-maintain-trips/
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
+│   ├── restaurants.example.json
 │   ├── guide-template.md
 │   ├── readme-*.{png,svg}       # Chinese visuals
 │   └── readme-*.en.{png,svg}    # English visuals
@@ -203,6 +218,9 @@ plan-and-maintain-trips/
 └── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
+    ├── export_field_pack.py
+    ├── replan_day.py
+    ├── suggest_food.py
     └── check_links.py
 ```
 
@@ -214,6 +232,7 @@ plan-and-maintain-trips/
 - Never label an unavailable future date as sold out without evidence, or silently move a user-defined hard anchor.
 - Never compare an aggregator teaser price with a tax-inclusive price under different room or cancellation terms.
 - Treat route maps as planning tools; check live navigation, weather, and operator notices on the day.
+- The offline HTML shows trip details and schematic lines; navigation links need connectivity. KML lines express visit order, and restaurant distance is straight-line distance.
 - Never store passports, payment details, account credentials, tokens, or authorization codes in the project or Skill.
 
 ---

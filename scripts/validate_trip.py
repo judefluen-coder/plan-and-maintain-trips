@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import sys
+import math
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -66,6 +67,13 @@ def parse_datetime(value: Any, path: str, findings: Findings) -> datetime | None
     except ValueError:
         findings.error(f"{path} must be an ISO datetime: {value!r}")
         return None
+
+
+def parse_clock(value: Any, path: str, findings: Findings) -> int | None:
+    if not isinstance(value, str) or not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", value):
+        findings.error(f"{path} must use HH:MM")
+        return None
+    return int(value[:2]) * 60 + int(value[3:])
 
 
 def require_list(data: dict[str, Any], key: str, findings: Findings) -> list[Any]:
@@ -138,6 +146,7 @@ def validate(data: Any) -> tuple[Findings, dict[str, int]]:
     require_unique_ids(segments, "segments", findings)
     anchor_ids = require_unique_ids(anchors, "anchors", findings)
     booking_ids = require_unique_ids(bookings, "bookings", findings)
+    anchors_by_id = {a["id"]: a for a in anchors if isinstance(a, dict) and isinstance(a.get("id"), str)}
 
     segment_ranges: list[tuple[date, date, str]] = []
     for index, segment in enumerate(segments):
@@ -228,6 +237,59 @@ def validate(data: Any) -> tuple[Findings, dict[str, int]]:
             for anchor_id in anchor_refs:
                 if anchor_id not in anchor_ids:
                     findings.error(f"days[{index}] references missing anchor {anchor_id!r}")
+        items = day_item.get("items", [])
+        if not isinstance(items, list):
+            findings.error(f"days[{index}].items must be a list")
+            continue
+        item_ids: set[str] = set()
+        for item_index, item in enumerate(items):
+            if isinstance(item, str):
+                continue
+            path = f"days[{index}].items[{item_index}]"
+            if not isinstance(item, dict) or not isinstance(item.get("name"), str) or not item["name"].strip():
+                findings.error(f"{path} must be text or an object with a name")
+                continue
+            item_id = item.get("id")
+            if item_id is not None:
+                if not isinstance(item_id, str) or not item_id.strip() or item_id in item_ids:
+                    findings.error(f"{path}.id must be a unique non-empty string within the day")
+                else:
+                    item_ids.add(item_id)
+            if "start" in item or "end" in item:
+                item_start = parse_clock(item.get("start"), f"{path}.start", findings)
+                item_end = parse_clock(item.get("end"), f"{path}.end", findings)
+                if item_start is not None and item_end is not None and item_end <= item_start:
+                    findings.error(f"{path}.end must follow start on the same date")
+            if ("lat" in item) != ("lon" in item):
+                findings.error(f"{path} needs both lat and lon")
+            elif "lat" in item:
+                for key, low, high in (("lat", -90, 90), ("lon", -180, 180)):
+                    value = item[key]
+                    if not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value) or not low <= value <= high:
+                        findings.error(f"{path}.{key} is not a valid WGS84 coordinate")
+            if item.get("anchor_id") is not None and item["anchor_id"] not in anchor_ids:
+                findings.error(f"{path}.anchor_id references a missing anchor")
+            elif item.get("anchor_id") is not None:
+                anchor = anchors_by_id[item["anchor_id"]]
+                if anchor.get("date") != day_item.get("date"):
+                    findings.error(f"{path}.anchor_id points to an anchor on another date")
+                if anchor.get("rigidity") == "hard" and anchor.get("time") and item.get("start") != anchor["time"]:
+                    findings.error(f"{path}.start differs from its hard anchor time")
+            if item.get("booking_id") is not None and item["booking_id"] not in booking_ids:
+                findings.error(f"{path}.booking_id references a missing booking")
+
+    restaurants = data.get("restaurants", [])
+    if not isinstance(restaurants, list):
+        findings.error("restaurants must be a list when present")
+    else:
+        require_unique_ids(restaurants, "restaurants", findings)
+        for index, restaurant in enumerate(restaurants):
+            if not isinstance(restaurant, dict):
+                continue
+            for key, low, high in (("lat", -90, 90), ("lon", -180, 180)):
+                value = restaurant.get(key)
+                if not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value) or not low <= value <= high:
+                    findings.error(f"restaurants[{index}].{key} is not a valid WGS84 coordinate")
 
     if start and end:
         expected_dates = {start + timedelta(days=offset) for offset in range((end - start).days + 1)}

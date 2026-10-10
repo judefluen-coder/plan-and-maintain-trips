@@ -83,6 +83,8 @@
 | 路线排程 | 综合地理位置、游玩时长、安检排队、移动时间、休息与体力 | 可执行到具体时间的每日详细路线 |
 | 餐厅衔接 | 按当天路线、预约间隙、营业时间和排队风险选择餐厅 | 主选与备选餐厅 + 为什么适合当天的说明 |
 | 地图与现场执行 | 用不同颜色和编号表达多日路线，并提炼当天必须保护的事项 | 高清路线图 + 每日执行攻略卡 |
+| 离线与提醒 | 从带坐标和时间的行程生成手机路线页、地图点位和日历事件 | 单文件离线 HTML + KML + ICS |
+| 现场重排与美食 | 迟到、闭馆或下雨时提出调整建议；按当天路线筛选已研究的餐厅 | 不改动原计划的重排建议 + 沿线餐厅候选 |
 | 持续调整 | 每次改日期、酒店或景点时，检查受影响的预约、路线、餐厅与地图 | 变更记录 + 同步更新后的全套产物 |
 | 最终交付 | 审计日期、晚数、硬锚点、链接、预算和版本一致性，再按需发布 | Markdown / 飞书 / Notion / Google Docs / DOCX / PDF |
 
@@ -168,6 +170,18 @@ python3 scripts/render_route_map.py route.json route-map.svg
 
 # 检查攻略里的购票与预约链接
 python3 scripts/check_links.py guide.md
+
+# 从同一份 trip.json 导出离线路线页、地图点位和日历
+python3 scripts/export_field_pack.py trip.json output/
+
+# 根据迟到、闭馆或下雨生成当天调整建议（不会改写 trip.json）
+python3 scripts/replan_day.py trip.json --date 2030-05-02 --delay-minutes 45 --rain
+
+# 从已核验的餐厅候选中找当天午餐
+python3 scripts/suggest_food.py trip.json --date 2030-05-01 --meal lunch
+
+# 也可以加载可跨行程复用的城市餐厅库
+python3 scripts/suggest_food.py trip.json --date 2030-05-01 --meal lunch --catalog city-restaurants.json
 ```
 
 成功的状态校验示例：
@@ -189,6 +203,7 @@ plan-and-maintain-trips/
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
+│   ├── restaurants.example.json
 │   ├── guide-template.md
 │   ├── readme-*.{png,svg}       # 中文视觉稿
 │   └── readme-*.en.{png,svg}    # English visuals
@@ -201,6 +216,9 @@ plan-and-maintain-trips/
 └── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
+    ├── export_field_pack.py
+    ├── replan_day.py
+    ├── suggest_food.py
     └── check_links.py
 ```
 
@@ -212,6 +230,7 @@ plan-and-maintain-trips/
 - 不会把未出现目标日期直接写成售罄，也不会静默移动用户指定的硬锚点。
 - 不会把聚合平台的诱导价与含税、同房型、同退改条件的最终价格混为一谈。
 - 路线图用于规划；出发当天仍应检查实时导航、天气和运营方通知。
+- 离线 HTML 可查看行程和示意路线；点击导航需要网络。KML 连线只表达游览顺序，餐厅距离是直线距离。
 - 不在项目或 Skill 中保存护照、支付信息、账号凭证、Token 或授权码。
 
 ---

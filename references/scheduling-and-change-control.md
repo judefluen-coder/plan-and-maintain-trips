@@ -60,6 +60,10 @@ When a decision changes, inspect every affected layer:
 
 Update the canonical state first. Then regenerate or patch every dependent artifact. Explicitly state which hard anchors remained unchanged.
 
+For a same-day delay, closure, or rain branch, run `python3 scripts/replan_day.py trip.json --date YYYY-MM-DD --delay-minutes 45`, with `--closed-id ITEM_ID` or `--rain` as needed. The helper returns a proposal and conflict warnings without modifying bookings or the canonical state. Check live transport, operator notices, and any affected reservation before accepting the proposal; then update `trip.json` and regenerate outputs.
+
+When selecting meals, use `python3 scripts/suggest_food.py trip.json --date YYYY-MM-DD --meal lunch` on researched `restaurants` candidates. Add `--catalog city-restaurants.json` to reuse a city library across trips. The helper ranks by straight-line distance to the meal point or a nearby timed stop. Verify current opening hours, actual walking route, price, and reservation before naming a primary restaurant.
+
 ## Conflict handling
 
 If two requirements cannot coexist, show the conflict with concrete timing or cost evidence. Protect confirmed bookings and user-declared invariants. Offer the smallest viable change rather than silently rewriting the whole trip.

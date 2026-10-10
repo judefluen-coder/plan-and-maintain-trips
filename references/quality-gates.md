@@ -37,6 +37,9 @@ Run these gates before final delivery and after any major revision.
 - Booking console, itinerary, budget, maps, and field cards share one version.
 - Day-of cards match detailed daily times.
 - Map day colors, route order, labels, and dates match the guide.
+- When generated, offline HTML, KML, and ICS match the same structured item times and coordinates; inspect one calendar import in the trip time zone.
+- Day-of replan proposals preserve hard anchor times and make booking conflicts explicit; accepted changes are written back to `trip.json` before regeneration.
+- Restaurant shortlists state the actual route fit and identify unverified opening hours, availability, or walking time.
 - Old airports, hotels, transport modes, sold-out shows, or superseded routes are absent.
 - Links have been checked; protected/anti-bot pages are labeled for manual verification.
 - Local source files remain available even when publishing externally.

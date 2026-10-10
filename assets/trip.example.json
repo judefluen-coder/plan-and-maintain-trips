@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "trip": {
+    "id": "lisbon-coast-example",
     "title": "Example two-base cultural trip",
     "start_date": "2030-05-01",
     "end_date": "2030-05-05",
@@ -75,7 +76,11 @@
       "base": "Lisbon",
       "outcome": "Recover from arrival and learn the historic center",
       "anchor_ids": [],
-      "items": ["Hotel bag drop", "Riverside orientation walk", "Market lunch"],
+      "items": [
+        {"id": "bag-drop", "name": "Hotel bag drop", "start": "10:00", "end": "10:30"},
+        {"id": "riverside", "name": "Riverside orientation walk", "start": "11:00", "end": "11:45", "lat": 38.7077, "lon": -9.1365, "weather_sensitive": true},
+        {"id": "market-lunch", "name": "Market lunch", "start": "12:15", "end": "13:30", "lat": 38.7070, "lon": -9.1457, "meal": "lunch", "booking_id": "market-lunch"}
+      ],
       "first_cut": "Sunset viewpoint"
     },
     {
@@ -83,7 +88,12 @@
       "base": "Lisbon",
       "outcome": "Focused art and architecture day",
       "anchor_ids": ["gallery-entry"],
-      "items": ["Reserved gallery entry", "Garden recovery break", "Neighborhood dinner"],
+      "items": [
+        {"id": "gallery", "name": "Reserved gallery entry", "start": "10:00", "end": "12:00", "lat": 38.7108, "lon": -9.1427, "anchor_id": "gallery-entry", "booking_id": "gallery-ticket", "rigidity": "hard"},
+        {"id": "garden", "name": "Garden recovery break", "start": "12:30", "end": "13:00", "lat": 38.7148, "lon": -9.1607, "weather_sensitive": true, "rigidity": "optional"},
+        {"id": "dinner", "name": "Neighborhood dinner", "start": "19:00", "end": "20:00", "lat": 38.7108, "lon": -9.1427, "meal": "dinner"}
+      ],
+      "weather_fallback": "Skip the garden and take an indoor café break",
       "first_cut": "Design shop detour"
     },
     {
@@ -91,7 +101,11 @@
       "base": "Cascais",
       "outcome": "Make a low-risk base transfer",
       "anchor_ids": ["coast-train"],
-      "items": ["Hotel checkout", "Transfer to the coast", "Seafront walk"],
+      "items": [
+        {"id": "checkout", "name": "Hotel checkout", "start": "09:00", "end": "09:30"},
+        {"id": "coast-train", "name": "Transfer to the coast", "start": "11:00", "end": "11:45", "lat": 38.7008, "lon": -9.4173, "anchor_id": "coast-train", "mode_from_previous": "rail"},
+        {"id": "seafront", "name": "Seafront walk", "start": "12:15", "end": "13:00", "lat": 38.6968, "lon": -9.4204, "weather_sensitive": true}
+      ],
       "first_cut": "Lighthouse extension"
     },
     {
@@ -109,6 +123,20 @@
       "anchor_ids": [],
       "items": ["Breakfast near hotel", "Short promenade", "Onward transfer"],
       "first_cut": "Promenade"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "example-riverside-cafe",
+      "name": "Example Riverside Café",
+      "base": "Lisbon",
+      "lat": 38.7072,
+      "lon": -9.1460,
+      "meals": ["lunch"],
+      "price_level": "mid",
+      "reservation": "check with venue",
+      "source_url": "https://example.com/restaurant",
+      "checked_at": "2030-01-15T09:00:00+00:00"
     }
   ],
   "decisions": [

@@ -8,6 +8,7 @@ Complete local artifacts before publishing:
 - `guide.md`: full human-readable guide;
 - `booking-checklist.md` or an equivalent section;
 - `route-map.svg` plus PNG when a renderer exists;
+- when structured locations/times exist: `route-offline.html`, `trip.kml`, and `trip.ics`;
 - `audit.md`: final quality report.
 
 Keep one authoritative guide. Do not leave several unlabeled competing versions.
@@ -49,6 +50,8 @@ When a visual execution pack is requested, create one SVG or high-resolution PNG
 Use geographic coordinates when available, but describe the map as schematic unless it uses a verified navigation engine. Prefer one map per base or compact region and no more than six day colors per map.
 
 Always preserve a vector source. Inspect labels, route order, legends, dates, and hotel inclusion before exporting a high-resolution image.
+
+For a phone-readable route pack, run `python3 scripts/export_field_pack.py trip.json output/`. Its HTML contains all trip data and scripts locally, but it is a schematic coordinate plot without street tiles. Navigation links open an external map and need connectivity. KML lines express visit order, not a verified street or transit route. ICS events use the trip's IANA time zone and UTC timestamps; import a sample into the target calendar before relying on alerts.
 
 ## Publisher adapter order
 

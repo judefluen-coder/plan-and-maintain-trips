@@ -1,0 +1,16 @@
+{
+  "restaurants": [
+    {
+      "id": "example-riverside-cafe",
+      "name": "Sample Riverside Café",
+      "base": "Lisbon",
+      "lat": 38.7072,
+      "lon": -9.1460,
+      "meals": ["lunch"],
+      "price_level": "mid",
+      "reservation": "check with venue",
+      "source_url": "https://example.com/restaurant",
+      "checked_at": "2030-01-15T09:00:00+00:00"
+    }
+  ]
+}

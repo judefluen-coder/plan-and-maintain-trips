@@ -34,6 +34,7 @@ Never put traveler credentials, payment data, passport numbers, API tokens, or d
 - **Booking:** turn planned items into a status-controlled booking console with official links.
 - **Recheck:** refresh only volatile facts whose review time has arrived.
 - **Day-of:** produce compact field cards from confirmed bookings and current conditions.
+- **Live replan:** propose a minimal same-day adjustment for delay, closure, or rain; protect hard anchors and reconfirm affected bookings.
 - **Publish:** render local artifacts first, then use an available optional publisher.
 
 The user can move between modes naturally. Do not restart from scratch when a decision changes.
@@ -142,6 +143,8 @@ python3 scripts/render_route_map.py route.json route.svg
 
 Inspect the SVG visually before delivery. Convert to a high-resolution PNG only if a renderer is available; preserve the SVG as the lossless source. Label a schematic map honestly and do not imply turn-by-turn accuracy.
 
+When the trip has structured, timed items with verified coordinates, run `python3 scripts/export_field_pack.py trip.json output/` to derive an offline phone route page, KML points, and an ICS calendar. These are optional companion artifacts; keep the original SVG/PNG overview. The route page works offline for viewing but its external navigation links need connectivity. Do not export invented times or venue centroids as actual entrances. Read `references/state-model.md` for the optional item fields.
+
 ## Maintain changes without drift
 
 When the user changes one decision:
@@ -152,6 +155,8 @@ When the user changes one decision:
 4. update all affected outputs;
 5. scan for stale statements from earlier versions;
 6. report what changed and what did not.
+
+For disruptions on the day, `scripts/replan_day.py` can propose shifted flexible items, dropped optional stops, and conflicts without editing state. Resolve warnings against real-world facts before applying the proposal. For meals, `scripts/suggest_food.py` ranks researched restaurants along the route; proximity is only a shortlist signal, so recheck opening hours and reservations.
 
 Never reintroduce excluded items or silently move a hard anchor. Do not compare hotel teaser prices with full-stay, tax-included checkout prices.
 
