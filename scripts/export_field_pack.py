@@ -162,7 +162,9 @@ function show(index){{
       const [x,y]=coords[i],g=node('g',{{tabindex:0,role:'link','aria-label':p.name}});
       const c=node('circle',{{cx:x,cy:y,r:18,fill:color,stroke:'white','stroke-width':3}});
       const t=node('text',{{x,y:y+5,'text-anchor':'middle',fill:'white','font-size':15,'font-weight':'bold'}});
-      const label=node('text',{{x,y:y-31,'text-anchor':'middle',fill:'#173253','font-size':24,'font-weight':600,'paint-order':'stroke',stroke:'white','stroke-width':7}});
+      const labelX=x>560?x-12:x<240?x+12:x;
+      const labelAnchor=x>560?'end':x<240?'start':'middle';
+      const label=node('text',{{x:labelX,y:y-31,'text-anchor':labelAnchor,fill:'#173253','font-size':24,'font-weight':600,'paint-order':'stroke',stroke:'white','stroke-width':7}});
       t.textContent=i+1;label.textContent=p.name;g.append(c,t,label);
       g.addEventListener('click',()=>open('https://www.google.com/maps/search/?api=1&query='+p.lat+','+p.lon,'_blank'));
       svg.append(g);
