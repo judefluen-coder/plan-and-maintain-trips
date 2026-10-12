@@ -74,7 +74,7 @@
 
 ## 打开完整示例
 
-[在线打开示例路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；[Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)还包含同源生成的 SVG 地图、KML、ICS 和五日文字攻略。示例是虚构数据，用来展示文件如何配合，不提供真实票务信息。
+[法国艺术人文路线完整案例](examples/france-2026/README.md)展示了巴黎＋蔚蓝海岸的两张高清图、订票清单、逐日路线、交通、餐厅与酒店选址；这是已过去的 2026 年脱敏历史案例，不能直接照搬票务或班次。想看可交互的离线页面与机器可导出文件，再打开 [Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)或[在线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；后者使用虚构数据。
 
 版本变化见 [Changelog](CHANGELOG.md)。
 

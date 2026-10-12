@@ -74,7 +74,7 @@ Supported outputs:
 
 ## Open a complete example
 
-[Open the live route-page example](https://judefluen-coder.github.io/plan-and-maintain-trips/). The [Lisbon → Cascais output package](examples/lisbon-coast/README.md) also includes the SVG atlas, KML, ICS, and a five-day written guide generated from the same sample state. The data is fictional and is not a ticketing recommendation.
+The [France arts and culture case study](examples/france-2026/README.md) shows two high-resolution maps, a booking checklist, day-by-day routes, transport, food, and hotel-selection logic for Paris and the French Riviera. It is a redacted **2026 historical case**, not current ticketing advice; the detailed guide is in Chinese. For an interactive offline page and machine-exported files, see the fictional [Lisbon → Cascais output package](examples/lisbon-coast/README.md) or [live route page](https://judefluen-coder.github.io/plan-and-maintain-trips/).
 
 See the [changelog](CHANGELOG.md) for version history.
 
