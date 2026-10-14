@@ -8,6 +8,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 from scripts.export_field_pack import calendar, kml, load, page
+from scripts.render_field_cards import render_card, render_markdown
 from scripts.replan_day import propose
 from scripts.render_route_map import route_from_trip
 from scripts.suggest_food import candidates
@@ -45,6 +46,23 @@ class FieldPackTests(unittest.TestCase):
         self.assertIn("2030-05-05", output)
         self.assertNotIn("<script src=", output)
         self.assertNotIn("@import", output)
+
+    def test_field_cards_keep_booking_state_and_unknown_times_honest(self):
+        card = render_card(self.data, self.days[1], 1)
+        root = ET.fromstring(card)
+        self.assertEqual(root.attrib["width"], "1080")
+        self.assertIn("Reservation: bookable", card)
+        self.assertIn("Garden recovery break", card)
+        self.assertIn("OPEN MAP", card)
+        untimed = render_card(self.data, self.days[3], 3)
+        self.assertIn("Time not specified", untimed)
+        self.assertIn("No fixed booking recorded", untimed)
+        self.assertEqual(render_markdown(self.data).count("## Day "), 5)
+
+    def test_example_first_cuts_are_scheduled_items(self):
+        for day in self.days:
+            names = [item["name"] if isinstance(item, dict) else item for item in day["items"]]
+            self.assertIn(day["first_cut"], names)
 
     def test_replan_warns_on_fixed_booking_without_mutation(self):
         original = copy.deepcopy(self.data)

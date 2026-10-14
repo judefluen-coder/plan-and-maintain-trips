@@ -131,6 +131,8 @@ Leave explicit fill-in fields for unknown hotel, flight, terminal, booking numbe
 
 When the user wants a visual execution pack, export each card as a screenshot-friendly SVG or high-resolution PNG and keep a searchable text equivalent. Use `assets/readme-day-card.svg` only as a visual reference; replace every example value with project facts and verify that no label is clipped.
 
+For structured `trip.json` days, `python3 scripts/render_field_cards.py trip.json output/` can derive a first SVG card per date plus `field-cards.md`. Review each card against current booking evidence and the detailed guide; the script does not research live facts or fill missing confirmations.
+
 ### 6. Create route maps
 
 Create one map per compact geographic segment, normally no more than six days. Use a different color per day, numbered stops, solid lines for walking, dashed lines for transit, and short day cards.

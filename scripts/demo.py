@@ -38,6 +38,7 @@ def main() -> int:
         print(run("validate_trip.py", str(trip), "--strict").strip())
         run("render_route_map.py", str(trip), str(output / "route.svg"), "--from-trip")
         run("export_field_pack.py", str(trip), str(output))
+        run("render_field_cards.py", str(trip), str(output))
         replanned = run("replan_day.py", str(trip), "--date", "2030-05-02", "--delay-minutes", "45", "--rain")
         food = run("suggest_food.py", str(trip), "--date", "2030-05-01", "--meal", "lunch")
         for name, content in (("replan-proposal.json", replanned), ("food-candidates.json", food)):
@@ -49,7 +50,7 @@ def main() -> int:
     print("\nFictional offline demo; names and booking links are placeholders, not travel advice.")
     print(f"Open the route page: {output / 'route-offline.html'}")
     print(f"Route map: {output / 'route.svg'}")
-    print(f"Calendar, map points, and change advice are in: {output}")
+    print(f"Day cards, calendar, map points, and change advice are in: {output}")
     return 0
 
 

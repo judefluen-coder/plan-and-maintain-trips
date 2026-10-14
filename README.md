@@ -48,6 +48,8 @@
   </a>
 </p>
 
+上图是排版示意；[查看从示例 `trip.json` 实际生成的 Day 02 卡片](examples/lisbon-coast/day-02.svg)和[对应文字版](examples/lisbon-coast/field-cards.md)，可以核对哪些信息确实来自数据。
+
 这样的执行卡可以：
 
 - 每天单独输出为高清 PNG，直接保存到手机相册；
@@ -78,6 +80,10 @@
 [法国艺术人文路线完整案例](examples/france-2026/README.md)展示了巴黎＋蔚蓝海岸的两张高清图、订票清单、逐日路线、交通、餐厅与酒店选址；这是已过去的 2026 年脱敏历史案例，**不是**可从仓库里的示例 `trip.json` 重跑的自动化演示，不能直接照搬票务或班次。要亲手重生成可交互页面和导出文件，请用下方的一键演示；它使用[虚构的 Lisbon → Cascais 数据](examples/lisbon-coast/README.md)，也有[在线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)可先预览。
 
 版本变化见 [Changelog](CHANGELOG.md)。
+
+发现问题或希望改进？请看 [贡献指南](CONTRIBUTING.md)，并用仓库的 Issue 模板提交脱敏复现信息。
+
+第一次试用可按[五分钟新用户测试](docs/try-it.md)走一遍；维护者的[发布素材](docs/launch-kit.md)已备好，但尚未代替用户对外发帖。
 
 ## 完整能力与交付一览
 
@@ -137,7 +143,7 @@ cd "$HOME/.codex/skills/plan-and-maintain-trips"
 python3 scripts/demo.py
 ```
 
-命令会校验[同一份虚构行程数据](assets/trip.example.json)，在临时目录生成路线图 SVG、可离线打开的路线页、KML、ICS、延误＋雨天重排建议和沿线餐厅候选，并打印实际文件路径；不联网、不购买或预约。它**不自动生成**真实世界资料核验、完整文字攻略或飞书文档；这些需要在 Codex 中使用 Skill，并按目的地核实来源。
+命令会校验[同一份虚构行程数据](assets/trip.example.json)，在临时目录生成路线图 SVG、每日执行卡 SVG＋文字版、可离线打开的路线页、KML、ICS、延误＋雨天重排建议和沿线餐厅候选，并打印实际文件路径；不联网、不购买或预约。它**不自动生成**真实世界资料核验、完整文字攻略或飞书文档；这些需要在 Codex 中使用 Skill，并按目的地核实来源。
 
 新建 Codex 任务或重新加载 Skill 后，可以这样开始：
 
@@ -188,6 +194,9 @@ python3 scripts/check_links.py guide.md
 # 从同一份 trip.json 导出离线路线页、地图点位和日历
 python3 scripts/export_field_pack.py trip.json output/
 
+# 从同一份状态导出每天的 SVG 执行卡和文字版
+python3 scripts/render_field_cards.py trip.json output/
+
 # 根据迟到、闭馆或下雨生成当天调整建议（不会改写 trip.json）
 python3 scripts/replan_day.py trip.json --date 2030-05-02 --delay-minutes 45 --rain
 
@@ -235,6 +244,7 @@ plan-and-maintain-trips/
 ├── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
+    ├── render_field_cards.py
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py

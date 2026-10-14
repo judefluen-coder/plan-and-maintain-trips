@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="Plan and Maintain Trips social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#142e51"/>
+      <stop offset="0.65" stop-color="#19456a"/>
+      <stop offset="1" stop-color="#0b6768"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="1250" cy="25" r="335" fill="#ffffff" opacity="0.055"/>
+  <circle cx="-80" cy="595" r="290" fill="#81c7e8" opacity="0.075"/>
+  <path d="M0 475 C210 410 345 545 555 485 S845 420 1280 515" fill="none" stroke="#b7d2df" stroke-width="3" opacity="0.22"/>
+
+  <rect x="66" y="66" width="342" height="48" rx="24" fill="#e4f1ee"/>
+  <text x="91" y="99" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#0f665f">OPEN SOURCE · CODEX SKILL</text>
+  <text x="64" y="205" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="69" font-weight="700" fill="#ffffff">Plan &amp; Maintain</text>
+  <text x="64" y="282" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="69" font-weight="700" fill="#ffffff">Trips</text>
+  <text x="69" y="346" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="600" fill="#e1ebf4">从灵感到可预约、可执行、可调整的旅程</text>
+  <text x="69" y="394" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" fill="#b8d2e0">Booking states  ·  Multi-day routes  ·  Day-of cards</text>
+
+  <path d="M91 507 C168 472 203 548 283 505 S394 460 475 502 S586 533 667 486" fill="none" stroke="#bcd6e3" stroke-width="5" stroke-dasharray="12 14" stroke-linecap="round" opacity="0.78"/>
+  <circle cx="91" cy="507" r="17" fill="#b74742" stroke="#ffffff" stroke-width="5"/>
+  <circle cx="283" cy="505" r="17" fill="#188066" stroke="#ffffff" stroke-width="5"/>
+  <circle cx="475" cy="502" r="17" fill="#d78a0a" stroke="#ffffff" stroke-width="5"/>
+  <circle cx="667" cy="486" r="17" fill="#2876ae" stroke="#ffffff" stroke-width="5"/>
+  <text x="69" y="585" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" fill="#c8dce5">One trip state · Every decision stays in sync</text>
+
+  <rect x="819" y="67" width="397" height="506" rx="28" fill="#fffdf8"/>
+  <rect x="819" y="67" width="397" height="109" rx="28" fill="#d68608"/>
+  <rect x="819" y="145" width="397" height="31" fill="#d68608"/>
+  <text x="851" y="112" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#ffffff">DAY 03 · SAMPLE CARD</text>
+  <text x="851" y="150" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="29" font-weight="700" fill="#ffffff">Plan around the 09:30 slot</text>
+  <line x1="861" y1="221" x2="861" y2="416" stroke="#d5e2df" stroke-width="5"/>
+  <circle cx="861" cy="233" r="14" fill="#b74742"/>
+  <circle cx="861" cy="320" r="14" fill="#188066"/>
+  <circle cx="861" cy="407" r="14" fill="#2876ae"/>
+  <text x="894" y="228" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#173253">09:05 · Arrival buffer</text>
+  <text x="894" y="256" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#647b8b">Verify entry status first</text>
+  <text x="894" y="315" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#173253">09:30 · Target entry</text>
+  <text x="894" y="343" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#647b8b">Never treat bookable as booked</text>
+  <text x="894" y="402" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700" fill="#173253">12:15 · Lunch nearby</text>
+  <text x="894" y="430" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#647b8b">Check route and opening</text>
+  <rect x="848" y="468" width="340" height="64" rx="30" fill="#e5f2ed"/>
+  <text x="871" y="507" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#17685f">Rain fallback · first cut visible</text>
+</svg>

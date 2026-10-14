@@ -45,6 +45,8 @@ Use explicit blanks for unknown flight, terminal, hotel, booking number, insuran
 
 When a visual execution pack is requested, create one SVG or high-resolution PNG per day and preserve a searchable text version. Inspect each image at phone width for clipped text, illegible type, excessive blank space, and stale itinerary details.
 
+For structured days, `python3 scripts/render_field_cards.py trip.json output/` produces one SVG per date and a Markdown equivalent from the canonical state. Treat these as drafts until booking evidence, arrival deadlines, and missing addresses are checked. The renderer deliberately labels unknown times instead of inventing them.
+
 ## Route map
 
 Use geographic coordinates when available, but describe the map as schematic unless it uses a verified navigation engine. Prefer one map per base or compact region and no more than six day colors per map.

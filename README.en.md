@@ -48,6 +48,8 @@ The full guide is for planning. On the road, you need one card that answers what
   </a>
 </p>
 
+The image above is a layout concept. [Open the Day 02 card actually generated from the example `trip.json`](examples/lisbon-coast/day-02.svg) and its [searchable text equivalent](examples/lisbon-coast/field-cards.md) to see what the data really supports.
+
 Each field card can:
 
 - ship as a separate high-resolution PNG that is easy to save to a phone;
@@ -78,6 +80,10 @@ Supported outputs:
 The [France arts and culture case study](examples/france-2026/README.md) shows two high-resolution maps, a booking checklist, day-by-day routes, transport, food, and hotel-selection logic for Paris and the French Riviera. It is a redacted **2026 historical case**, not current ticketing advice or a dataset that can be regenerated from the repository's example `trip.json`; the detailed guide is in Chinese. To reproduce the machine-generated artifacts yourself, use the one-command fictional [Lisbon → Cascais example](examples/lisbon-coast/README.md) below, or first view its [live route page](https://judefluen-coder.github.io/plan-and-maintain-trips/).
 
 See the [changelog](CHANGELOG.md) for version history.
+
+Found a bug or have a concrete workflow improvement? Read [Contributing](CONTRIBUTING.md) and use the repository's issue forms with redacted reproduction details.
+
+For a first trial, follow the [five-minute new-user test](docs/try-it.md). A [maintainer launch kit](docs/launch-kit.md) is prepared but has not been posted on anyone's behalf.
 
 ## Capabilities and deliverables
 
@@ -137,7 +143,7 @@ cd "$HOME/.codex/skills/plan-and-maintain-trips"
 python3 scripts/demo.py
 ```
 
-The command validates [one fictional trip state](assets/trip.example.json), generates a route SVG, offline route page, KML, ICS, delay-and-rain replan proposal, and nearby food shortlist in a temporary directory, then prints the file paths. It does not use the network, buy or reserve anything, or generate live research, a full written guide, or a Feishu document. Those require running the Skill in Codex and checking destination-specific sources.
+The command validates [one fictional trip state](assets/trip.example.json), generates a route SVG, daily field-card SVGs and searchable text, an offline route page, KML, ICS, a delay-and-rain replan proposal, and a nearby food shortlist in a temporary directory, then prints the file paths. It does not use the network, buy or reserve anything, or generate live research, a full written guide, or a Feishu document. Those require running the Skill in Codex and checking destination-specific sources.
 
 Start a new Codex task or reload skills, then try:
 
@@ -190,6 +196,9 @@ python3 scripts/check_links.py guide.md
 # Derive an offline route page, map points, and calendar from trip.json
 python3 scripts/export_field_pack.py trip.json output/
 
+# Derive one SVG field card per day plus searchable Markdown
+python3 scripts/render_field_cards.py trip.json output/
+
 # Propose a same-day change without modifying the canonical state
 python3 scripts/replan_day.py trip.json --date 2030-05-02 --delay-minutes 45 --rain
 
@@ -237,6 +246,7 @@ plan-and-maintain-trips/
 ├── scripts/
     ├── validate_trip.py
     ├── render_route_map.py
+    ├── render_field_cards.py
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py

@@ -36,7 +36,7 @@
   "anchors": [
     {
       "id": "gallery-entry",
-      "name": "Reserved gallery entry",
+      "name": "Gallery entry target",
       "date": "2030-05-02",
       "time": "10:00",
       "rigidity": "hard",
@@ -53,7 +53,7 @@
   "bookings": [
     {
       "id": "gallery-ticket",
-      "item": "Reserved gallery entry",
+      "item": "Gallery entry target",
       "status": "bookable",
       "intended_date": "2030-05-02",
       "intended_time": "10:00",
@@ -82,7 +82,7 @@
         {"id": "riverside", "name": "Riverside orientation walk", "start": "11:00", "end": "11:45", "lat": 38.7077, "lon": -9.1365, "weather_sensitive": true},
         {"id": "market-lunch", "name": "Market lunch", "start": "12:15", "end": "13:30", "lat": 38.7070, "lon": -9.1457, "meal": "lunch", "booking_id": "market-lunch"}
       ],
-      "first_cut": "Sunset viewpoint"
+      "first_cut": "Riverside orientation walk"
     },
     {
       "date": "2030-05-02",
@@ -90,12 +90,12 @@
       "outcome": "Focused art and architecture day",
       "anchor_ids": ["gallery-entry"],
       "items": [
-        {"id": "gallery", "name": "Reserved gallery entry", "start": "10:00", "end": "12:00", "lat": 38.7108, "lon": -9.1427, "anchor_id": "gallery-entry", "booking_id": "gallery-ticket", "rigidity": "hard"},
+        {"id": "gallery", "name": "Gallery entry target", "start": "10:00", "end": "12:00", "lat": 38.7108, "lon": -9.1427, "anchor_id": "gallery-entry", "booking_id": "gallery-ticket", "rigidity": "hard"},
         {"id": "garden", "name": "Garden recovery break", "start": "12:30", "end": "13:00", "lat": 38.7148, "lon": -9.1607, "weather_sensitive": true, "rigidity": "optional"},
         {"id": "dinner", "name": "Neighborhood dinner", "start": "19:00", "end": "20:00", "lat": 38.7108, "lon": -9.1427, "meal": "dinner"}
       ],
       "weather_fallback": "Skip the garden and take an indoor café break",
-      "first_cut": "Design shop detour"
+      "first_cut": "Garden recovery break"
     },
     {
       "date": "2030-05-03",
@@ -107,7 +107,7 @@
         {"id": "coast-train", "name": "Transfer to the coast", "start": "11:00", "end": "11:45", "lat": 38.7008, "lon": -9.4173, "anchor_id": "coast-train", "mode_from_previous": "rail"},
         {"id": "seafront", "name": "Seafront walk", "start": "12:15", "end": "13:00", "lat": 38.6968, "lon": -9.4204, "weather_sensitive": true}
       ],
-      "first_cut": "Lighthouse extension"
+      "first_cut": "Seafront walk"
     },
     {
       "date": "2030-05-04",
@@ -115,7 +115,7 @@
       "outcome": "Explore the coast at an easy pace",
       "anchor_ids": [],
       "items": ["Coastal museum", "Long lunch", "Beach or indoor weather branch"],
-      "first_cut": "Clifftop extension"
+      "first_cut": "Beach or indoor weather branch"
     },
     {
       "date": "2030-05-05",
@@ -123,7 +123,7 @@
       "outcome": "Depart without schedule risk",
       "anchor_ids": [],
       "items": ["Breakfast near hotel", "Short promenade", "Onward transfer"],
-      "first_cut": "Promenade"
+      "first_cut": "Short promenade"
     }
   ],
   "restaurants": [

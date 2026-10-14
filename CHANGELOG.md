@@ -4,7 +4,14 @@ This project uses `vMAJOR.MINOR.PATCH` tags. While the major version is `0`, min
 
 ## Unreleased
 
-- No changes yet.
+No changes yet.
+
+## v0.2.0 — 2026-10-14
+
+- Render mobile SVG day cards and searchable Markdown directly from structured `trip.json` days; include them in the one-command demo and CI drift checks.
+- Align the fictional sample's first-cut items with its actual timeline, and distinguish a bookable gallery slot from a purchased ticket.
+- Add contributor guidance, privacy-aware issue forms, and a pull-request checklist.
+- Prepare an independent-user trial script and an unposted launch kit with a social-preview PNG.
 
 ## v0.1.0 — 2026-10-14
 

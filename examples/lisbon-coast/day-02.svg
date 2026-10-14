@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1600" viewBox="0 0 1080 1600" role="img" aria-label="Day 2 field card">
+<rect width="1080" height="1600" fill="#f7f4ed"/>
+<rect width="1080" height="312" fill="#173253"/>
+<rect x="62" y="54" width="110" height="48" rx="24" fill="#188066"/>
+<text x="84" y="88" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">DAY 02</text>
+<text x="62" y="157" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="39" font-weight="700">2030-05-02</text>
+<text x="62" y="214" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="40" font-weight="700">Lisbon</text>
+<text x="62" y="266" fill="#dbe6ed" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Focused art and architecture day</text>
+<rect x="48" y="355" width="984" height="124" rx="18" fill="#ffffff"/>
+<rect x="48" y="355" width="10" height="124" rx="5" fill="#188066"/>
+<text x="78" y="396" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">PROTECT THIS</text>
+<text x="78" y="439" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">10:00  Gallery entry target</text>
+<text x="78" y="467" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="400">Reservation: bookable; verify entry evidence and arrival buffer</text>
+<text x="62" y="523" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">FOLLOW IN ORDER</text>
+<rect x="48" y="561" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="608" r="24" fill="#188066"/>
+<text x="91" y="617" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">1</text>
+<text x="140" y="607" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Gallery entry target</text>
+<text x="140" y="649" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">10:00–12:00</text>
+<text x="826" y="649" fill="#188066" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.7108,-9.1427" target="_blank"><rect x="810" y="619" width="210" height="42" fill="transparent"/></a>
+<rect x="48" y="699" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="746" r="24" fill="#188066"/>
+<text x="91" y="755" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">2</text>
+<text x="140" y="745" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Garden recovery break</text>
+<text x="140" y="787" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">12:30–13:00</text>
+<text x="826" y="787" fill="#188066" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.7148,-9.1607" target="_blank"><rect x="810" y="757" width="210" height="42" fill="transparent"/></a>
+<rect x="48" y="837" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="884" r="24" fill="#188066"/>
+<text x="91" y="893" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">3</text>
+<text x="140" y="883" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Neighborhood dinner</text>
+<text x="140" y="925" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">19:00–20:00</text>
+<text x="826" y="925" fill="#188066" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.7108,-9.1427" target="_blank"><rect x="810" y="895" width="210" height="42" fill="transparent"/></a>
+<text x="62" y="1007" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">IF PLANS CHANGE</text>
+<rect x="48" y="1033" width="984" height="123" rx="16" fill="#ffffff"/>
+<text x="78" y="1071" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">FIRST CUT</text>
+<text x="78" y="1111" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Garden recovery break</text>
+<rect x="48" y="1170" width="984" height="123" rx="16" fill="#ffffff"/>
+<text x="78" y="1208" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">RAIN / DISRUPTION</text>
+<text x="78" y="1248" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Skip the garden and take an indoor café break</text>
+<text x="62" y="1355" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700">BEFORE LEAVING</text>
+<text x="62" y="1397" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Weather · transit · booking evidence · first navigation</text>
+<text x="62" y="1438" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Hotel address / ticket QR: add only confirmed details</text>
+<text x="62" y="1491" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400">FICTIONAL DEMO · schematic links are not live travel advice</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1600" viewBox="0 0 1080 1600" role="img" aria-label="Day 1 field card">
+<rect width="1080" height="1600" fill="#f7f4ed"/>
+<rect width="1080" height="312" fill="#173253"/>
+<rect x="62" y="54" width="110" height="48" rx="24" fill="#b74742"/>
+<text x="84" y="88" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">DAY 01</text>
+<text x="62" y="157" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="39" font-weight="700">2030-05-01</text>
+<text x="62" y="214" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="40" font-weight="700">Lisbon</text>
+<text x="62" y="266" fill="#dbe6ed" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Recover from arrival and learn the historic</text><text x="62" y="301" fill="#dbe6ed" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">center</text>
+<rect x="48" y="374" width="984" height="124" rx="18" fill="#ffffff"/>
+<rect x="48" y="374" width="10" height="124" rx="5" fill="#b74742"/>
+<text x="78" y="415" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">PROTECT THIS</text>
+<text x="78" y="462" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="29" font-weight="700">No fixed booking recorded for this day</text>
+<text x="62" y="542" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">FOLLOW IN ORDER</text>
+<rect x="48" y="580" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="627" r="24" fill="#b74742"/>
+<text x="91" y="636" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">1</text>
+<text x="140" y="626" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Hotel bag drop</text>
+<text x="140" y="668" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">10:00–10:30</text>
+<rect x="48" y="718" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="765" r="24" fill="#b74742"/>
+<text x="91" y="774" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">2</text>
+<text x="140" y="764" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Riverside orientation walk</text>
+<text x="140" y="806" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">11:00–11:45</text>
+<text x="826" y="806" fill="#b74742" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.7077,-9.1365" target="_blank"><rect x="810" y="776" width="210" height="42" fill="transparent"/></a>
+<rect x="48" y="856" width="984" height="124" rx="16" fill="#ffffff"/>
+<circle cx="91" cy="903" r="24" fill="#b74742"/>
+<text x="91" y="912" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">3</text>
+<text x="140" y="902" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Market lunch</text>
+<text x="140" y="944" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">12:15–13:30</text>
+<text x="826" y="944" fill="#b74742" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.707,-9.1457" target="_blank"><rect x="810" y="914" width="210" height="42" fill="transparent"/></a>
+<text x="62" y="1026" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">IF PLANS CHANGE</text>
+<rect x="48" y="1052" width="984" height="123" rx="16" fill="#ffffff"/>
+<text x="78" y="1090" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">FIRST CUT</text>
+<text x="78" y="1130" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Riverside orientation walk</text>
+<rect x="48" y="1189" width="984" height="123" rx="16" fill="#ffffff"/>
+<text x="78" y="1227" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">RAIN / DISRUPTION</text>
+<text x="78" y="1267" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Check weather and transport before leaving</text>
+<text x="62" y="1374" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700">BEFORE LEAVING</text>
+<text x="62" y="1416" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Weather · transit · booking evidence · first navigation</text>
+<text x="62" y="1457" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Hotel address / ticket QR: add only confirmed details</text>
+<text x="62" y="1510" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400">FICTIONAL DEMO · schematic links are not live travel advice</text>
+</svg>

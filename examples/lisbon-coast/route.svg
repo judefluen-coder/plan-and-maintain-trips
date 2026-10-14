@@ -33,10 +33,10 @@
 <path d="M 2236.1 855.6 L 2104.0 508.7" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
 <path d="M 2104.0 508.7 L 2236.1 855.6" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
 <path d="M 2104.0 508.7 L 2236.1 855.6" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
-<rect x="1661.6" y="807.6" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<rect x="1711.6" y="807.6" width="570.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
 <circle cx="2236.1" cy="855.6" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
 <text x="2236.1" y="865.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="1683.6" y="848.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Reserved gallery entry</text>
+<text x="1733.6" y="848.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Gallery entry target</text>
 <rect x="1686.6" y="508.7" width="595.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
 <circle cx="2104.0" cy="508.7" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
 <text x="2104.0" y="518.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
@@ -71,7 +71,7 @@
 <text x="907.7" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 2 · 2030-05-02 · Lisbon</text>
 <circle cx="915.7" cy="2420.3" r="17" fill="#167C5A"/>
 <text x="915.7" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="944.7" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Reserved gallery entry · 120 min</text>
+<text x="944.7" y="2427.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Gallery entry target · 120 min</text>
 <circle cx="915.7" cy="2468.3" r="17" fill="#167C5A"/>
 <text x="915.7" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
 <text x="944.7" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Garden recovery break · 30 min</text>

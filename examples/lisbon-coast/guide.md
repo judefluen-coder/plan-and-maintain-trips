@@ -19,11 +19,11 @@ Open the [offline route page](route-offline.html), [vector route atlas](route.sv
 
 | Date | Base | Planned sequence | First cut |
 |---|---|---|---|
-| May 1 | Lisbon | 10:00 bag drop → 11:00 riverside walk → 12:15 market lunch | Sunset viewpoint |
-| May 2 | Lisbon | 10:00 fixed gallery entry → 12:30 garden break → 19:00 neighborhood dinner | Garden in rain or delay |
-| May 3 | Cascais | 09:00 checkout → 11:00 coast train → 12:15 seafront walk | Lighthouse extension |
-| May 4 | Cascais | Coastal museum → long lunch → beach or indoor branch | Clifftop extension |
-| May 5 | Cascais | Breakfast → short promenade if time permits → onward transfer | Promenade |
+| May 1 | Lisbon | 10:00 bag drop → 11:00 riverside walk → 12:15 market lunch | Riverside walk |
+| May 2 | Lisbon | 10:00 gallery slot target → 12:30 garden break → 19:00 neighborhood dinner | Garden break |
+| May 3 | Cascais | 09:00 checkout → 11:00 coast train → 12:15 seafront walk | Seafront walk |
+| May 4 | Cascais | Coastal museum → long lunch → beach or indoor branch | Beach/indoor branch |
+| May 5 | Cascais | Breakfast → short promenade if time permits → onward transfer | Short promenade |
 
 The May 4–5 items are intentionally untimed text entries. They appear in the guide and offline page but do not become calendar events or map points; a real plan would add verified times and coordinates before export.
 
@@ -38,7 +38,7 @@ The May 4–5 items are intentionally untimed text entries. They appear in the g
 | Day | Protect | Morning check | If disrupted |
 |---|---|---|---|
 | May 1 | Easy arrival | Hotel bag-drop details | Shorten walk |
-| May 2 | 10:00 gallery entry | Ticket confirmation and venue notice | Skip garden; do not move fixed entry without operator confirmation |
+| May 2 | 10:00 gallery slot target | Check whether a real ticket was purchased; venue notice | Skip garden; do not treat a `bookable` example as a confirmed ticket |
 | May 3 | Base transfer | Train service and checkout | Skip seafront walk |
 | May 4 | Easy coastal day | Weather and museum opening | Use the indoor branch |
 | May 5 | Onward transfer | Departure time and luggage | Skip promenade |

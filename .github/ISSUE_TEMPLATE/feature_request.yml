@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a concrete improvement to an executable trip-planning workflow.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe a real planning or on-trip decision that is currently difficult.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed behavior
+      description: What should the Skill or a local artifact do differently?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Redacted example or alternative
+      description: Omit private booking and identity information. Say whether the request needs a third-party API or account.

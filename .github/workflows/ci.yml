@@ -30,11 +30,16 @@ jobs:
           mkdir -p "$RUNNER_TEMP/trip-output"
           python scripts/render_route_map.py assets/trip.example.json "$RUNNER_TEMP/trip-output/route.svg" --from-trip
           python scripts/export_field_pack.py assets/trip.example.json "$RUNNER_TEMP/trip-output"
+          python scripts/render_field_cards.py assets/trip.example.json "$RUNNER_TEMP/trip-output"
           cmp examples/lisbon-coast/route.svg "$RUNNER_TEMP/trip-output/route.svg"
           cmp examples/lisbon-coast/route-offline.html "$RUNNER_TEMP/trip-output/route-offline.html"
           cmp examples/lisbon-coast/trip.kml "$RUNNER_TEMP/trip-output/trip.kml"
+          cmp examples/lisbon-coast/day-02.svg "$RUNNER_TEMP/trip-output/day-02.svg"
+          cmp examples/lisbon-coast/field-cards.md "$RUNNER_TEMP/trip-output/field-cards.md"
       - name: Smoke-test the new-user demo
         run: |
           python scripts/demo.py --output "$RUNNER_TEMP/trip-demo"
           test -s "$RUNNER_TEMP/trip-demo/route-offline.html"
           test -s "$RUNNER_TEMP/trip-demo/replan-proposal.json"
+          test -s "$RUNNER_TEMP/trip-demo/day-01.svg"
+          test -s "$RUNNER_TEMP/trip-demo/field-cards.md"
