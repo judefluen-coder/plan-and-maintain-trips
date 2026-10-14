@@ -20,7 +20,7 @@ The repo contains a redacted France historical case study and a separate fiction
 
 ## Sharing asset
 
-`assets/social-preview.png` is a 1280×640 PNG under 1 MB, with `assets/social-preview.svg` as its editable source. It is **prepared but not uploaded** as the repository social preview. Upload it in GitHub repository Settings → General → Social preview → Edit, then check the visible preview and one shared-link unfurl. [GitHub's image requirements](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview) recommend this size and a PNG/JPG/GIF under 1 MB.
+`assets/social-preview.png` is a 1280×640 PNG under 1 MB, with `assets/social-preview.svg` as its editable source. It was uploaded as the repository social preview on 2026-10-14. The image appears in GitHub repository Settings → General → Social preview, and the public repository page exposes the uploaded `og:image`. Check an actual shared-link unfurl on the target platform before posting, because third-party caches may lag. [GitHub's image requirements](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview) recommend this size and a PNG/JPG/GIF under 1 MB.
 
 Do not post these messages to communities before selecting the relevant audience and adapting the opening line to its rules. No external post or message was sent while preparing this kit.
 
