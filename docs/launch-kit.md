@@ -23,3 +23,19 @@ The repo contains a redacted France historical case study and a separate fiction
 `assets/social-preview.png` is a 1280×640 PNG under 1 MB, with `assets/social-preview.svg` as its editable source. It is **prepared but not uploaded** as the repository social preview. Upload it in GitHub repository Settings → General → Social preview → Edit, then check the visible preview and one shared-link unfurl. [GitHub's image requirements](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview) recommend this size and a PNG/JPG/GIF under 1 MB.
 
 Do not post these messages to communities before selecting the relevant audience and adapting the opening line to its rules. No external post or message was sent while preparing this kit.
+
+## Short walkthrough to record
+
+Record an actual run from a clean public clone, not a slideshow presented as a terminal capture. Keep the fictional-data disclaimer visible and avoid exposing a personal home path, browser profile, or tickets.
+
+1. Show `python3 scripts/demo.py --output demo-output` completing successfully in a disposable directory.
+2. Open `demo-output/route-offline.html` and switch from Day 1 to Day 2. Show that the place order and times come from the sample data.
+3. Open `demo-output/day-02.svg`; point out the 10:00 gallery target and its `bookable` status, which is not a purchased ticket.
+4. Run `python3 scripts/replan_day.py assets/trip.example.json --date 2030-05-02 --delay-minutes 45 --rain`. Show that the garden break is removed, while the gallery stays on the same date and a late-arrival warning remains.
+5. End with the repository URL and a caption that the Lisbon → Cascais itinerary is fictional. Verify the recording's readable text, duration, audio permissions, and absence of private data before publishing it.
+
+No screen recording has been produced or published by this document.
+
+## Maintainer self-check (not human usability testing)
+
+On 2026-10-14, a fresh shallow clone of the public `main` branch ran `python3 scripts/demo.py --output <temporary directory>` and all 10 unit tests successfully on macOS. The resulting Day 2 card and Markdown existed. This establishes that the released one-command sample is independently reproducible from a clone; it does not establish that an unfamiliar traveler can install or use the Skill without help. Use [the five-minute test](try-it.md) with a real participant to learn that.
