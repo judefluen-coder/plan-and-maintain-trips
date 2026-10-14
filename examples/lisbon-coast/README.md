@@ -9,6 +9,12 @@ The [guide](guide.md) shows how the booking checklist, five-day itinerary, food 
 Regenerate locally from the repository root:
 
 ```bash
+python3 scripts/demo.py
+```
+
+This creates a fresh temporary output directory without touching the checked-in example. It also generates a delay/rain proposal and a nearby-food shortlist. For each generator separately:
+
+```bash
 python3 scripts/validate_trip.py assets/trip.example.json --strict
 python3 scripts/render_route_map.py assets/trip.example.json examples/lisbon-coast/route.svg --from-trip
 python3 scripts/export_field_pack.py assets/trip.example.json examples/lisbon-coast/

@@ -33,3 +33,8 @@ jobs:
           cmp examples/lisbon-coast/route.svg "$RUNNER_TEMP/trip-output/route.svg"
           cmp examples/lisbon-coast/route-offline.html "$RUNNER_TEMP/trip-output/route-offline.html"
           cmp examples/lisbon-coast/trip.kml "$RUNNER_TEMP/trip-output/trip.kml"
+      - name: Smoke-test the new-user demo
+        run: |
+          python scripts/demo.py --output "$RUNNER_TEMP/trip-demo"
+          test -s "$RUNNER_TEMP/trip-demo/route-offline.html"
+          test -s "$RUNNER_TEMP/trip-demo/replan-proposal.json"

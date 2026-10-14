@@ -19,6 +19,7 @@
   <img alt="Any destination" src="https://img.shields.io/badge/Destination-Anywhere-16856B?style=flat-square">
   <img alt="Visual field cards" src="https://img.shields.io/badge/Output-Visual%20field%20cards-D88700?style=flat-square">
   <img alt="Multi-document publishing" src="https://img.shields.io/badge/Publish-Multi--document-7354A5?style=flat-square">
+  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-4C657A?style=flat-square"></a>
 </p>
 
 > This is not another attraction list. Every schedule, reservation, restaurant, route map, and day-of field card is derived from one canonical trip state. Change one decision, and every affected deliverable stays in sync.
@@ -74,7 +75,7 @@ Supported outputs:
 
 ## Open a complete example
 
-The [France arts and culture case study](examples/france-2026/README.md) shows two high-resolution maps, a booking checklist, day-by-day routes, transport, food, and hotel-selection logic for Paris and the French Riviera. It is a redacted **2026 historical case**, not current ticketing advice; the detailed guide is in Chinese. For an interactive offline page and machine-exported files, see the fictional [Lisbon → Cascais output package](examples/lisbon-coast/README.md) or [live route page](https://judefluen-coder.github.io/plan-and-maintain-trips/).
+The [France arts and culture case study](examples/france-2026/README.md) shows two high-resolution maps, a booking checklist, day-by-day routes, transport, food, and hotel-selection logic for Paris and the French Riviera. It is a redacted **2026 historical case**, not current ticketing advice or a dataset that can be regenerated from the repository's example `trip.json`; the detailed guide is in Chinese. To reproduce the machine-generated artifacts yourself, use the one-command fictional [Lisbon → Cascais example](examples/lisbon-coast/README.md) below, or first view its [live route page](https://judefluen-coder.github.io/plan-and-maintain-trips/).
 
 See the [changelog](CHANGELOG.md) for version history.
 
@@ -128,7 +129,17 @@ flowchart LR
 
 ## Start in 30 seconds
 
-Install the Skill in your Codex skills directory, then start a new task or reload skills:
+The public repository needs no GitHub sign-in. Install with Git and Python 3.11+, then run the fully offline demo:
+
+```bash
+git clone https://github.com/judefluen-coder/plan-and-maintain-trips.git "$HOME/.codex/skills/plan-and-maintain-trips"
+cd "$HOME/.codex/skills/plan-and-maintain-trips"
+python3 scripts/demo.py
+```
+
+The command validates [one fictional trip state](assets/trip.example.json), generates a route SVG, offline route page, KML, ICS, delay-and-rain replan proposal, and nearby food shortlist in a temporary directory, then prints the file paths. It does not use the network, buy or reserve anything, or generate live research, a full written guide, or a Feishu document. Those require running the Skill in Codex and checking destination-specific sources.
+
+Start a new Codex task or reload skills, then try:
 
 ```text
 Use $plan-and-maintain-trips to plan a trip to Japan from October 1 to October 10.
@@ -143,13 +154,6 @@ It also maintains an existing plan through changes:
 Use $plan-and-maintain-trips to update the current itinerary. Keep the Kyoto hotel unchanged,
 and do not move the booked Shinkansen. Move Nara one day later, then synchronize the restaurants,
 booking checklist, route atlas, and daily field cards.
-```
-
-Install on another machine that is already signed in to GitHub:
-
-```bash
-gh repo clone judefluen-coder/plan-and-maintain-trips \
-  ~/.codex/skills/plan-and-maintain-trips
 ```
 
 <details>
@@ -210,11 +214,13 @@ PASS: 5 days, 2 segments, 2 anchors, 2 bookings; 0 errors, 0 warnings
 ```text
 plan-and-maintain-trips/
 ├── README.md / README.en.md
+├── LICENSE
 ├── CHANGELOG.md
 ├── SKILL.md
 ├── .github/workflows/        # CI and example preview deployment
 ├── agents/openai.yaml
 ├── examples/lisbon-coast/    # browser-openable complete output example
+├── examples/france-2026/     # redacted historical case; not a runnable dataset
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
@@ -234,6 +240,7 @@ plan-and-maintain-trips/
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py
+    ├── demo.py
     └── check_links.py
 └── tests/                    # behavioral tests
 ```

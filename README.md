@@ -19,6 +19,7 @@
   <img alt="目的地覆盖全球" src="https://img.shields.io/badge/%E7%9B%AE%E7%9A%84%E5%9C%B0-%E5%85%A8%E7%90%83-16856B?style=flat-square">
   <img alt="输出每日攻略图" src="https://img.shields.io/badge/%E8%BE%93%E5%87%BA-%E6%AF%8F%E6%97%A5%E6%94%BB%E7%95%A5%E5%9B%BE-D88700?style=flat-square">
   <img alt="支持多文档发布" src="https://img.shields.io/badge/%E5%8F%91%E5%B8%83-%E5%A4%9A%E6%96%87%E6%A1%A3-7354A5?style=flat-square">
+  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-4C657A?style=flat-square"></a>
 </p>
 
 > 不是再生成一份“景点清单”。所有日程、预约、餐厅、路线图和当天执行卡，都由同一份行程状态派生；改动一个决定，其余产物会跟着同步。
@@ -74,7 +75,7 @@
 
 ## 打开完整示例
 
-[法国艺术人文路线完整案例](examples/france-2026/README.md)展示了巴黎＋蔚蓝海岸的两张高清图、订票清单、逐日路线、交通、餐厅与酒店选址；这是已过去的 2026 年脱敏历史案例，不能直接照搬票务或班次。想看可交互的离线页面与机器可导出文件，再打开 [Lisbon → Cascais 示例输出包](examples/lisbon-coast/README.md)或[在线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；后者使用虚构数据。
+[法国艺术人文路线完整案例](examples/france-2026/README.md)展示了巴黎＋蔚蓝海岸的两张高清图、订票清单、逐日路线、交通、餐厅与酒店选址；这是已过去的 2026 年脱敏历史案例，**不是**可从仓库里的示例 `trip.json` 重跑的自动化演示，不能直接照搬票务或班次。要亲手重生成可交互页面和导出文件，请用下方的一键演示；它使用[虚构的 Lisbon → Cascais 数据](examples/lisbon-coast/README.md)，也有[在线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)可先预览。
 
 版本变化见 [Changelog](CHANGELOG.md)。
 
@@ -128,7 +129,17 @@ flowchart LR
 
 ## 30 秒开始使用
 
-安装到 Codex Skill 目录后，新建任务或重新加载 Skill：
+公开仓库无需 GitHub 登录。用 Git 和 Python 3.11+ 安装，然后运行完全离线的示例：
+
+```bash
+git clone https://github.com/judefluen-coder/plan-and-maintain-trips.git "$HOME/.codex/skills/plan-and-maintain-trips"
+cd "$HOME/.codex/skills/plan-and-maintain-trips"
+python3 scripts/demo.py
+```
+
+命令会校验[同一份虚构行程数据](assets/trip.example.json)，在临时目录生成路线图 SVG、可离线打开的路线页、KML、ICS、延误＋雨天重排建议和沿线餐厅候选，并打印实际文件路径；不联网、不购买或预约。它**不自动生成**真实世界资料核验、完整文字攻略或飞书文档；这些需要在 Codex 中使用 Skill，并按目的地核实来源。
+
+新建 Codex 任务或重新加载 Skill 后，可以这样开始：
 
 ```text
 使用 $plan-and-maintain-trips，帮我规划 10 月 1 日到 10 月 10 日的日本旅行。
@@ -141,13 +152,6 @@ flowchart LR
 ```text
 使用 $plan-and-maintain-trips 更新现有行程：京都酒店不变，已订的新干线不能移动；
 把奈良往后挪一天，并同步修改餐厅、预约 Checklist、路线图和每日执行卡。
-```
-
-在另一台已登录 GitHub 的机器安装：
-
-```bash
-gh repo clone judefluen-coder/plan-and-maintain-trips \
-  ~/.codex/skills/plan-and-maintain-trips
 ```
 
 <details>
@@ -208,11 +212,13 @@ PASS: 5 days, 2 segments, 2 anchors, 2 bookings; 0 errors, 0 warnings
 ```text
 plan-and-maintain-trips/
 ├── README.md / README.en.md
+├── LICENSE
 ├── CHANGELOG.md
 ├── SKILL.md
 ├── .github/workflows/        # CI 与示例预览发布
 ├── agents/openai.yaml
 ├── examples/lisbon-coast/    # 可打开的完整示例输出
+├── examples/france-2026/     # 脱敏历史案例；非可重跑数据集
 ├── assets/
 │   ├── trip.example.json
 │   ├── route.example.json
@@ -232,6 +238,7 @@ plan-and-maintain-trips/
     ├── export_field_pack.py
     ├── replan_day.py
     ├── suggest_food.py
+    ├── demo.py
     └── check_links.py
 └── tests/                    # 行为测试
 ```
