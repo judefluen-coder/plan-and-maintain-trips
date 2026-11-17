@@ -1,10 +1,10 @@
 <p align="center">
   <a href="assets/readme-hero.svg">
-    <img src="assets/readme-hero.png" alt="旅行总策划——从零散想法到可执行旅程" width="100%">
+    <img src="assets/readme-hero.png" alt="远行策划——从零散想法到可执行旅程" width="100%">
   </a>
 </p>
 
-<h1 align="center">Plan & Maintain Trips</h1>
+<h1 align="center">远行策划 · Plan & Maintain Trips</h1>
 
 <p align="center">
   <strong>简体中文</strong> · <a href="./README.en.md">English</a>
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img alt="Codex 旅行总策划 Skill" src="https://img.shields.io/badge/Codex-%E6%97%85%E8%A1%8C%E6%80%BB%E7%AD%96%E5%88%92-163A63?style=flat-square">
+  <img alt="Codex 远行策划 Skill" src="https://img.shields.io/badge/Codex-%E8%BF%9C%E8%A1%8C%E7%AD%96%E5%88%92-163A63?style=flat-square">
   <img alt="目的地覆盖全球" src="https://img.shields.io/badge/%E7%9B%AE%E7%9A%84%E5%9C%B0-%E5%85%A8%E7%90%83-16856B?style=flat-square">
   <img alt="输出每日攻略图" src="https://img.shields.io/badge/%E8%BE%93%E5%87%BA-%E6%AF%8F%E6%97%A5%E6%94%BB%E7%95%A5%E5%9B%BE-D88700?style=flat-square">
   <img alt="支持多文档发布" src="https://img.shields.io/badge/%E5%8F%91%E5%B8%83-%E5%A4%9A%E6%96%87%E6%A1%A3-7354A5?style=flat-square">
@@ -126,7 +126,7 @@
 | 持续调整 | 每次改日期、酒店或景点时，检查受影响的预约、路线、餐厅与地图 | 变更记录 + 同步更新后的全套产物 |
 | 最终交付 | 审计日期、晚数、硬锚点、链接、预算和版本一致性，再按需发布 | Markdown / 飞书 / Notion / Google Docs / DOCX / PDF |
 
-## 为什么选 Plan & Maintain Trips
+## 为什么选远行策划
 
 旅行计划最难的不是列出景点，而是订票、路线和临时变动之后，整份攻略仍然能用。这个 Skill 着重解决以下问题：
 

@@ -3,7 +3,7 @@ name: plan-and-maintain-trips
 description: Plan, research, revise, audit, and publish executable trips for any destination. Use when Codex needs to design a single-city or multi-city itinerary, compare lodging or transport, manage fixed bookings and changing constraints, distinguish booking availability from unreleased inventory, create route maps and day-of field cards, recheck volatile travel facts, or publish a final travel guide to an available document platform.
 ---
 
-# Plan and Maintain Trips
+# 远行策划 · Plan and Maintain Trips
 
 Treat a trip as a maintained project, not a one-shot list of attractions. Keep one canonical state, preserve user decisions, verify volatile facts from current sources, and derive every itinerary, checklist, map, and published document from that state.
 

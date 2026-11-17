@@ -6,6 +6,8 @@
 
 <h1 align="center">Plan & Maintain Trips</h1>
 
+<p align="center">远行策划</p>
+
 <p align="center">
   <a href="./README.md">简体中文</a> · <strong>English</strong>
 </p>
