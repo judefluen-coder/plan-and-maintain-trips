@@ -48,7 +48,7 @@ The full guide is for planning. On the road, you need one card that answers what
   </a>
 </p>
 
-The image above is a layout concept. [Open the Day 02 card actually generated from the example `trip.json`](examples/lisbon-coast/day-02.svg) and its [searchable text equivalent](examples/lisbon-coast/field-cards.md) to see what the data really supports.
+The image above is a layout concept. [Open the Day 02 PNG actually generated from the example `trip.json`](examples/lisbon-coast/day-02.png), its [lossless SVG](examples/lisbon-coast/day-02.svg), and its [searchable text equivalent](examples/lisbon-coast/field-cards.md) to see what the data really supports. The generated card uses a phone-friendly travel-journal layout.
 
 Each field card can:
 
@@ -75,9 +75,34 @@ Supported outputs:
 - **DOCX / PDF:** create an editable or print-ready archive when document tools are available;
 - **No platform connected:** still deliver the complete core guide without blocking on a CLI, account, or connector.
 
-## Open a complete example
+## Explore the live trip workbench
 
-The [France arts and culture case study](examples/france-2026/README.md) shows two high-resolution maps, a booking checklist, day-by-day routes, transport, food, and hotel-selection logic for Paris and the French Riviera. It is a redacted **2026 historical case**, not current ticketing advice or a dataset that can be regenerated from the repository's example `trip.json`; the detailed guide is in Chinese. To reproduce the machine-generated artifacts yourself, use the one-command fictional [Lisbon → Cascais example](examples/lisbon-coast/README.md) below, or first view its [live route page](https://judefluen-coder.github.io/plan-and-maintain-trips/).
+[Open the workbench online](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/) without installing anything. It opens a redacted [five-day Paris historical case](examples/france-2026/README.md): select a day on the overview map, then explore its landmark map, timeline, and linked field-guide board. The board makes ticket checks, transport, food, protected appointments, and weather tradeoffs visible. Day 2 includes a **browser-only simulated** revision proposal.
+
+<p align="center">
+  <a href="assets/workbench-overview.jpg"><img src="assets/workbench-overview.jpg" alt="Actual workbench screenshot: five-day Paris overview map and day selection" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="assets/workbench-day-map.jpg"><img src="assets/workbench-day-map.jpg" alt="Actual workbench screenshot: Day 4 landmark map linked to its timeline" width="49%"></a>
+  <a href="assets/workbench-day-board.jpg"><img src="assets/workbench-day-board.jpg" alt="Actual workbench screenshot: Day 4 route, tickets, transport, food, and contingency board" width="49%"></a>
+</p>
+
+<p align="center"><sub>These are screenshots of the working interface, which is currently in Chinese. The Paris itinerary is an archived 2026 case: markers are not entrance-level navigation, and ticket labels are not current availability.</sub></p>
+
+### From the demo to your own trip
+
+1. **Explore first:** open the [Paris workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/), choose a Day tab or map badge, and inspect the field-guide board. The earlier [fictional Lisbon demo](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon) remains available.
+2. **Create your trip:** install the Skill and tell Codex your dates, destinations, preferences, and existing bookings. Have it create your own `trip.json` **outside the Skill directory**. The static website does not yet generate a whole trip from scratch with hosted AI.
+3. **Connect the visual workbench:** make sure the Codex CLI is installed and signed in, then run the command below locally. The bridge prints and opens an online workbench link with a temporary pairing secret; click “未连接 Codex” (“Not connected to Codex”) on the page to connect. Do not share the pairing link. If your browser asks to connect to a local service, approve only the page you trust.
+
+   ```bash
+   python3 bridge/server.py --trip /absolute/path/to/your/trip.json
+   ```
+
+4. **Review before applying:** select one day and describe a change in natural language. Inspect the map, timeline, warnings, and diff; only your confirmation writes back to `trip.json`, with a `.bak` backup. The current bridge revises one day at a time. Model requests use your locally signed-in Codex CLI and your own quota; GitHub Pages supplies neither model compute nor trip storage. See the [workbench setup and safety guide](web/README.md).
+
+For a complete human-readable guide, see the [Paris + French Riviera case](examples/france-2026/README.md), with maps, ticket checklist, transport, food, and hotel-selection logic. For reproducible offline exports, use the fictional [Lisbon → Cascais dataset](examples/lisbon-coast/README.md) and its [live offline-route preview](https://judefluen-coder.github.io/plan-and-maintain-trips/). These examples serve different purposes.
 
 See the [changelog](CHANGELOG.md) for version history.
 
@@ -236,7 +261,10 @@ plan-and-maintain-trips/
 │   ├── restaurants.example.json
 │   ├── guide-template.md
 │   ├── readme-*.{png,svg}       # Chinese visuals
-│   └── readme-*.en.{png,svg}    # English visuals
+│   ├── readme-*.en.{png,svg}    # English visuals
+│   └── workbench-*.jpg         # screenshots of the live workbench
+├── web/                         # GitHub Pages interactive workbench
+├── bridge/                      # optional local Codex bridge
 ├── references/
 │   ├── state-model.md
 │   ├── research-and-evidence.md

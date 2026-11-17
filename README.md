@@ -48,7 +48,7 @@
   </a>
 </p>
 
-上图是排版示意；[查看从示例 `trip.json` 实际生成的 Day 02 卡片](examples/lisbon-coast/day-02.svg)和[对应文字版](examples/lisbon-coast/field-cards.md)，可以核对哪些信息确实来自数据。
+上图是排版示意；[查看从示例 `trip.json` 实际生成的 Day 02 卡片（PNG）](examples/lisbon-coast/day-02.png)、[无损 SVG](examples/lisbon-coast/day-02.svg)和[对应文字版](examples/lisbon-coast/field-cards.md)，可以核对哪些信息确实来自数据。真实执行卡采用更适合手机阅读的旅行手册式排版；示例数据为英文虚构行程。
 
 这样的执行卡可以：
 
@@ -75,9 +75,34 @@
 - **DOCX / PDF：** 文档工具可用时生成可编辑版或打印归档版；
 - **平台不可用时：** 核心攻略仍然完整交付，不会因为没有 CLI、账号或连接器而停住。
 
-## 打开完整示例
+## 看看真正能操作的工作台
 
-[法国艺术人文路线完整案例](examples/france-2026/README.md)展示了巴黎＋蔚蓝海岸的两张高清图、订票清单、逐日路线、交通、餐厅与酒店选址；这是已过去的 2026 年脱敏历史案例，**不是**可从仓库里的示例 `trip.json` 重跑的自动化演示，不能直接照搬票务或班次。要亲手重生成可交互页面和导出文件，请用下方的一键演示；它使用[虚构的 Lisbon → Cascais 数据](examples/lisbon-coast/README.md)，也有[在线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)可先预览。
+[在线打开旅行工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)无需安装即可体验。默认展示[巴黎五日历史案例](examples/france-2026/README.md)：先在总图上选 Day，再进入当天地图、时间轴和下方的执行看板；看板展示订票节点、交通、餐食、必须保护的时段与雨天取舍。点击 Day 2 的「调整这一天」还可体验**只在浏览器内生效**的模拟提案。
+
+<p align="center">
+  <a href="assets/workbench-overview.jpg"><img src="assets/workbench-overview.jpg" alt="真实工作台截图：巴黎五日总览地图与逐日入口" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="assets/workbench-day-map.jpg"><img src="assets/workbench-day-map.jpg" alt="真实工作台截图：Day 4 景点图标与时间轴联动" width="49%"></a>
+  <a href="assets/workbench-day-board.jpg"><img src="assets/workbench-day-board.jpg" alt="真实工作台截图：Day 4 路线、票券、交通餐食与应变看板" width="49%"></a>
+</p>
+
+<p align="center"><sub>以上是实际页面截图，不是概念稿。巴黎内容来自已过去的 2026 年脱敏攻略；地图点不是入口导航，票务状态不代表今天可订。</sub></p>
+
+### 从示例走到自己的旅程
+
+1. **先体验：**打开[巴黎工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)，点击 Day 标签或地图圆章，下钻后在「执行看板」查看完整信息。旧的[里斯本虚构示例](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon)仍可切换。
+2. **创建自己的计划：**安装 Skill 后，在 Codex 对话中描述日期、目的地、偏好和已有预约，让它在 Skill 目录**之外**生成自己的 `trip.json`。网页目前不提供从零生成整段旅程的托管式 AI。
+3. **连接可视化工作台：**确认本机已安装并登录 Codex CLI，再运行下方命令。桥接会打印并打开带临时配对凭据的线上工作台链接；在页面点「未连接 Codex」完成连接。不要分享配对链接。浏览器若询问是否允许连接本机服务，只对你信任的页面授权。
+
+   ```bash
+   python3 bridge/server.py --trip /你的绝对路径/trip.json
+   ```
+
+4. **检查后再修改：**选一天，用自然语言提出调整；先看地图、时间轴和差异预览，确认后才写回本地 `trip.json`，并留 `.bak` 备份。目前一次只调整一天。模型请求使用你本机已登录的 Codex CLI 和自己的配额；GitHub Pages 不提供模型算力，也不保存你的行程。详见[工作台使用与安全说明](web/README.md)。
+
+想研究完整旅行攻略而非网页演示，可阅读[巴黎＋蔚蓝海岸案例](examples/france-2026/README.md)，其中有高清路线图、订票清单、交通、餐厅与酒店选址。想离线重跑脚本与导出文件，则用[虚构的 Lisbon → Cascais 数据](examples/lisbon-coast/README.md)和[在线离线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；两种案例用途不同。
 
 版本变化见 [Changelog](CHANGELOG.md)。
 
@@ -234,7 +259,10 @@ plan-and-maintain-trips/
 │   ├── restaurants.example.json
 │   ├── guide-template.md
 │   ├── readme-*.{png,svg}       # 中文视觉稿
-│   └── readme-*.en.{png,svg}    # English visuals
+│   ├── readme-*.en.{png,svg}    # English visuals
+│   └── workbench-*.jpg         # 真实工作台截图
+├── web/                         # GitHub Pages 交互工作台
+├── bridge/                      # 可选本机 Codex 桥接
 ├── references/
 │   ├── state-model.md
 │   ├── research-and-evidence.md

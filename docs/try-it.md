@@ -2,8 +2,8 @@
 
 This is a self-serve test for someone who did not build the project. It uses fictional data, needs no Feishu account, and does not make purchases or contact venues.
 
-1. On a machine with Git, Python 3.11+, and Codex, follow the [README installation steps](../README.en.md#start-in-30-seconds).
-2. Run `python3 scripts/demo.py`. Open the printed `route-offline.html` and `day-02.svg`. Find the May 2 gallery status and the first item to cut in rain.
+1. Open the [online workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/) without installing anything. On the Paris historical replay, select Day 4 and find the linked map, timeline, and field-guide board. Confirm that its ticket cards say historical recheck, not booked or currently available.
+2. On a machine with Git, Python 3.11+, and Codex, follow the [README installation steps](../README.en.md#start-in-30-seconds). Run `python3 scripts/demo.py`, then open the printed `route-offline.html` and `day-02.svg`. Find the fictional May 2 gallery status and the first item to cut in rain.
 3. Start a fresh Codex task with this prompt (do not edit files inside the installed Skill):
 
    > Use `$plan-and-maintain-trips` with the fictional sample `assets/trip.example.json`. It is May 2 and I am 45 minutes late; rain has started. Keep the 10:00 gallery target on its original date and do not claim its `bookable` state means I have a ticket. Tell me what to cut first, what needs confirmation, and what changes in the day card. Work in a separate temporary trip directory.

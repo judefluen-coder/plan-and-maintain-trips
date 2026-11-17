@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "trip": {
+    "id": "paris-2026-route-replay",
+    "demo": true,
+    "demo_kind": "historical",
+    "title": "巴黎艺术人文 · 五日路线回放",
+    "start_date": "2026-09-25",
+    "end_date": "2026-09-29",
+    "travelers": 2,
+    "home_currency": "EUR",
+    "timezone": "Europe/Paris",
+    "scope_note": "从2026年9月24日至30日巴黎段摘取五个观光日；抵达与离开日未列入本地图。历史计划不代表已出票或现在仍可预约。"
+  },
+  "preferences": {
+    "pace": "medium",
+    "interests": ["艺术", "建筑", "存在主义", "城市步行"],
+    "mobility": "跨区优先地铁或RER；遇临时管制先复核"
+  },
+  "segments": [],
+  "transports": [],
+  "anchors": [
+    {"id": "orsay-slot", "name": "奥赛13:00", "date": "2026-09-26", "time": "13:00", "rigidity": "hard", "booking_id": "orsay-ticket"},
+    {"id": "louvre-date", "name": "卢浮宫日期不动", "date": "2026-09-27", "rigidity": "hard", "booking_id": "louvre-ticket"},
+    {"id": "versailles-slot", "name": "凡尔赛主宫12:00", "date": "2026-09-29", "time": "12:00", "rigidity": "hard", "booking_id": "versailles-ticket"}
+  ],
+  "bookings": [
+    {"id": "orsay-ticket", "item": "奥赛博物馆", "status": "needs_recheck", "intended_date": "2026-09-26", "intended_time": "13:00", "travelers": 2, "source_url": "https://www.musee-orsay.fr/en/visit", "checked_at": "2026-09-23T00:00:00+02:00", "checked_at_precision": "date_only", "note": "仅知历史攻略核验日期，无具体时刻；未公开真实出票凭证"},
+    {"id": "louvre-ticket", "item": "卢浮宫", "status": "needs_recheck", "intended_date": "2026-09-27", "travelers": 2, "source_url": "https://ticket.louvre.fr/en/billetterie/4505", "checked_at": "2026-09-23T00:00:00+02:00", "checked_at_precision": "date_only", "note": "日期为当时固定决定，入馆时间以未公开票面为准"},
+    {"id": "cruise-ticket", "item": "塞纳河游船", "status": "needs_recheck", "intended_date": "2026-09-27", "travelers": 2, "source_url": "https://www.bateaux-mouches.fr/en/cruise/information", "checked_at": "2026-09-23T00:00:00+02:00", "checked_at_precision": "date_only", "note": "当时计划20:00到码头，未公开真实班次与订单"},
+    {"id": "chapelle-ticket", "item": "圣礼拜堂", "status": "needs_recheck", "intended_date": "2026-09-28", "intended_time": "14:15", "travelers": 2, "source_url": "https://tickets.monuments-nationaux.fr/en-GB/families?site=2035141861660400306", "checked_at": "2026-09-23T00:00:00+02:00", "checked_at_precision": "date_only", "note": "有合适时段才去，未公开真实出票凭证"},
+    {"id": "versailles-ticket", "item": "凡尔赛宫", "status": "needs_recheck", "intended_date": "2026-09-29", "intended_time": "12:00", "travelers": 2, "source_url": "https://ticket.chateauversailles.fr/en", "checked_at": "2026-09-23T00:00:00+02:00", "checked_at_precision": "date_only", "note": "历史计划时段；未公开真实出票凭证"}
+  ],
+  "planning_checklist": [
+    {"name": "巴黎博物馆通票 6 日", "date": "2026-09-25", "action": "当时计划 9/25 在凯旋门首次使用；购通票不等于取得各馆预约时段。", "url": "https://www.parismuseumpass.fr/en/pass"},
+    {"name": "奥赛博物馆", "date": "2026-09-26", "action": "历史计划为 9/26 13:00；核对真实票面时间和入口。", "url": "https://www.musee-orsay.fr/en/visit"},
+    {"name": "卢浮宫", "date": "2026-09-27", "action": "9/27 日期固定，实际入场按真实票面；不能从攻略推断已出票。", "url": "https://ticket.louvre.fr/en/billetterie/4505"},
+    {"name": "塞纳河游船", "date": "2026-09-27", "action": "9/27 晚计划20:00到码头；复核班次、天气和登船口。", "url": "https://www.bateaux-mouches.fr/en/cruise/information"},
+    {"name": "圣礼拜堂", "date": "2026-09-28", "action": "9/28 约14:15；有合适官方时段才去，没有就删。", "url": "https://tickets.monuments-nationaux.fr/en-GB/families?site=2035141861660400306"},
+    {"name": "巴黎圣母院", "date": "2026-09-28", "action": "9/28 条件访问；以当时实际免费预约时段为准，没有则只看外观。", "url": "https://resa.notredamedeparis.fr/en/reservationindividuelle/tickets"},
+    {"name": "凡尔赛主宫", "date": "2026-09-29", "action": "9/29 12:00 是历史计划时段；另核对音乐花园票。", "url": "https://ticket.chateauversailles.fr/en"},
+    {"name": "交通与临时管制", "when": "每日复核", "action": "9/25—26 巴黎管制与 9/29 RER C 均须在出行前复核。", "url": "https://www.iledefrance-mobilites.fr/en/"}
+  ],
+  "days": [
+    {
+      "date": "2026-09-25", "base": "巴黎", "title": "凯旋门与蒙马特", "primary_outcome": "绕开当时管制区，上午凯旋门，下午蒙马特", "pace": "medium", "anchor_ids": [],
+      "items": [
+        {"id": "arc", "name": "凯旋门", "start": "10:00", "end": "11:15", "lat": 48.873797, "lon": 2.295019, "icon": "arc", "note": "PMP首次使用；当时计划11:20前离开星形广场"},
+        {"id": "metro-m2", "name": "地铁2号线前往 Blanche / Pigalle", "time_text": "11:20前", "mode_from_previous": "metro", "note": "历史封控背景；实时运营请重新查"},
+        {"id": "montmartre-lunch", "name": "蒙马特午餐", "start": "12:00", "end": "13:15", "meal": "lunch", "note": "未指定餐厅，不在地图上画点"},
+        {"id": "sacre-coeur", "name": "圣心堂", "start": "13:30", "end": "14:15", "lat": 48.886800, "lon": 2.343030, "icon": "sacrecoeur"},
+        {"id": "tertre", "name": "小丘广场与蒙马特慢走", "start": "14:15", "end": "15:45", "lat": 48.886540, "lon": 2.340790, "icon": "walk", "rigidity": "optional"}
+      ],
+      "first_cut": "小丘广场与蒙马特慢走", "weather_fallback": "凯旋门入口若受影响，只看外观并提前离开；下雨缩短蒙马特慢走",
+      "guide": {
+        "before": "09:40到凯旋门地下通道/安检口；早晨复核当时的封控和地铁运营。PMP凭证、酒店地址与离线地图存两部手机。",
+        "transport": "11:20前离开星形广场，搭地铁2号线到 Blanche / Pigalle；不沿香榭丽舍散步，也不进入当时的拉丁区、西岱岛等管制核心。",
+        "food": "12:00—13:15在 Pigalle 一带午餐；16:15左右回酒店，18:30在酒店附近晚餐。两餐都不设跨城折返。",
+        "decision": "若凯旋门入口临时改变，只看外观和无名烈士墓后离开。先删蒙马特小巷延伸，晚上不设硬预约。",
+        "links": [{"label": "巴黎市封控总览（历史来源）", "url": "https://www.paris.fr/pages/les-perturbations-a-paris-31469"}, {"label": "八区封站/封路（历史来源）", "url": "https://mairie08.paris.fr/pages/visite-du-pape-a-paris-toutes-les-informations-pratiques-dans-le-8e-arrondissement-36207"}, {"label": "巴黎博物馆通票", "url": "https://www.parismuseumpass.fr/en/pass"}]
+      }
+    },
+    {
+      "date": "2026-09-26", "base": "巴黎", "title": "左岸艺术与铁塔夜景", "primary_outcome": "保护13:00奥赛时段，三馆之间步行，晚上看铁塔", "pace": "high", "anchor_ids": ["orsay-slot"],
+      "items": [
+        {"id": "rodin", "name": "罗丹美术馆", "start": "10:00", "end": "10:55", "lat": 48.855865, "lon": 2.315985, "icon": "museum"},
+        {"id": "invalides", "name": "荣军院穹顶与拿破仑墓", "start": "11:05", "end": "11:45", "lat": 48.855020, "lon": 2.312510, "icon": "invalides"},
+        {"id": "takeaway-lunch", "name": "外带午餐与步行去奥赛", "start": "11:45", "end": "12:40", "meal": "lunch", "note": "12:40到场安检"},
+        {"id": "orsay", "name": "奥赛博物馆", "start": "13:00", "end": "16:00", "lat": 48.860000, "lon": 2.326600, "icon": "orsay", "anchor_id": "orsay-slot", "booking_id": "orsay-ticket", "rigidity": "hard"},
+        {"id": "hotel-rest", "name": "回酒店休息与晚餐", "start": "16:15", "end": "20:00", "note": "酒店未公开，不在地图画点"},
+        {"id": "trocadero", "name": "特罗卡德罗看铁塔闪灯", "time_text": "21:00左右", "lat": 48.862000, "lon": 2.288730, "icon": "eiffel", "rigidity": "optional"}
+      ],
+      "first_cut": "罗丹花园延伸与铁塔夜间停留", "weather_fallback": "奥赛不动；下雨或疲劳时取消铁塔夜景",
+      "guide": {
+        "before": "12:40到奥赛安检，保护13:00时段；前夜核对票面入口。当天七区临时管制属于历史情境，需复核官方公告。",
+        "transport": "罗丹—荣军院—奥赛三馆之间步行，不依赖七区机动车；回酒店可从 Solférino 乘地铁12号线，20:00后再去 Trocadéro。",
+        "food": "11:45外带午餐；16:15起回酒店休息，18:30在酒店附近晚餐。夜景只看一轮闪灯即可。",
+        "decision": "迟到先缩短罗丹与荣军院，不压缩奥赛到场缓冲；下雨或疲劳直接取消铁塔夜景。",
+        "links": [{"label": "奥赛参观信息", "url": "https://www.musee-orsay.fr/en/visit"}, {"label": "巴黎市封控总览（历史来源）", "url": "https://www.paris.fr/pages/les-perturbations-a-paris-31469"}]
+      }
+    },
+    {
+      "date": "2026-09-27", "base": "巴黎", "title": "卢浮宫与塞纳河游船", "primary_outcome": "卢浮宫日期不动，白天留休息，夜晚乘船", "pace": "medium", "anchor_ids": ["louvre-date"],
+      "items": [
+        {"id": "louvre", "name": "卢浮宫", "time_text": "按票面时段", "lat": 48.860600, "lon": 2.337600, "icon": "louvre", "anchor_id": "louvre-date", "booking_id": "louvre-ticket", "rigidity": "hard", "note": "按真实票面提前30分钟到场；约参观2小时45分"},
+        {"id": "quick-lunch", "name": "快速午餐", "time_text": "13:00左右", "meal": "lunch", "note": "未指定餐厅"},
+        {"id": "tuileries", "name": "杜乐丽花园", "time_text": "午餐后", "lat": 48.863700, "lon": 2.327900, "icon": "tuileries", "weather_sensitive": true},
+        {"id": "orangerie", "name": "橘园美术馆（可选）", "time_text": "15:00左右", "lat": 48.863770, "lon": 2.322660, "icon": "museum", "rigidity": "optional", "note": "仅体力足且排队不超过30—45分钟时进入"},
+        {"id": "afternoon-rest", "name": "酒店休息与晚餐", "start": "16:30", "end": "19:45", "note": "晚餐地点以历史攻略为准；不推断酒店位置"},
+        {"id": "cruise-port", "name": "Port de la Conférence 游船码头", "time_text": "20:00到码头", "lat": 48.864020, "lon": 2.306110, "icon": "landmark", "booking_id": "cruise-ticket", "note": "当时计划乘最接近20:30的船；不代表已出票"}
+      ],
+      "first_cut": "橘园美术馆（可选）", "weather_fallback": "卢浮宫不动；排队过长或下雨时跳过橘园，游船须复核天气与班次",
+      "guide": {
+        "before": "按卢浮宫真实票面提前30分钟到场；游船前复核天气、班次和登船码头，不能把地图地标点当作入口。",
+        "transport": "从卢浮宫一侧进入杜乐丽；协和广场如仍有设施或绕行，不穿越广场。晚上预留从晚餐地点到 Port de la Conférence 的交通时间。",
+        "food": "13:00快速午餐，16:30—18:00回酒店休息；当时建议18:15在 Chez Francis 晚餐，20:00到码头。餐厅不代表已订位。",
+        "decision": "橘园仅在体力足且排队不超过30—45分钟时进入；卢浮离馆变晚、排队超过45分钟或疲劳，就直接取消。",
+        "links": [{"label": "卢浮宫官方预约", "url": "https://ticket.louvre.fr/en/billetterie/4505"}, {"label": "游船班次与码头", "url": "https://www.bateaux-mouches.fr/en/cruise/information"}, {"label": "Chez Francis 预约", "url": "https://chezfrancis-paris.com/en/accueil-english/"}]
+      }
+    },
+    {
+      "date": "2026-09-28", "base": "巴黎", "title": "拉丁区、西岱岛与存在主义", "primary_outcome": "左岸连续步行，圣礼拜堂和圣母院按实际可入场情况取舍", "pace": "high", "anchor_ids": [],
+      "items": [
+        {"id": "luxembourg", "name": "卢森堡公园", "time_text": "09:30左右", "lat": 48.846710, "lon": 2.336370, "icon": "garden", "weather_sensitive": true},
+        {"id": "pantheon", "name": "先贤祠", "start": "10:15", "end": "11:30", "lat": 48.846190, "lon": 2.346070, "icon": "museum"},
+        {"id": "bookstore", "name": "莎士比亚书店外观", "start": "11:45", "end": "12:15", "rigidity": "optional", "note": "不凭空标注店铺入口"},
+        {"id": "racine-lunch", "name": "Bouillon Racine 午餐", "start": "12:30", "end": "13:45", "meal": "lunch", "note": "历史计划，不代表餐厅预订"},
+        {"id": "chapelle", "name": "圣礼拜堂（有票才去）", "start": "14:15", "end": "15:15", "lat": 48.855400, "lon": 2.344800, "icon": "chapelle", "booking_id": "chapelle-ticket", "rigidity": "optional"},
+        {"id": "notredame", "name": "巴黎圣母院（按实际预约）", "time_text": "15:30起", "lat": 48.853000, "lon": 2.349900, "icon": "notredame", "note": "未拿到合适时段则只看外观"},
+        {"id": "existentialism", "name": "圣日耳曼存在主义散步", "start": "17:00", "end": "18:30", "lat": 48.854140, "lon": 2.332630, "icon": "food", "note": "经 Hôtel La Louisiane、萨特故居纪念牌、萨特—波伏瓦广场；地图终点为花神咖啡馆"}
+      ],
+      "first_cut": "蒙帕纳斯晨间加项与莎士比亚书店", "weather_fallback": "优先保护已取得的时段；体力不足时先删书店，再把圣礼拜堂与圣母院内部参观二选一",
+      "guide": {
+        "before": "若前夜休息充分，可加08:00—08:50蒙帕纳斯公墓与波伏瓦故居外观；否则09:30从卢森堡公园开始。圣礼拜堂须有合适时段才去。",
+        "transport": "当天以左岸连续步行为主，不跨城折返凯旋门。圣母院后步行约15—20分钟到 Hôtel La Louisiane，再经 42 rue Bonaparte、萨特—波伏瓦广场抵达花神咖啡馆。",
+        "food": "12:30—13:45当时计划 Bouillon Racine 午餐；花神或双叟二选一，建议只喝咖啡或酒，不连续在两家消费。",
+        "decision": "圣母院没有合适时段就现场短队候位或只看外观20分钟；如入场拖延，存在主义线只保留广场与花神。先删蒙帕纳斯晨间加项，再删书店。",
+        "links": [{"label": "圣礼拜堂官方预约", "url": "https://tickets.monuments-nationaux.fr/en-GB/families?site=2035141861660400306"}, {"label": "圣母院免费预约", "url": "https://resa.notredamedeparis.fr/en/reservationindividuelle/tickets"}, {"label": "Bouillon Racine 预约", "url": "https://www.bouillonracine.fr/?lang=en&page_id=2495"}, {"label": "波伏瓦左岸路线", "url": "https://www.paris.fr/pages/sur-les-pas-de-simone-de-beauvoir-ecrivaine-et-feministe-emblematique-de-paris-21516"}]
+      }
+    },
+    {
+      "date": "2026-09-29", "base": "凡尔赛", "title": "凡尔赛主宫与特里亚农", "primary_outcome": "保护12:00主宫时段，花园与特里亚农可按体力缩减", "pace": "high", "anchor_ids": ["versailles-slot"],
+      "items": [
+        {"id": "rer-c", "name": "巴黎出发前往凡尔赛", "time_text": "09:30左右", "mode_from_previous": "rail", "note": "历史计划；当天线路运营需重新核对"},
+        {"id": "palace", "name": "凡尔赛宫主宫", "start": "12:00", "end": "14:15", "lat": 48.804328, "lon": 2.120936, "icon": "versailles", "anchor_id": "versailles-slot", "booking_id": "versailles-ticket", "rigidity": "hard"},
+        {"id": "gardens", "name": "音乐花园", "start": "14:15", "end": "15:00", "weather_sensitive": true, "note": "园区范围大，未把中心点当作入口"},
+        {"id": "flottille", "name": "La Flottille 午餐", "time_text": "15:00左右", "meal": "lunch", "note": "历史建议，不代表已订位"},
+        {"id": "trianon", "name": "大特里亚农", "start": "16:00", "end": "17:45", "lat": 48.814362, "lon": 2.104948, "icon": "versailles", "rigidity": "optional"}
+      ],
+      "first_cut": "大特里亚农", "weather_fallback": "主宫不删；下雨或疲劳时花园压至30分钟，特里亚农取消或只留一处",
+      "guide": {
+        "before": "前夜核对 RER C、天气、PMP Passport入场时段及音乐花园票；09:30从巴黎出发，10:45左右抵达，11:25开始排队。",
+        "transport": "按12:00主宫时段倒推车次；园区很大，主宫、花园、特里亚农之间不能按地图直线距离估算，19:00左右回巴黎。",
+        "food": "10:45抵达后可先轻食；当时计划15:00在 La Flottille 午餐，不代表已订位。",
+        "decision": "主宫不删；雨天或疲劳将花园压到30分钟，特里亚农取消或只留一处。",
+        "links": [{"label": "凡尔赛官方票务", "url": "https://ticket.chateauversailles.fr/en"}, {"label": "Île-de-France Mobilités", "url": "https://www.iledefrance-mobilites.fr/en/"}, {"label": "La Flottille", "url": "https://www.laflottille.fr/"}]
+      }
+    }
+  ],
+  "exclusions": ["芭蕾演出：最终决定不看，故不占用晚间时段"],
+  "decisions": [
+    {"id": "historical-replay", "at": "2026-09-23", "decision": "按已归档攻略回放五个巴黎观光日；卢浮宫9月27日、凡尔赛9月29日、奥赛9月26日13:00不移动", "source": "examples/france-2026/guide.md"}
+  ],
+  "evidence": [
+    {"id": "paris-guide", "claim": "日期、路线和当时风险来自仓库内脱敏历史攻略；非当前实时可订信息", "source_url": "https://github.com/judefluen-coder/plan-and-maintain-trips/blob/main/examples/france-2026/guide.md", "source_type": "project_archive", "checked_at": "2026-11-17T09:16:42Z", "applies_to": "2026-09-25 to 2026-09-29"},
+    {"id": "paris-map", "claim": "地图点为景点或公共空间参考位置，非各入口或码头登船口导航", "source_url": "https://www.openstreetmap.org/", "source_type": "open_map", "checked_at": "2026-11-17T09:16:42Z", "applies_to": "historical replay"}
+  ]
+}

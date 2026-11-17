@@ -22,10 +22,10 @@ Open the [offline route page](route-offline.html), [vector route atlas](route.sv
 | May 1 | Lisbon | 10:00 bag drop → 11:00 riverside walk → 12:15 market lunch | Riverside walk |
 | May 2 | Lisbon | 10:00 gallery slot target → 12:30 garden break → 19:00 neighborhood dinner | Garden break |
 | May 3 | Cascais | 09:00 checkout → 11:00 coast train → 12:15 seafront walk | Seafront walk |
-| May 4 | Cascais | Coastal museum → long lunch → beach or indoor branch | Beach/indoor branch |
-| May 5 | Cascais | Breakfast → short promenade if time permits → onward transfer | Short promenade |
+| May 4 | Cascais | Paula Rego House of Stories → long lunch → Marechal Carmona Park → Santa Marta Lighthouse Museum | Lighthouse museum |
+| May 5 | Cascais | Breakfast → Rainha Beach promenade if time permits → Cascais railway station | Rainha Beach promenade |
 
-The May 4–5 items are intentionally untimed text entries. They appear in the guide and offline page but do not become calendar events or map points; a real plan would add verified times and coordinates before export.
+The May 4–5 items remain intentionally untimed, so they do not become calendar events. Their named stops have published location coordinates and appear on both maps; the hotel-dependent breakfast and unspecific lunch stay unlocated. This is still a fictional 2030 itinerary, not a claim that venues will be open then. Recheck hours, access, transport, and reservations before a real trip.
 
 ## Food, lodging, and budget
 
@@ -40,7 +40,7 @@ The May 4–5 items are intentionally untimed text entries. They appear in the g
 | May 1 | Easy arrival | Hotel bag-drop details | Shorten walk |
 | May 2 | 10:00 gallery slot target | Check whether a real ticket was purchased; venue notice | Skip garden; do not treat a `bookable` example as a confirmed ticket |
 | May 3 | Base transfer | Train service and checkout | Skip seafront walk |
-| May 4 | Easy coastal day | Weather and museum opening | Use the indoor branch |
+| May 4 | Easy coastal day | Weather and both museums' opening | Skip park in rain; cut lighthouse museum if needed |
 | May 5 | Onward transfer | Departure time and luggage | Skip promenade |
 
 ## Audit
@@ -48,4 +48,4 @@ The May 4–5 items are intentionally untimed text entries. They appear in the g
 - Five calendar dates are covered once; segments total four nights.
 - The hard May 2 gallery anchor matches its structured item time.
 - The SVG atlas, offline page, KML, and ICS are generated from `assets/trip.example.json`.
-- The fictional names, example links, unverified hours, hotel, and budget are visible unresolved fields, not real-world claims.
+- The fictional schedule, example links, unverified 2030 opening hours, hotel, and budget are visible unresolved fields, not real-world claims.

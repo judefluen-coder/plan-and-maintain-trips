@@ -1,40 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1600" viewBox="0 0 1080 1600" role="img" aria-label="Day 5 field card">
-<rect width="1080" height="1600" fill="#f7f4ed"/>
-<rect width="1080" height="312" fill="#173253"/>
-<rect x="62" y="54" width="110" height="48" rx="24" fill="#78599e"/>
-<text x="84" y="88" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">DAY 05</text>
-<text x="62" y="157" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="39" font-weight="700">2030-05-05</text>
-<text x="62" y="214" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="40" font-weight="700">Cascais</text>
-<text x="62" y="266" fill="#dbe6ed" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Depart without schedule risk</text>
-<rect x="48" y="355" width="984" height="124" rx="18" fill="#ffffff"/>
-<rect x="48" y="355" width="10" height="124" rx="5" fill="#78599e"/>
-<text x="78" y="396" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">PROTECT THIS</text>
-<text x="78" y="443" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="29" font-weight="700">No fixed booking recorded for this day</text>
-<text x="62" y="523" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">FOLLOW IN ORDER</text>
-<rect x="48" y="561" width="984" height="124" rx="16" fill="#ffffff"/>
-<circle cx="91" cy="608" r="24" fill="#78599e"/>
-<text x="91" y="617" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">1</text>
-<text x="140" y="607" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Breakfast near hotel</text>
-<text x="140" y="649" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Time not specified</text>
-<rect x="48" y="699" width="984" height="124" rx="16" fill="#ffffff"/>
-<circle cx="91" cy="746" r="24" fill="#78599e"/>
-<text x="91" y="755" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">2</text>
-<text x="140" y="745" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Short promenade</text>
-<text x="140" y="787" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Time not specified</text>
-<rect x="48" y="837" width="984" height="124" rx="16" fill="#ffffff"/>
-<circle cx="91" cy="884" r="24" fill="#78599e"/>
-<text x="91" y="893" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">3</text>
-<text x="140" y="883" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">Onward transfer</text>
-<text x="140" y="925" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Time not specified</text>
-<text x="62" y="1007" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">IF PLANS CHANGE</text>
-<rect x="48" y="1033" width="984" height="123" rx="16" fill="#ffffff"/>
-<text x="78" y="1071" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">FIRST CUT</text>
-<text x="78" y="1111" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Short promenade</text>
-<rect x="48" y="1170" width="984" height="123" rx="16" fill="#ffffff"/>
-<text x="78" y="1208" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">RAIN / DISRUPTION</text>
-<text x="78" y="1248" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="400">Check weather and transport before leaving</text>
-<text x="62" y="1355" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="700">BEFORE LEAVING</text>
-<text x="62" y="1397" fill="#173253" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Weather · transit · booking evidence · first navigation</text>
-<text x="62" y="1438" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="400">Hotel address / ticket QR: add only confirmed details</text>
-<text x="62" y="1491" fill="#597088" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400">FICTIONAL DEMO · schematic links are not live travel advice</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1624" viewBox="0 0 1080 1624" role="img" aria-label="Day 5 field card">
+<rect width="1080" height="1624" fill="#faf8f3"/>
+<rect width="1080" height="12" fill="#694888"/>
+<text x="62" y="74" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">TRAVEL FIELD GUIDE</text>
+<text x="62" y="203" fill="#694888" font-family="Georgia, Songti SC, serif" font-size="120" font-weight="400">05</text>
+<text x="1032" y="74" text-anchor="end" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="29" font-weight="700">2030-05-05</text>
+<text x="256" y="157" fill="#183149" font-family="Georgia, Songti SC, serif" font-size="52" font-weight="700">Cascais</text>
+<text x="256" y="227" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="400">Depart without schedule risk</text>
+<line x1="48" y1="284" x2="1032" y2="284" stroke="#d8dedc" stroke-width="2"/>
+<rect x="48" y="312" width="984" height="162" rx="16" fill="#ffffff" stroke="#d8dedc" stroke-width="2"/>
+<rect x="48" y="312" width="9" height="162" rx="4" fill="#694888"/>
+<text x="78" y="352" fill="#694888" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">NO FIXED ANCHOR</text>
+<text x="78" y="398" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="33" font-weight="700">No fixed booking recorded for this day</text>
+<text x="62" y="531" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">FOLLOW IN ORDER</text>
+<line x1="48" y1="553" x2="1032" y2="553" stroke="#d8dedc" stroke-width="2"/>
+<circle cx="264" cy="616" r="21" fill="#694888"/>
+<text x="264" y="624" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">1</text>
+<text x="62" y="617" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">TBC</text>
+<text x="308" y="616" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="33" font-weight="700">Breakfast near hotel</text>
+<text x="308" y="666" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400">Time not specified</text>
+<line x1="48" y1="712" x2="1032" y2="712" stroke="#d8dedc" stroke-width="2"/>
+<circle cx="264" cy="763" r="21" fill="#694888"/>
+<text x="264" y="771" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">2</text>
+<text x="62" y="764" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">TBC</text>
+<text x="308" y="763" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="33" font-weight="700">Rainha Beach promenade</text>
+<text x="308" y="813" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400">Time not specified</text>
+<text x="308" y="842" fill="#694888" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.699149,-9.41812" target="_blank"><rect x="294" y="813" width="210" height="44" fill="transparent"/></a>
+<line x1="48" y1="859" x2="1032" y2="859" stroke="#d8dedc" stroke-width="2"/>
+<circle cx="264" cy="910" r="21" fill="#694888"/>
+<text x="264" y="918" text-anchor="middle" fill="#ffffff" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">3</text>
+<text x="62" y="911" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700">TBC</text>
+<text x="308" y="910" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="33" font-weight="700">Cascais railway station</text>
+<text x="308" y="960" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400">Time not specified</text>
+<text x="308" y="989" fill="#694888" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700">OPEN MAP ↗</text>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=38.70088,-9.41791" target="_blank"><rect x="294" y="960" width="210" height="44" fill="transparent"/></a>
+<line x1="48" y1="1006" x2="1032" y2="1006" stroke="#d8dedc" stroke-width="2"/>
+<text x="62" y="1059" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">IF PLANS CHANGE</text>
+<rect x="48" y="1079" width="984" height="125" rx="16" fill="#f1f0ea"/>
+<text x="78" y="1117" fill="#694888" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700">FIRST CUT</text>
+<text x="78" y="1160" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="600">Rainha Beach promenade</text>
+<rect x="48" y="1216" width="984" height="125" rx="16" fill="#f1f0ea"/>
+<text x="78" y="1254" fill="#694888" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700">RAIN / DISRUPTION</text>
+<text x="78" y="1297" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="600">Check weather and transport before leaving</text>
+<line x1="48" y1="1389" x2="1032" y2="1389" stroke="#d8dedc" stroke-width="2"/>
+<text x="62" y="1437" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">BEFORE LEAVING</text>
+<text x="62" y="1481" fill="#183149" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="400">Weather · transit · booking evidence · first navigation</text>
+<text x="62" y="1522" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="400">Hotel address / ticket QR: add only confirmed details</text>
+<text x="62" y="1579" fill="#536776" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400">FICTIONAL DEMO · schematic links are not live travel advice</text>
 </svg>

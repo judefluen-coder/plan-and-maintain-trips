@@ -4,7 +4,10 @@ This project uses `vMAJOR.MINOR.PATCH` tags. While the major version is `0`, min
 
 ## Unreleased
 
-No changes yet.
+- Add a GitHub Pages trip workbench with a five-day Paris historical replay, linked overview/day maps, a visual execution board, and a browser-only Day 2 proposal demo.
+- Add an opt-in loopback bridge for a user's own `trip.json` and signed-in Codex CLI; validate protected anchors, preview changes, and create a backup before confirmed writes.
+- Replace concept screenshots in both READMEs with captures of the working interface and document the demo-to-personal-trip flow, privacy boundary, and current single-day revision limit.
+- Improve generated Lisbon field cards and keep their route, offline, calendar, and text artifacts synchronized with the canonical example.
 
 ## v0.2.0 — 2026-10-14
 

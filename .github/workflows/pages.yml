@@ -30,6 +30,10 @@ jobs:
           cp examples/lisbon-coast/route.svg "$RUNNER_TEMP/site/route.svg"
           cp examples/lisbon-coast/trip.kml "$RUNNER_TEMP/site/trip.kml"
           cp examples/lisbon-coast/trip.ics "$RUNNER_TEMP/site/trip.ics"
+          mkdir -p "$RUNNER_TEMP/site/workbench" "$RUNNER_TEMP/site/assets"
+          cp web/index.html web/style.css web/app.js web/poi-icons.js web/map-lab.html web/map-lab.css web/map-lab.js "$RUNNER_TEMP/site/workbench/"
+          cp assets/trip.example.json "$RUNNER_TEMP/site/assets/trip.example.json"
+          cp assets/paris.demo.json "$RUNNER_TEMP/site/assets/paris.demo.json"
       - uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ runner.temp }}/site

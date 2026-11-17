@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {"type": "string"},
+    "day_json": {"type": "string"},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["summary", "day_json", "warnings"],
+  "additionalProperties": false
+}

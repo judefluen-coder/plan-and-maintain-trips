@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="比较六种旅行地图的景点标注方式与原创地标图形。">
+  <title>地图标注试验场 · Plan & Maintain Trips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@5.16.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="./map-lab.css">
+  <script defer src="https://unpkg.com/maplibre-gl@5.16.0/dist/maplibre-gl.js" integrity="sha256-VYO6tYxE3T+h6noUzJ2iAtqHOsDUWrcu2xQoIIYW/XI=" crossorigin="anonymous"></script>
+  <script defer src="./poi-icons.js"></script>
+  <script defer src="./map-lab.js"></script>
+</head>
+<body data-theme="atlas">
+  <header class="site-header">
+    <a class="brand" href="./"><span class="brand-seal">✳</span><span>Plan <em>&</em> Maintain Trips</span></a>
+    <a class="back-link" href="./">返回旅行工作台 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">MAP DESIGN LAB · 01 / 06</p><h1 id="page-title">同一段巴黎，<br><i>六种打开方式。</i></h1></div>
+      <div class="intro-aside"><span class="intro-rule"></span><p>不是换一层颜色而已。这里比较的是：景点如何被看见、路线如何被理解，以及点击后如何进入当天的故事。</p><small>同一组巴黎地标示意坐标 · 原创建筑图形，非景点官方商标</small></div>
+    </section>
+
+    <section class="choices" aria-label="选择地图标注样式">
+      <button class="choice active" type="button" data-style="atlas" aria-pressed="true"><span class="choice-preview preview-atlas"><i class="preview-route"></i><b>01</b><strong>卢浮宫</strong><small>艺术 · 收藏</small></span><span class="choice-copy"><span class="choice-number">A / EDITORIAL</span><strong>旅行手帐</strong><small>像在地图上贴一张精致的地标卡。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      <button class="choice" type="button" data-style="wayfinder" aria-pressed="false"><span class="choice-preview preview-wayfinder"><i class="preview-route"></i><b>01</b><strong>卢浮宫</strong><small>02　杜乐丽花园</small></span><span class="choice-copy"><span class="choice-number">B / WAYFINDER</span><strong>城市寻路</strong><small>编号和地点优先，适合当天执行。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      <button class="choice" type="button" data-style="nocturne" aria-pressed="false"><span class="choice-preview preview-nocturne"><i class="preview-route"></i><b>✦</b><strong>01 · LOUVRE</strong><small>艺术地标</small></span><span class="choice-copy"><span class="choice-number">C / NOCTURNE</span><strong>夜色导览</strong><small>深色底图与发光标签，更有探索感。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      <button class="choice" type="button" data-style="emblem" aria-pressed="false"><span class="choice-preview preview-emblem"><i class="preview-route"></i><b>◇</b><strong>卢浮宫</strong><small>01 · 地标徽章</small></span><span class="choice-copy"><span class="choice-number">D / EMBLEM</span><strong>地标徽章</strong><small>让建筑剪影成为主角，一眼认出景点。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      <button class="choice" type="button" data-style="postcard" aria-pressed="false"><span class="choice-preview preview-postcard"><i class="preview-route"></i><b>01</b><strong>PARIS · 卢浮宫</strong><small>值得收藏的一站</small></span><span class="choice-copy"><span class="choice-number">E / POSTCARD</span><strong>城市邮票</strong><small>旅行纪念感更强，适合分享与导出。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      <button class="choice" type="button" data-style="iconic" aria-pressed="false"><span class="choice-preview preview-iconic"><i class="preview-route"></i><b>◇</b><strong>01</strong><small>点选后显示名称</small></span><span class="choice-copy"><span class="choice-number">F / ICON FIRST</span><strong>图标寻宝</strong><small>用地标图形代替常驻长标签，地图更清爽。</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+    </section>
+
+    <section class="stage" aria-label="地图样式实时预览">
+      <div class="map-pane"><div class="map-topline"><span id="map-edition">A / 旅行手帐</span><button id="fit-route" type="button">⤢ 看全站点</button></div><div id="map" class="map" role="application" aria-label="巴黎景点示意地图"></div><div id="map-fallback" class="map-fallback" hidden>地图暂时不可用；右侧仍可比较站点标注。</div><div class="map-foot"><span>◌　01 — 05 地标顺序示意</span><span>连线不表示步行导航</span></div></div>
+      <aside class="story-pane" aria-live="polite"><div class="story-head"><span id="style-index">DESIGN 01 / 06</span><h2 id="style-name">旅行手帐</h2><p id="style-description">让景点像收藏在旅行册中的一张张小卡片。地名、类别和顺序同时可见，适合全程图与首次浏览。</p></div><div class="selected-place"><span class="section-label">现在聚焦 / SELECTED PLACE</span><div class="place-title-row"><span id="place-symbol" class="place-symbol"></span><div><small id="place-category">艺术地标</small><h3 id="place-name">卢浮宫</h3></div></div><p id="place-note">作为地图视觉示意的景点；点击其他地标，可查看标注与右侧内容如何联动。</p></div><div class="stop-section"><div class="stop-heading"><span>示意站点</span><small>点击以聚焦地图</small></div><ol id="stop-list" class="stop-list"></ol></div><div class="design-note"><span class="section-label">设计取舍 / TRADE-OFF</span><p id="style-tradeoff">信息丰富，但高密度街区需要在缩放时收起部分标签。</p></div></aside>
+    </section>
+    <footer class="page-footer"><span>地图 © OpenStreetMap contributors / OpenFreeMap</span><span>仅比较界面；具体营业时间、开放与预约请以官方信息为准。</span></footer>
+  </main>
+</body>
+</html>

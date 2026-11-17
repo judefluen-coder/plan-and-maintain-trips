@@ -47,12 +47,13 @@ Morning check: weather, transit, booking evidence, first navigation. Add unknown
 
 Outcome: Explore the coast at an easy pace
 
-- Coastal museum
+- Paula Rego House of Stories [Map](https://www.google.com/maps/search/?api=1&query=38.694766,-9.423707)
 - Long lunch
-- Beach or indoor weather branch
+- Marechal Carmona Park [Map](https://www.google.com/maps/search/?api=1&query=38.694759,-9.421921)
+- Santa Marta Lighthouse Museum [Map](https://www.google.com/maps/search/?api=1&query=38.69042,-9.421043)
 
-First cut: Beach or indoor weather branch
-Rain/disruption: Check current conditions
+First cut: Santa Marta Lighthouse Museum
+Rain/disruption: Skip the park in rain; recheck museum opening before departure
 
 Morning check: weather, transit, booking evidence, first navigation. Add unknown hotel/ticket details only after confirmation.
 
@@ -61,10 +62,10 @@ Morning check: weather, transit, booking evidence, first navigation. Add unknown
 Outcome: Depart without schedule risk
 
 - Breakfast near hotel
-- Short promenade
-- Onward transfer
+- Rainha Beach promenade [Map](https://www.google.com/maps/search/?api=1&query=38.699149,-9.41812)
+- Cascais railway station [Map](https://www.google.com/maps/search/?api=1&query=38.70088,-9.41791)
 
-First cut: Short promenade
+First cut: Rainha Beach promenade
 Rain/disruption: Check current conditions
 
 Morning check: weather, transit, booking evidence, first navigation. Add unknown hotel/ticket details only after confirmation.

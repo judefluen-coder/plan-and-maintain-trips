@@ -32,13 +32,14 @@ class FieldPackTests(unittest.TestCase):
     def test_kml_contains_ordered_points(self):
         root = ET.fromstring(kml(self.data, self.days))
         namespace = {"k": "http://www.opengis.net/kml/2.2"}
-        self.assertEqual(len(root.findall(".//k:Point", namespace)), 7)
-        self.assertEqual(len(root.findall(".//k:LineString", namespace)), 3)
+        self.assertEqual(len(root.findall(".//k:Point", namespace)), 12)
+        self.assertEqual(len(root.findall(".//k:LineString", namespace)), 5)
 
     def test_svg_route_uses_canonical_trip_items(self):
         route = route_from_trip(str(EXAMPLE), None, None)
-        self.assertEqual([day["date"] for day in route["days"]], ["2030-05-01", "2030-05-02", "2030-05-03"])
+        self.assertEqual([day["date"] for day in route["days"]], [f"2030-05-{day:02d}" for day in range(1, 6)])
         self.assertEqual(route["days"][1]["stops"][0]["name"], self.days[1]["items"][0]["name"])
+        self.assertEqual([len(day["stops"]) for day in route["days"][3:]], [3, 2])
 
     def test_offline_page_embeds_all_days_without_remote_assets(self):
         output = page(self.data, self.days)

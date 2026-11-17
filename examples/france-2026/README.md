@@ -6,6 +6,8 @@
 
 [打开完整攻略：订票、逐日路线、餐厅、酒店与交通](guide.md)
 
+[在交互工作台查看巴黎五个观光日](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)：全程地图可下钻到单日，并联动时间轴与执行看板。工作台只摘取 9 月 25—29 日；抵达日、巴黎飞尼斯与南法部分仍以完整攻略为准。
+
 ## 两张高清路线图
 
 [下载巴黎路线图原图](paris-route-4k.png) · [下载尼斯及蔚蓝海岸路线图原图](riviera-route-4k.png)

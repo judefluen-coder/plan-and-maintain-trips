@@ -21,10 +21,15 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Check Python syntax and behavior
         run: |
-          python -m compileall -q scripts tests
+          python -m compileall -q scripts bridge tests
           python -m unittest discover -s tests -v
+          node --check web/app.js
+          node --check web/poi-icons.js
+          node --check web/map-lab.js
       - name: Validate the canonical example
-        run: python scripts/validate_trip.py assets/trip.example.json --strict
+        run: |
+          python scripts/validate_trip.py assets/trip.example.json --strict
+          python scripts/validate_trip.py assets/paris.demo.json --strict
       - name: Regenerate example artifacts and detect drift
         run: |
           mkdir -p "$RUNNER_TEMP/trip-output"

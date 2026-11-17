@@ -3,7 +3,7 @@
 <rect width="100%" height="100%" fill="#F8F5EC"/>
 <rect x="136.4" y="368.3" width="2207.2" height="1859.2" rx="28" fill="#FCFBF7" stroke="#9AB0C5" stroke-width="3"/>
 <text x="1240.0" y="182.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="64" font-weight="700" fill="#17355F" text-anchor="middle">Example two-base cultural trip</text>
-<text x="1240.0" y="277.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="500" fill="#3F5877" text-anchor="middle">2030-05-01 – 2030-05-03 | schematic overview</text>
+<text x="1240.0" y="277.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="500" fill="#3F5877" text-anchor="middle">2030-05-01 – 2030-05-05 | schematic overview</text>
 <line x1="357.1" y1="368.3" x2="357.1" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
 <line x1="577.8" y1="368.3" x2="577.8" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
 <line x1="798.6" y1="368.3" x2="798.6" y2="2227.6" stroke="#E6E4DE" stroke-width="2"/>
@@ -19,43 +19,69 @@
 <line x1="136.4" y1="1430.8" x2="2343.6" y2="1430.8" stroke="#E6E4DE" stroke-width="2"/>
 <line x1="136.4" y1="1696.4" x2="2343.6" y2="1696.4" stroke="#E6E4DE" stroke-width="2"/>
 <line x1="136.4" y1="1962.0" x2="2343.6" y2="1962.0" stroke="#E6E4DE" stroke-width="2"/>
-<path d="M 2281.6 1124.4 L 2214.1 1185.1" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
-<path d="M 2281.6 1124.4 L 2214.1 1185.1" fill="none" stroke="#B33A3A" stroke-width="10" stroke-linecap="round"/>
-<rect x="1661.6" y="1076.4" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="2281.6" cy="1124.4" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
-<text x="2281.6" y="1134.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="1683.6" y="1117.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Riverside orientation walk</text>
-<rect x="1911.6" y="1203.1" width="370.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="2214.1" cy="1185.1" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
-<text x="2214.1" y="1195.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
-<text x="1933.6" y="1244.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Market lunch</text>
-<path d="M 2236.1 855.6 L 2104.0 508.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
-<path d="M 2236.1 855.6 L 2104.0 508.7" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
-<path d="M 2104.0 508.7 L 2236.1 855.6" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
-<path d="M 2104.0 508.7 L 2236.1 855.6" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
-<rect x="1711.6" y="807.6" width="570.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="2236.1" cy="855.6" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
-<text x="2236.1" y="865.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="1733.6" y="848.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Gallery entry target</text>
+<path d="M 2281.6 963.3 L 2214.9 1008.1" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2281.6 963.3 L 2214.9 1008.1" fill="none" stroke="#B33A3A" stroke-width="10" stroke-linecap="round"/>
+<rect x="1661.6" y="915.3" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2281.6" cy="963.3" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2281.6" y="973.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1683.6" y="956.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Riverside orientation walk</text>
+<rect x="1911.6" y="1026.1" width="370.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2214.9" cy="1008.1" r="29" fill="#B33A3A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2214.9" y="1018.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="1933.6" y="1067.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Market lunch</text>
+<path d="M 2236.6 764.8 L 2106.1 508.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2236.6 764.8 L 2106.1 508.7" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
+<path d="M 2106.1 508.7 L 2236.6 764.8" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 2106.1 508.7 L 2236.6 764.8" fill="none" stroke="#167C5A" stroke-width="10" stroke-linecap="round"/>
+<rect x="1711.6" y="716.8" width="570.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2236.6" cy="764.8" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2236.6" y="774.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1733.6" y="757.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Gallery entry target</text>
 <rect x="1686.6" y="508.7" width="595.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="2104.0" cy="508.7" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
-<text x="2104.0" y="518.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<circle cx="2106.1" cy="508.7" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2106.1" y="518.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
 <text x="1708.6" y="549.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Garden recovery break</text>
-<rect x="1736.6" y="873.6" width="545.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="2236.1" cy="855.6" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
-<text x="2236.1" y="865.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
-<text x="1758.6" y="914.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Neighborhood dinner</text>
-<path d="M 221.1 1722.8 L 198.4 2069.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
-<path d="M 221.1 1722.8 L 198.4 2069.7" fill="none" stroke="#D38300" stroke-width="10" stroke-linecap="round"/>
-<rect x="259.1" y="1674.8" width="595.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="221.1" cy="1722.8" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
-<text x="221.1" y="1732.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="281.1" y="1715.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Transfer to the coast</text>
-<rect x="236.4" y="2007.7" width="395.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
-<circle cx="198.4" cy="2069.7" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
-<text x="198.4" y="2079.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
-<text x="258.4" y="2048.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Seafront walk</text>
-<rect x="136.4" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#B33A3A" stroke-width="3"/>
+<rect x="1736.6" y="782.8" width="545.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="2236.6" cy="764.8" r="29" fill="#167C5A" stroke="#FFFFFF" stroke-width="6"/>
+<text x="2236.6" y="774.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1758.6" y="823.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Neighborhood dinner</text>
+<path d="M 244.9 1405.1 L 222.4 1661.2" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 244.9 1405.1 L 222.4 1661.2" fill="none" stroke="#D38300" stroke-width="10" stroke-linecap="round"/>
+<rect x="282.9" y="1357.1" width="595.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="244.9" cy="1405.1" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
+<text x="244.9" y="1415.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="304.9" y="1398.1" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Transfer to the coast</text>
+<rect x="260.4" y="1613.2" width="395.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="222.4" cy="1661.2" r="29" fill="#D38300" stroke="#FFFFFF" stroke-width="6"/>
+<text x="222.4" y="1671.2" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="282.4" y="1654.2" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Seafront walk</text>
+<path d="M 198.4 1791.4 L 211.4 1791.9" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 198.4 1791.4 L 211.4 1791.9" fill="none" stroke="#1666A8" stroke-width="10" stroke-linecap="round"/>
+<path d="M 211.4 1791.9 L 217.7 2069.7" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 211.4 1791.9 L 217.7 2069.7" fill="none" stroke="#1666A8" stroke-width="10" stroke-linecap="round"/>
+<rect x="236.4" y="1743.4" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="198.4" cy="1791.4" r="29" fill="#1666A8" stroke="#FFFFFF" stroke-width="6"/>
+<text x="198.4" y="1801.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="258.4" y="1784.4" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Paula Rego House of Stories</text>
+<rect x="249.4" y="1809.9" width="595.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="211.4" cy="1791.9" r="29" fill="#1666A8" stroke="#FFFFFF" stroke-width="6"/>
+<text x="211.4" y="1801.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="271.4" y="1850.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Marechal Carmona Park</text>
+<rect x="255.7" y="2007.7" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="217.7" cy="2069.7" r="29" fill="#1666A8" stroke="#FFFFFF" stroke-width="6"/>
+<text x="217.7" y="2079.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="277.7" y="2048.7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Santa Marta Lighthouse Museum</text>
+<path d="M 238.9 1510.8 L 240.4 1400.0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+<path d="M 238.9 1510.8 L 240.4 1400.0" fill="none" stroke="#7251A5" stroke-width="10" stroke-linecap="round"/>
+<rect x="276.9" y="1462.8" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="238.9" cy="1510.8" r="29" fill="#7251A5" stroke="#FFFFFF" stroke-width="6"/>
+<text x="238.9" y="1520.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="298.9" y="1503.8" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Rainha Beach promenade</text>
+<rect x="198.4" y="1308.0" width="620.0" height="62" rx="22" fill="#FFFFFF" stroke="#D8DEE4" stroke-width="2"/>
+<circle cx="240.4" cy="1400.0" r="29" fill="#7251A5" stroke="#FFFFFF" stroke-width="6"/>
+<text x="240.4" y="1410.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="220.4" y="1349.0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" fill="#243D5E" text-anchor="start">Cascais railway station</text>
+<rect x="136.4" y="2315.3" width="712.6" height="517.6" rx="26" fill="#FFFFFF" stroke="#B33A3A" stroke-width="3"/>
 <rect x="136.4" y="2315.3" width="712.6" height="68" rx="26" fill="#B33A3A"/>
 <rect x="136.4" y="2355.3" width="712.6" height="28" fill="#B33A3A"/>
 <text x="160.4" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 1 · 2030-05-01 · Lisbon</text>
@@ -65,7 +91,7 @@
 <circle cx="168.4" cy="2468.3" r="17" fill="#B33A3A"/>
 <text x="168.4" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
 <text x="197.4" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Market lunch · 75 min</text>
-<rect x="883.7" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#167C5A" stroke-width="3"/>
+<rect x="883.7" y="2315.3" width="712.6" height="517.6" rx="26" fill="#FFFFFF" stroke="#167C5A" stroke-width="3"/>
 <rect x="883.7" y="2315.3" width="712.6" height="68" rx="26" fill="#167C5A"/>
 <rect x="883.7" y="2355.3" width="712.6" height="28" fill="#167C5A"/>
 <text x="907.7" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 2 · 2030-05-02 · Lisbon</text>
@@ -78,7 +104,7 @@
 <circle cx="915.7" cy="2516.3" r="17" fill="#167C5A"/>
 <text x="915.7" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
 <text x="944.7" y="2523.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Neighborhood dinner · 60 min</text>
-<rect x="1631.0" y="2315.3" width="712.6" height="1069.9" rx="26" fill="#FFFFFF" stroke="#D38300" stroke-width="3"/>
+<rect x="1631.0" y="2315.3" width="712.6" height="517.6" rx="26" fill="#FFFFFF" stroke="#D38300" stroke-width="3"/>
 <rect x="1631.0" y="2315.3" width="712.6" height="68" rx="26" fill="#D38300"/>
 <rect x="1631.0" y="2355.3" width="712.6" height="28" fill="#D38300"/>
 <text x="1655.0" y="2362.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 3 · 2030-05-03 · Cascais</text>
@@ -88,5 +114,28 @@
 <circle cx="1663.0" cy="2468.3" r="17" fill="#D38300"/>
 <text x="1663.0" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
 <text x="1692.0" y="2475.3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Seafront walk · 45 min</text>
+<rect x="136.4" y="2867.6" width="712.6" height="517.6" rx="26" fill="#FFFFFF" stroke="#1666A8" stroke-width="3"/>
+<rect x="136.4" y="2867.6" width="712.6" height="68" rx="26" fill="#1666A8"/>
+<rect x="136.4" y="2907.6" width="712.6" height="28" fill="#1666A8"/>
+<text x="160.4" y="2914.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 4 · 2030-05-04 · Cascais</text>
+<circle cx="168.4" cy="2972.6" r="17" fill="#1666A8"/>
+<text x="168.4" y="2979.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="197.4" y="2979.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Paula Rego House of Stories</text>
+<circle cx="168.4" cy="3020.6" r="17" fill="#1666A8"/>
+<text x="168.4" y="3027.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="197.4" y="3027.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Marechal Carmona Park</text>
+<circle cx="168.4" cy="3068.6" r="17" fill="#1666A8"/>
+<text x="168.4" y="3075.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="197.4" y="3075.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Santa Marta Lighthouse Museum</text>
+<rect x="883.7" y="2867.6" width="712.6" height="517.6" rx="26" fill="#FFFFFF" stroke="#7251A5" stroke-width="3"/>
+<rect x="883.7" y="2867.6" width="712.6" height="68" rx="26" fill="#7251A5"/>
+<rect x="883.7" y="2907.6" width="712.6" height="28" fill="#7251A5"/>
+<text x="907.7" y="2914.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="start">Day 5 · 2030-05-05 · Cascais</text>
+<circle cx="915.7" cy="2972.6" r="17" fill="#7251A5"/>
+<text x="915.7" y="2979.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="944.7" y="2979.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Rainha Beach promenade</text>
+<circle cx="915.7" cy="3020.6" r="17" fill="#7251A5"/>
+<text x="915.7" y="3027.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="944.7" y="3027.6" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" fill="#253E5D" text-anchor="start">Cascais railway station</text>
 <text x="1240.0" y="3465.9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" fill="#65778C" text-anchor="middle">Order and coordinates only; verify live navigation, opening hours, and tickets.</text>
 </svg>

@@ -114,16 +114,26 @@
       "base": "Cascais",
       "outcome": "Explore the coast at an easy pace",
       "anchor_ids": [],
-      "items": ["Coastal museum", "Long lunch", "Beach or indoor weather branch"],
-      "first_cut": "Beach or indoor weather branch"
+      "items": [
+        {"id": "paula-rego", "name": "Paula Rego House of Stories", "lat": 38.694766, "lon": -9.423707, "icon": "museum"},
+        {"id": "long-lunch", "name": "Long lunch"},
+        {"id": "carmona-park", "name": "Marechal Carmona Park", "lat": 38.694759, "lon": -9.421921, "icon": "garden", "weather_sensitive": true},
+        {"id": "santa-marta", "name": "Santa Marta Lighthouse Museum", "lat": 38.690420, "lon": -9.421043, "icon": "museum", "rigidity": "optional"}
+      ],
+      "first_cut": "Santa Marta Lighthouse Museum",
+      "weather_fallback": "Skip the park in rain; recheck museum opening before departure"
     },
     {
       "date": "2030-05-05",
       "base": "Cascais",
       "outcome": "Depart without schedule risk",
       "anchor_ids": [],
-      "items": ["Breakfast near hotel", "Short promenade", "Onward transfer"],
-      "first_cut": "Short promenade"
+      "items": [
+        {"id": "departure-breakfast", "name": "Breakfast near hotel"},
+        {"id": "rainha-beach", "name": "Rainha Beach promenade", "lat": 38.699149, "lon": -9.418120, "icon": "walk", "weather_sensitive": true, "rigidity": "optional"},
+        {"id": "cascais-station", "name": "Cascais railway station", "lat": 38.700880, "lon": -9.417910, "icon": "rail"}
+      ],
+      "first_cut": "Rainha Beach promenade"
     }
   ],
   "restaurants": [
@@ -154,6 +164,41 @@
       "checked_at": "2030-01-15T09:00:00+00:00",
       "applies_to": "2030-05-02",
       "next_check_at": "2030-02-15T09:00:00+00:00"
+    },
+    {
+      "claim": "Paula Rego House of Stories location; 2030 opening not verified",
+      "source_url": "https://360.cascais.pt/pt/visitar/casa-das-historias-paula-rego",
+      "checked_at": "2026-11-17T00:00:00+00:00",
+      "applies_to": "2030-05-04",
+      "next_check_at": "2030-04-01T00:00:00+00:00"
+    },
+    {
+      "claim": "Marechal Carmona Park location; 2030 access not verified",
+      "source_url": "https://360.cascais.pt/pt/visitar/parque-marechal-carmona?id=289",
+      "checked_at": "2026-11-17T00:00:00+00:00",
+      "applies_to": "2030-05-04",
+      "next_check_at": "2030-04-01T00:00:00+00:00"
+    },
+    {
+      "claim": "Santa Marta Lighthouse Museum location; 2030 opening not verified",
+      "source_url": "https://360.cascais.pt/pt/visitar/farol-museu-de-santa-marta?id=170",
+      "checked_at": "2026-11-17T00:00:00+00:00",
+      "applies_to": "2030-05-04",
+      "next_check_at": "2030-04-01T00:00:00+00:00"
+    },
+    {
+      "claim": "Rainha Beach location; 2030 access not verified",
+      "source_url": "https://360.cascais.pt/pt/visitar/praia-da-rainha?id=272",
+      "checked_at": "2026-11-17T00:00:00+00:00",
+      "applies_to": "2030-05-05",
+      "next_check_at": "2030-04-01T00:00:00+00:00"
+    },
+    {
+      "claim": "Cascais station location from OpenStreetMap; 2030 onward transport not booked",
+      "source_url": "https://www.openstreetmap.org/node/10783321231",
+      "checked_at": "2026-11-17T00:00:00+00:00",
+      "applies_to": "2030-05-05",
+      "next_check_at": "2030-04-01T00:00:00+00:00"
     }
   ]
 }

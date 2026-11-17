@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用地图、逐日时间轴和 Codex 修改提案管理你的旅程。">
+  <title>旅行工作台 · Plan & Maintain Trips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@5.16.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css?v=journey-board-2">
+  <script defer src="https://unpkg.com/maplibre-gl@5.16.0/dist/maplibre-gl.js" integrity="sha256-VYO6tYxE3T+h6noUzJ2iAtqHOsDUWrcu2xQoIIYW/XI=" crossorigin="anonymous"></script>
+  <script defer src="./poi-icons.js?v=paris-replay"></script>
+  <script defer src="./app.js?v=journey-board-3"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Plan & Maintain Trips 首页"><span class="brand-mark">✳</span><span>Plan <em>&</em> Maintain Trips</span></a>
+    <nav class="topnav" aria-label="工作台导航"><a href="https://github.com/judefluen-coder/plan-and-maintain-trips/blob/main/examples/france-2026/guide.md" target="_blank" rel="noopener noreferrer">巴黎原攻略 ↗</a><span class="nav-divider"></span><a href="./map-lab.html">地图样式试验场 ↗</a><span class="nav-divider"></span><a href="https://github.com/judefluen-coder/plan-and-maintain-trips" target="_blank" rel="noopener noreferrer">项目说明 ↗</a><span class="nav-divider"></span><span class="topnav-label">TRIP WORKBENCH <b>01</b></span></nav>
+  </header>
+
+  <main class="shell">
+    <section class="masthead" aria-labelledby="trip-title">
+      <div class="masthead-main"><p class="eyebrow"><span></span> YOUR JOURNEY / 你的旅程</p><h1 id="trip-title">正在打开旅程…</h1><p id="trip-meta" class="trip-meta">地图、日程与预约，始终来自同一份行程状态。</p></div>
+      <div class="masthead-actions"><span id="data-badge" class="data-badge">示例旅程</span><button id="connect-button" class="connection-button" type="button"><i class="connection-dot"></i><span id="connection-label">未连接 Codex</span><span aria-hidden="true">↗</span></button><button id="import-button" class="plain-button" type="button">导入行程</button><input id="trip-file" type="file" accept=".json,application/json" hidden></div>
+    </section>
+
+    <section class="status-ribbon" aria-label="工作台状态"><div class="ribbon-icon">◎</div><p id="status-copy">正在载入示例；连接本机 Codex 后，才能生成真实修改提案。</p><button id="status-action" type="button">了解连接方式 <span aria-hidden="true">→</span></button></section>
+
+    <section id="workspace" class="workspace" aria-label="旅程工作区">
+      <div class="atlas-column">
+        <div class="section-bar"><div><p class="section-kicker">THE ROUTE / 路线图</p><h2 id="map-title">全程概览</h2></div><div class="section-bar-actions"><button id="map-overview" type="button" class="text-control">⤢ 全程</button><a class="text-control" href="#journey-board">执行看板 ↘</a></div></div>
+        <div class="day-navigation"><div id="day-tabs" class="day-tabs" role="tablist" aria-label="选择日期"></div></div>
+        <div id="map-frame" class="map-frame"><div id="map" class="map" role="application" aria-label="交互式旅程地图"></div><div id="map-fallback" class="map-fallback" hidden>底图暂时无法加载，右侧行程仍可正常查看。</div><div id="map-empty" class="map-empty" hidden><span id="map-empty-kicker">尚未定位</span><strong id="map-empty-title">这一天的地图点待补充</strong><p>以下活动尚无经核实的坐标，因此不会在地图上虚构位置。</p><div id="map-empty-items" class="map-empty-items"></div></div><div class="map-location"><span id="map-location-kicker">ALL DAYS</span><strong id="map-location-title">整段旅程，一眼看清</strong><small id="map-location-note">点选日期，深入当天路线。</small></div><div class="map-scale-note">连线仅表示顺序，图标为地标参考位置；请按实际入口导航。</div></div>
+        <div class="atlas-footer"><div id="map-legend" class="map-legend"></div><button id="export-button" class="text-control" type="button">下载当前行程 JSON ↓</button></div>
+      </div>
+
+      <aside class="day-column" aria-label="逐日行程详情">
+        <div class="day-cover"><p id="detail-kicker" class="detail-kicker">JOURNEY OVERVIEW</p><h2 id="detail-title">旅程总览</h2><p id="detail-subtitle">选择一天，查看路线、时间与需要保护的预约。</p></div>
+        <div id="overview-panel" class="overview-panel"><div class="summary-stats"><div><strong id="stat-days">—</strong><span>旅行天数</span></div><div><strong id="stat-stops">—</strong><span>地图站点</span></div><div><strong id="stat-anchors">—</strong><span>固定安排</span></div></div><div class="overview-heading"><span>逐日节奏</span><small>点击进入当天</small></div><div id="overview-days" class="overview-days"></div><a class="board-jump" href="#journey-board">查看全程执行看板 <span aria-hidden="true">↓</span></a></div>
+        <div id="day-panel" class="day-panel" hidden><div class="day-facts"><span id="day-base">—</span><span id="day-count">—</span></div><div class="timeline-heading"><span>当天时间轴</span><small>点击站点，地图会定位</small></div><ol id="timeline" class="timeline"></ol><div id="booking-box" class="booking-box"></div><div id="fallback-box" class="fallback-box" hidden></div><a class="board-jump" href="#journey-board">展开当天执行看板 <span aria-hidden="true">↓</span></a><button id="adjust-button" class="adjust-button" type="button">✳ 调整这一天 <span aria-hidden="true">↗</span></button></div>
+      </aside>
+    </section>
+    <section id="journey-board" class="journey-board" aria-labelledby="board-title">
+      <div class="board-heading"><div><p class="section-kicker">THE FIELD GUIDE / 执行看板</p><h2 id="board-title">全程规划画布</h2><p id="board-subtitle">订票、交通、餐食与临场取舍，和地图一起切换。</p></div><span id="board-context" class="board-context">五日路线</span></div>
+      <div id="board-content" class="board-content" aria-live="polite"></div>
+    </section>
+    <p class="site-note">地图 © OpenStreetMap contributors / OpenFreeMap · 示例与历史回放均不应直接用于当前预订。</p>
+  </main>
+
+  <button id="assistant-fab" class="assistant-fab" type="button" aria-controls="assistant-drawer" aria-expanded="false"><span>✳</span> 和 Codex 一起调整 <span aria-hidden="true">↗</span></button>
+  <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+  <aside id="assistant-drawer" class="assistant-drawer" aria-labelledby="assistant-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="section-kicker">PLAN WITH CODEX</p><h2 id="assistant-title">让这一日更合适</h2></div><button id="drawer-close" class="icon-button" type="button" aria-label="关闭调整面板">×</button></div>
+    <div class="drawer-body"><div class="context-card"><span>当前上下文</span><strong id="assistant-context">全程旅程</strong><small>只会提出修改建议，不会直接覆盖你的行程。</small></div><label class="request-label" for="change-request">想改变什么？</label><textarea id="change-request" rows="5" maxlength="700" placeholder="例如：把这一天放松一点，但已预约的博物馆时间不要动。"></textarea><div class="suggestion-row"><button id="relax-suggestion" type="button">节奏轻松一点</button><button id="rain-suggestion" type="button">准备雨天方案</button></div><button id="generate-button" class="generate-button" type="button">生成修改提案 <span aria-hidden="true">→</span></button><p id="generator-note" class="generator-note">未连接时仅可体验 Day 2 的模拟修改；真实生成需要本机 Codex。</p>
+      <div id="proposal-loading" class="proposal-loading" hidden role="status"><span class="loading-pulse"></span><div><strong>Codex 正在整理修改提案…</strong><small>当前行程不会被改写。完成后请先核对预约与时间。</small></div></div>
+      <section id="proposal-panel" class="proposal-panel" hidden aria-label="修改提案"><p class="proposal-label">PROPOSED CHANGE / 尚未应用</p><h3 id="proposal-title">修改提案</h3><p id="proposal-summary"></p><div class="diff-heading"><span>当天变化</span><small>与当前行程比较</small></div><div id="proposal-diff" class="proposal-diff"></div><div id="proposal-warnings" class="proposal-warnings" hidden></div><div class="proposal-actions"><button id="discard-button" class="plain-button" type="button">放弃</button><button id="apply-button" class="apply-button" type="button">确认并应用 <span aria-hidden="true">→</span></button></div></section>
+    </div>
+  </aside>
+
+  <dialog id="connect-dialog" class="connect-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭" value="cancel">×</button><p class="section-kicker">CONNECT YOUR CODEX</p><h2>让工作台连接你的 Codex</h2><p>GitHub Pages 不托管你的行程。本机桥接使用你已登录的 Codex 和配额；生成提案时，行程 JSON 与修改要求会发送给你使用的模型服务，写回本地文件仍须你确认。</p><div class="connect-steps"><div><b>01</b><span>在 Codex 安装本项目的 Skill</span></div><div><b>02</b><span>运行本机桥接，并指定自己的 trip.json</span></div><div><b>03</b><span>用桥接程序给出的链接打开此工作台，点击下方连接</span></div></div><code>python3 bridge/server.py --trip /你的路径/trip.json</code><p class="dialog-footnote">浏览器可能询问是否允许连接本机服务。只有在你主动同意后，工作台才会连接。</p><div class="dialog-actions"><button id="connect-confirm" class="apply-button" type="button">连接本机工作台 →</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
