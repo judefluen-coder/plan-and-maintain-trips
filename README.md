@@ -1,6 +1,6 @@
 <p align="center">
   <a href="assets/readme-hero.svg">
-    <img src="assets/readme-hero.png" alt="远行策划——从零散想法到可执行旅程" width="100%">
+    <img src="assets/readme-hero-v2.png" alt="远行策划——从零散想法到可执行旅程" width="100%">
   </a>
 </p>
 
@@ -24,31 +24,36 @@
 
 > 不是再生成一份“景点清单”。所有日程、预约、餐厅、路线图和当天执行卡，都由同一份行程状态派生；改动一个决定，其余产物会跟着同步。
 
-## 先看它能交付什么
+## 先看真正能操作的工作台
+
+[打开远行策划工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)即可体验，无需安装。默认进入[巴黎五日历史案例](examples/france-2026/README.md)：在总图点 Day，下钻到当天地图和时间轴；订票、交通、餐食与临场取舍会在下方执行看板同步切换。Day 2 还可以体验**仅在浏览器内生效**的模拟修改提案。
+
+<p align="center">
+  <a href="assets/workbench-overview-v2.jpg"><img src="assets/workbench-overview-v2.jpg" alt="远行策划真实工作台：巴黎五日总览地图与逐日入口" width="100%"></a>
+</p>
+
+<details>
+<summary>展开看 Day 4：景点地图、时间轴和完整执行看板</summary>
+
+<p align="center"><a href="assets/workbench-day-map-v2.jpg"><img src="assets/workbench-day-map-v2.jpg" alt="远行策划 Day 4 景点图标与时间轴联动" width="100%"></a></p>
+<p align="center"><a href="assets/workbench-day-board-v2.jpg"><img src="assets/workbench-day-board-v2.jpg" alt="远行策划 Day 4 路线、票券、交通餐食与应变看板" width="100%"></a></p>
+</details>
+
+<p align="center"><sub>以上均为实际工作台截图，不是概念稿。巴黎内容是已过去的 2026 年脱敏攻略；地图点不是入口导航，票务状态不代表今天可订。</sub></p>
+
+## 除工作台之外，还能交付什么
 
 ### 1. 一张看懂多天路线
 
 每天一种颜色，站点按顺序编号；步行、公共交通、强度、固定预约和 first cut 都在图上，不需要再对着长篇文字找重点。
 
-<p align="center">
-  <a href="assets/readme-route-sample.svg">
-    <img src="assets/readme-route-sample.png" alt="六日路线图，包含编号站点、每日路线、距离与预约锚点" width="100%">
-  </a>
-</p>
-
-<p align="center"><sub>点击图片查看无损 SVG；README 使用 2400×1600 PNG，保证 GitHub 稳定显示。</sub></p>
+可查看[巴黎高清路线图](examples/france-2026/paris-route-4k.png)或[可编辑的路线图排版示意 SVG](assets/readme-route-sample.svg)。前者是历史攻略成品，后者是视觉示意，不是同一份数据。
 
 ### 2. 每天一张真正能带走的攻略图
 
 长攻略适合出发前研究，旅行当天更需要一眼就能执行的卡片。每张卡只保留当日必要信息：必须保护的预约、抵达时间、顺序、票夹、路线、午餐、强度，以及迟到或下雨时怎么删。
 
-<p align="center">
-  <a href="assets/readme-day-card.svg">
-    <img src="assets/readme-day-card.png" alt="包含时间线、票夹、路线、强度与备选方案的每日执行攻略卡" width="100%">
-  </a>
-</p>
-
-上图是排版示意；[查看从示例 `trip.json` 实际生成的 Day 02 卡片（PNG）](examples/lisbon-coast/day-02.png)、[无损 SVG](examples/lisbon-coast/day-02.svg)和[对应文字版](examples/lisbon-coast/field-cards.md)，可以核对哪些信息确实来自数据。真实执行卡采用更适合手机阅读的旅行手册式排版；示例数据为英文虚构行程。
+[查看从示例 `trip.json` 实际生成的 Day 02 卡片（PNG）](examples/lisbon-coast/day-02.png)、[无损 SVG](examples/lisbon-coast/day-02.svg)和[对应文字版](examples/lisbon-coast/field-cards.md)，可以核对哪些信息确实来自数据。示例数据为英文虚构行程；另有[中文排版示意](assets/readme-day-card.svg)。
 
 这样的执行卡可以：
 
@@ -61,11 +66,7 @@
 
 飞书不是前置条件，而是可选发布端。Skill 会先把本地交付包做完整，再根据当前已连接的工具输出到用户真正使用的平台。
 
-<p align="center">
-  <a href="assets/readme-publishing.svg">
-    <img src="assets/readme-publishing.png" alt="一份旅行项目发布到飞书、Markdown、Notion、Google Docs、DOCX 和 PDF" width="100%">
-  </a>
-</p>
+[查看多文档发布结构图](assets/readme-publishing.svg)。
 
 支持的输出方式：
 
@@ -75,22 +76,7 @@
 - **DOCX / PDF：** 文档工具可用时生成可编辑版或打印归档版；
 - **平台不可用时：** 核心攻略仍然完整交付，不会因为没有 CLI、账号或连接器而停住。
 
-## 看看真正能操作的工作台
-
-[在线打开旅行工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)无需安装即可体验。默认展示[巴黎五日历史案例](examples/france-2026/README.md)：先在总图上选 Day，再进入当天地图、时间轴和下方的执行看板；看板展示订票节点、交通、餐食、必须保护的时段与雨天取舍。点击 Day 2 的「调整这一天」还可体验**只在浏览器内生效**的模拟提案。
-
-<p align="center">
-  <a href="assets/workbench-overview.jpg"><img src="assets/workbench-overview.jpg" alt="真实工作台截图：巴黎五日总览地图与逐日入口" width="100%"></a>
-</p>
-
-<p align="center">
-  <a href="assets/workbench-day-map.jpg"><img src="assets/workbench-day-map.jpg" alt="真实工作台截图：Day 4 景点图标与时间轴联动" width="49%"></a>
-  <a href="assets/workbench-day-board.jpg"><img src="assets/workbench-day-board.jpg" alt="真实工作台截图：Day 4 路线、票券、交通餐食与应变看板" width="49%"></a>
-</p>
-
-<p align="center"><sub>以上是实际页面截图，不是概念稿。巴黎内容来自已过去的 2026 年脱敏攻略；地图点不是入口导航，票务状态不代表今天可订。</sub></p>
-
-### 从示例走到自己的旅程
+## 从示例走到自己的旅程
 
 1. **先体验：**打开[巴黎工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)，点击 Day 标签或地图圆章，下钻后在「执行看板」查看完整信息。旧的[里斯本虚构示例](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon)仍可切换。
 2. **创建自己的计划：**安装 Skill 后，在 Codex 对话中描述日期、目的地、偏好和已有预约，让它在 Skill 目录**之外**生成自己的 `trip.json`。网页目前不提供从零生成整段旅程的托管式 AI。
@@ -112,7 +98,7 @@
 
 ## 完整能力与交付一览
 
-上面的图片展示了最终成品；这张表说明它在旅行规划过程中具体会做什么。
+上面的真实工作台截图展示了地图与执行看板；这张表说明整个项目在旅行规划过程中还会做什么。
 
 | 规划环节 | 它会做什么 | 你会拿到什么 |
 |---|---|---|

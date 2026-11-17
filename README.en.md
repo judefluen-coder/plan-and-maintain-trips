@@ -26,31 +26,36 @@
 
 > This is not another attraction list. Every schedule, reservation, restaurant, route map, and day-of field card is derived from one canonical trip state. Change one decision, and every affected deliverable stays in sync.
 
-## See what it ships
+## See the real workbench first
+
+[Open the live workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/) without installing anything. It starts with a redacted [five-day Paris historical case](examples/france-2026/README.md): choose a day on the overview map, then inspect its landmark map and timeline. Tickets, transport, food, and on-the-ground tradeoffs follow the selected day in the field-guide board. Day 2 includes a **browser-only simulated** revision proposal.
+
+<p align="center">
+  <a href="assets/workbench-overview-v2.jpg"><img src="assets/workbench-overview-v2.jpg" alt="Actual Plan &amp; Maintain Trips workbench: five-day Paris overview map and day selection" width="100%"></a>
+</p>
+
+<details>
+<summary>Expand Day 4: landmark map, timeline, and complete field-guide board</summary>
+
+<p align="center"><a href="assets/workbench-day-map-v2.jpg"><img src="assets/workbench-day-map-v2.jpg" alt="Actual Day 4 landmark map linked to its timeline" width="100%"></a></p>
+<p align="center"><a href="assets/workbench-day-board-v2.jpg"><img src="assets/workbench-day-board-v2.jpg" alt="Actual Day 4 route, tickets, transport, food, and contingency board" width="100%"></a></p>
+</details>
+
+<p align="center"><sub>These are screenshots of the working interface, currently in Chinese—not concept art. The Paris trip is an archived 2026 case; map markers are not entrance-level navigation, and ticket labels are not current availability.</sub></p>
+
+## What else it ships
 
 ### 1. One map for the whole trip
 
 Each day gets its own color and numbered stops. Walking, transit, pace, fixed reservations, and the first item to cut are visible without digging through a long document.
 
-<p align="center">
-  <a href="assets/readme-route-sample.en.svg">
-    <img src="assets/readme-route-sample.en.png" alt="Six-day route atlas with numbered stops, day cards, distances, and booking anchors" width="100%">
-  </a>
-</p>
-
-<p align="center"><sub>Click the image for the lossless SVG. The README uses a 2400×1600 PNG for reliable GitHub rendering.</sub></p>
+See the [high-resolution Paris route map](examples/france-2026/paris-route-4k.png) or the [editable SVG layout concept](assets/readme-route-sample.en.svg). The former is a historical guide artifact; the latter is a visual concept, not the same dataset.
 
 ### 2. A field card for every day
 
 The full guide is for planning. On the road, you need one card that answers what happens next. Each card keeps only the essentials: protected reservations, arrival time, sequence, tickets, route, lunch, pace, and what to drop when you are late or the weather changes.
 
-<p align="center">
-  <a href="assets/readme-day-card.en.svg">
-    <img src="assets/readme-day-card.en.png" alt="Day-of travel field card with timeline, ticket wallet, route, pace, and fallback decisions" width="100%">
-  </a>
-</p>
-
-The image above is a layout concept. [Open the Day 02 PNG actually generated from the example `trip.json`](examples/lisbon-coast/day-02.png), its [lossless SVG](examples/lisbon-coast/day-02.svg), and its [searchable text equivalent](examples/lisbon-coast/field-cards.md) to see what the data really supports. The generated card uses a phone-friendly travel-journal layout.
+[Open the Day 02 PNG actually generated from the example `trip.json`](examples/lisbon-coast/day-02.png), its [lossless SVG](examples/lisbon-coast/day-02.svg), and its [searchable text equivalent](examples/lisbon-coast/field-cards.md) to see what the data really supports. The data is a fictional English-language trip; a separate [layout concept](assets/readme-day-card.en.svg) remains available.
 
 Each field card can:
 
@@ -63,11 +68,7 @@ Each field card can:
 
 Feishu is an optional publisher, not a prerequisite. The Skill completes a platform-independent local delivery package first, then publishes through whichever connected tools the user actually has.
 
-<p align="center">
-  <a href="assets/readme-publishing.en.svg">
-    <img src="assets/readme-publishing.en.png" alt="One canonical trip project publishing to Feishu Lark, Markdown, Notion, Google Docs, DOCX, and PDF" width="100%">
-  </a>
-</p>
+[View the multi-document publishing diagram](assets/readme-publishing.en.svg).
 
 Supported outputs:
 
@@ -77,22 +78,7 @@ Supported outputs:
 - **DOCX / PDF:** create an editable or print-ready archive when document tools are available;
 - **No platform connected:** still deliver the complete core guide without blocking on a CLI, account, or connector.
 
-## Explore the live trip workbench
-
-[Open the workbench online](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/) without installing anything. It opens a redacted [five-day Paris historical case](examples/france-2026/README.md): select a day on the overview map, then explore its landmark map, timeline, and linked field-guide board. The board makes ticket checks, transport, food, protected appointments, and weather tradeoffs visible. Day 2 includes a **browser-only simulated** revision proposal.
-
-<p align="center">
-  <a href="assets/workbench-overview.jpg"><img src="assets/workbench-overview.jpg" alt="Actual workbench screenshot: five-day Paris overview map and day selection" width="100%"></a>
-</p>
-
-<p align="center">
-  <a href="assets/workbench-day-map.jpg"><img src="assets/workbench-day-map.jpg" alt="Actual workbench screenshot: Day 4 landmark map linked to its timeline" width="49%"></a>
-  <a href="assets/workbench-day-board.jpg"><img src="assets/workbench-day-board.jpg" alt="Actual workbench screenshot: Day 4 route, tickets, transport, food, and contingency board" width="49%"></a>
-</p>
-
-<p align="center"><sub>These are screenshots of the working interface, which is currently in Chinese. The Paris itinerary is an archived 2026 case: markers are not entrance-level navigation, and ticket labels are not current availability.</sub></p>
-
-### From the demo to your own trip
+## From the demo to your own trip
 
 1. **Explore first:** open the [Paris workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/), choose a Day tab or map badge, and inspect the field-guide board. The earlier [fictional Lisbon demo](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon) remains available.
 2. **Create your trip:** install the Skill and tell Codex your dates, destinations, preferences, and existing bookings. Have it create your own `trip.json` **outside the Skill directory**. The static website does not yet generate a whole trip from scratch with hosted AI.
@@ -114,7 +100,7 @@ For a first trial, follow the [five-minute new-user test](docs/try-it.md). A [ma
 
 ## Capabilities and deliverables
 
-The visuals above show the finished artifacts. This table shows what the Skill does throughout the planning process.
+The real workbench screenshots above show the map and field-guide board. This table shows what the whole project does throughout planning.
 
 | Stage | What it does | What you receive |
 |---|---|---|
