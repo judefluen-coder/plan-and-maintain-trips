@@ -34,9 +34,12 @@
 | --- | --- | --- |
 | Codex CLI / App | 下方 `npx skills` 或原有手动安装 | 导入/导出 JSON；Codex CLI 可选自动提案桥接 |
 | [Claude Code](https://code.claude.com/docs/en/skills) | `npx skills` 选择 Claude Code | JSON 交接；CLI 可选自动提案桥接，需有效模型授权或余额 |
-| [Kimi Code CLI](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/skills.html)、[Gemini CLI](https://geminicli.com/docs/cli/skills/)、[OpenCode](https://opencode.ai/docs/skills/)、[Cursor](https://cursor.com/docs/skills)、[Qwen Code](https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/)、[GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) | 用 `npx skills` 选择对应代理；按该代理的方式调用 Skill | 同机可连接共享文件工作台，代理保存后自动刷新；跨设备用 JSON 交接 |
+| [OpenCode](https://opencode.ai/docs/skills/) | `npx skills` 选择 OpenCode | 已实测：生成、修改本机 `trip.json`，线上工作台导入与自动刷新 |
+| [Kimi Code CLI](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/skills.html)、[Gemini CLI](https://geminicli.com/docs/cli/skills/)、[Cursor](https://cursor.com/docs/skills)、[Qwen Code](https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/)、[GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) | 用 `npx skills` 选择对应代理；按该代理的方式调用 Skill | 支持同机共享文件或跨设备 JSON 交接的设计路径；尚未逐一实机运行 |
 | [WorkBuddy / CodeBuddy](https://cloud.tencent.cn/document/product/1831/137452) | 使用产品的本地 Skill 导入能力，具体位置以所用版本为准 | 能编辑同机文件时可用共享文件工作台；否则用 JSON 交接，未验证模型直连 |
 | DeepSeek、Kimi 等模型 API / 网页聊天 | 模型本身不能安装本地 Skill；选一个支持 Skill 的代理运行 | 由代理生成 JSON；网页聊天若无文件与脚本能力不能完成完整工作流 |
+
+实测范围：2026-11-18 在隔离目录用 OpenCode v2.3.2 和完全虚构的两日行程，验证了 Skill 加载、生成、单日修改、严格校验、线上导入，以及代理保存后工作台自动刷新；未用真实旅行资料，也不代表该免费模型或各平台日后的可用性。Claude Code 的 Skill 安装已验证，但模型生成因当前测试账号余额不足而未完成；WorkBuddy/CodeBuddy 的 ZIP 导入和其他代理的实际运行仍待实机验证。
 
 安装器使用 [Vercel `skills` CLI](https://github.com/vercel-labs/skills/blob/main/README.md)，需要 Node.js 22.20+。在自己的旅程项目目录运行（安装器会让你选择代理；`-g` 可改为用户级安装）：
 

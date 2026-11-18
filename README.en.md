@@ -36,9 +36,12 @@
 | --- | --- | --- |
 | Codex CLI / App | Use `npx skills` below or the existing manual method | Import/export JSON; Codex CLI can optionally use the automatic local bridge |
 | Claude Code | Select Claude Code in `npx skills` | JSON handoff; optional CLI bridge requires working model authorization or balance |
-| Kimi Code CLI, Gemini CLI, OpenCode, Cursor, Qwen Code, GitHub Copilot CLI | Select the agent in `npx skills`; invoke the skill using that agent's syntax | Same-machine shared-file workbench refreshes after the agent saves; use JSON handoff across devices |
+| OpenCode | Select OpenCode in `npx skills` | Verified: create and revise a local `trip.json`, import it online, and auto-refresh after a save |
+| Kimi Code CLI, Gemini CLI, Cursor, Qwen Code, GitHub Copilot CLI | Select the agent in `npx skills`; invoke the skill using that agent's syntax | Shared-file or JSON handoff is the intended path; these agents have not each been run end-to-end |
 | WorkBuddy / CodeBuddy | Use the product's local Skill import for your specific version | Shared-file workbench if it can edit the same local file; otherwise JSON handoff. Direct model invocation is unverified |
 | DeepSeek, Kimi or another model API/web chat | Choose a skill-capable agent that uses the model; the model itself cannot install a local Skill | File/script access is needed for the full workflow |
+
+Verification scope: on 2026-11-18, OpenCode v2.3.2 loaded the Skill and created and revised an entirely fictional two-day trip in an isolated directory. The file passed strict validation, imported into the live workbench, and refreshed there after the agent saved another edit. No real traveler data was used; this does not guarantee future availability of the tested free model or other agents. Claude Code Skill installation was verified, but live model generation stopped at insufficient account balance. WorkBuddy/CodeBuddy ZIP import and the other agents' full runs remain unverified.
 
 The [Vercel `skills` CLI](https://github.com/vercel-labs/skills/blob/main/README.md) requires Node.js 22.20+. In your own trip project, run:
 
