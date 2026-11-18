@@ -18,7 +18,7 @@ const DEMO_LABELS = {
   bookable: "可预约", walk_in: "现场前往", needs_recheck: "历史待复核"
 };
 const $ = (id) => document.getElementById(id);
-const state = { data: null, source: "demo", selectedDate: null, selectedItem: null, map: null, mapReady: false, markers: [], bridge: null, candidate: null, proposal: null, busy: false };
+const state = { data: null, source: "demo", selectedDate: null, selectedItem: null, map: null, mapReady: false, markers: [], bridge: null, candidate: null, providerLabel: null, canPropose: false, tripPath: null, version: null, syncError: null, externalUpdate: false, proposal: null, busy: false };
 function label(value) { return state.data?.trip?.demo ? DEMO_LABELS[value] || value : value; }
 function isHistoricalDemo() { return state.source === "demo" && state.data?.trip?.demo_kind === "historical"; }
 function itemTime(item) { return item.start ? `${item.start}${item.end ? ` — ${item.end}` : ""}` : item.time_text || "时间待补"; }
@@ -62,12 +62,14 @@ function renderHeader() {
   $("data-badge").textContent = state.source === "demo" ? (isHistoricalDemo() ? "历史案例回放" : "虚构示例") : state.source === "bridge" ? "本地真实行程" : "浏览器导入";
   const connected = state.source === "bridge";
   $("connect-button").classList.toggle("connected", connected);
-  $("connection-label").textContent = connected ? "已连接本机 Codex" : "未连接 Codex";
+  $("connection-label").textContent = connected ? `已连接 ${state.providerLabel || "本机代理"}` : "连接本机";
   if (state.proposal) setStatus("正在预览修改提案；地图与日程只是预览，尚未写入 trip.json。", "查看提案");
-  else if (connected) setStatus("已连接本机 Codex。网页操作会先生成提案，只有确认后才修改本地 trip.json。", "连接说明");
-  else if (state.source === "import") setStatus("当前行程只在这个浏览器标签页中。连接本机 Codex，才能直接生成和保存修改。", "连接说明");
-  else setStatus(isHistoricalDemo() ? "这是已过去的巴黎攻略脱敏回放，不代表已出票或当前可订。Day 2 可体验模拟修改。" : "你正在浏览一份虚构示例。Day 2 可以体验模拟修改；真实生成需要连接本机 Codex。", "了解连接方式");
-  $("generator-note").textContent = isHistoricalDemo() ? "历史回放仅可体验 Day 2 的模拟修改；不会查询现在的开放或票务。" : "未连接时仅可体验 Day 2 的模拟修改；真实生成需要本机 Codex。";
+  else if (state.externalUpdate) setStatus("本机代理已修改行程，地图与日程已同步；请核对固定预约、票务和路线变化。", "查看行程");
+  else if (connected) setStatus(state.canPropose ? `已连接 ${state.providerLabel || "本机代理"}。网页操作会先生成提案，只有确认后才修改本地 trip.json。` : "已连接本机行程文件。让装有 Skill 的代理保存 trip.json，工作台会自动刷新。", "连接说明");
+  else if (state.source === "import") setStatus("当前行程只在浏览器标签页中。可复制修改要求交给已安装 Skill 的代理，完成后重新导入。", "使用说明");
+  else setStatus(isHistoricalDemo() ? "这是已过去的巴黎攻略脱敏回放，不代表已出票或当前可订。Day 2 可体验模拟修改。" : "你正在浏览虚构示例。可导入代理生成的行程；Day 2 可体验模拟修改。", "了解使用方式");
+  $("generate-button").hidden = connected && !state.canPropose;
+  $("generator-note").textContent = connected ? (state.canPropose ? `当前由 ${state.providerLabel || "本机代理"} 生成真实提案。` : "复制要求给已安装 Skill 的本机代理；它保存同一份 trip.json 后，地图与日程会自动刷新。") : "其他代理：下载当前 JSON、复制要求交给已安装 Skill 的代理，完成后重新导入；浏览器不调用模型。";
 }
 
 function renderTabs(data) {
@@ -511,12 +513,19 @@ async function connect() {
   $("connect-confirm").disabled = true;
   try {
     const health = await api("health");
-    if (!health.codex_available) throw new Error("本机未找到 Codex CLI，请先安装或配置 --codex-bin");
+    if (!health.provider_available && !health.codex_available) throw new Error(`本机未找到 ${health.provider_label || "所选代理 CLI"}，请先安装或配置 --cli-bin`);
     const result = await api("trip");
     if (!result.trip?.trip || !Array.isArray(result.trip.days)) throw new Error("本机行程格式不完整");
+    if (result.validation_errors?.length) throw new Error(`本机行程未通过校验：${result.validation_errors[0]}`);
     state.bridge = state.candidate || state.bridge;
+    state.providerLabel = health.provider_label || "本机代理";
+    state.canPropose = health.can_propose ?? Boolean(health.codex_available);
+    state.tripPath = health.trip_path || null;
+    state.version = result.version;
+    state.syncError = null;
+    state.externalUpdate = false;
     state.data = result.trip; state.source = "bridge"; state.selectedDate = null; state.proposal = null;
-    $("connect-dialog").close(); render(); toast("已连接本机 Codex 工作台。修改前仍会要求你确认。");
+    $("connect-dialog").close(); render(); toast(state.canPropose ? `已连接 ${state.providerLabel}。修改前仍会要求你确认。` : "已连接本机行程。代理保存文件后，工作台会自动刷新。");
   } catch (error) { toast(`连接失败：${error.message}`); }
   finally { $("connect-confirm").disabled = false; }
 }
@@ -526,20 +535,34 @@ async function generate() {
   if (!state.selectedDate) { toast("请先选择要调整的某一天。"); return; }
   const request = $("change-request").value.trim();
   if (request.length < 3) { toast("请用至少 3 个字描述想调整的地方。"); return; }
-  state.busy = true; $("generate-button").disabled = true; $("proposal-loading").hidden = false; $("proposal-panel").hidden = true;
+  state.busy = true; $("generate-button").disabled = true; $("proposal-loading").querySelector("strong").textContent = `${state.providerLabel || "代理"} 正在整理修改提案…`; $("proposal-loading").hidden = false; $("proposal-panel").hidden = true;
   try {
     const before = dayAt(state.data, state.selectedDate);
-    if (state.source === "bridge") {
+    if (state.source === "bridge" && state.canPropose) {
       const result = await api("propose", "POST", { date: state.selectedDate, request });
       showProposal(result.proposal, result.before, result.proposal_id);
     } else if (state.source === "demo" && state.selectedDate === state.data.days[1]?.date) {
       await new Promise((resolve) => setTimeout(resolve, 650));
       showProposal(demoProposal(before), before);
     } else {
-      throw new Error("当前没有连接 Codex。示例只提供 Day 2 的模拟修改；真实修改请连接本机桥接。");
+      throw new Error("当前没有连接本机代理。可使用下方 JSON 交接，或启动本机桥接；示例只提供 Day 2 模拟修改。");
     }
   } catch (error) { toast(error.message); }
   finally { state.busy = false; $("generate-button").disabled = false; $("proposal-loading").hidden = true; }
+}
+
+async function copyHandoff() {
+  if (!state.selectedDate) { toast("请先选择要调整的某一天。"); return; }
+  const request = $("change-request").value.trim();
+  if (request.length < 3) { toast("请先写下至少 3 个字的修改要求。"); return; }
+  const shared = state.source === "bridge" && !state.canPropose && state.tripPath;
+  const target = shared ? `请直接修改本机文件 ${state.tripPath}。` : "请修改我提供的 trip.json。";
+  const finish = shared ? "保存并校验同一份文件后告诉我；工作台会自动刷新。" : "完成后请给我可下载的完整 trip.json，我会重新导入工作台。";
+  const message = `请使用已安装的 plan-and-maintain-trips Skill。${target}只调整 ${state.selectedDate}，要求：${request}\n请保护所有硬预约、固定时间、地点和预订编号；核实会变化的开放与票务信息；更新受影响的清单和说明。不要改 Skill 目录里的示例。${finish}未确认的事实请标注待核实，不要伪造。`;
+  try {
+    await navigator.clipboard.writeText(message);
+    toast(shared ? "已复制要求。交给你的本机 AI 代理；保存同一文件后工作台会自动刷新。" : "已复制要求。请先下载当前行程 JSON，连同要求交给你的 AI 代理；完成后重新导入。");
+  } catch { toast("复制失败，请检查浏览器的剪贴板权限。"); }
 }
 
 async function applyProposal() {
@@ -549,6 +572,8 @@ async function applyProposal() {
     if (state.source === "bridge") {
       const result = await api("apply", "POST", { proposal_id: state.proposal.id });
       state.data = result.trip;
+      state.version = result.version;
+      state.externalUpdate = false;
       toast("已写入本地 trip.json；原文件另有 .bak 备份。");
     } else {
       state.data.days = state.data.days.map((day) => day.date === state.proposal.date ? state.proposal.after : day);
@@ -566,6 +591,27 @@ function downloadTrip() {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+async function syncTrip() {
+  if (state.source !== "bridge" || state.busy || state.proposal || document.visibilityState === "hidden") return;
+  try {
+    const result = await api("trip");
+    if (result.validation_errors?.length) throw new Error(`文件未通过校验：${result.validation_errors[0]}`);
+    if (result.version !== state.version) {
+      state.data = result.trip;
+      state.version = result.version;
+      state.externalUpdate = true;
+      if (!dayAt(state.data, state.selectedDate)) state.selectedDate = null;
+      state.selectedItem = null;
+      render();
+      toast("本机行程已更新，地图和日程已同步。");
+    }
+    state.syncError = null;
+  } catch (error) {
+    if (error.message !== state.syncError) toast(`暂未同步：${error.message}`);
+    state.syncError = error.message;
+  }
+}
+
 function wireEvents() {
   $("connect-button").addEventListener("click", () => $("connect-dialog").showModal());
   $("status-action").addEventListener("click", () => state.proposal ? openDrawer() : $("connect-dialog").showModal());
@@ -576,7 +622,7 @@ function wireEvents() {
     try {
       const data = JSON.parse(await file.text());
       if (!data.trip || !Array.isArray(data.days) || !data.days.length) throw new Error("文件缺少 trip 或 days");
-      state.data = data; state.source = "import"; state.bridge = null; state.candidate = null; sessionStorage.removeItem("trip-bridge"); state.selectedDate = null; state.proposal = null;
+      state.data = data; state.source = "import"; state.bridge = null; state.candidate = null; state.providerLabel = null; state.canPropose = false; state.tripPath = null; state.version = null; state.syncError = null; state.externalUpdate = false; sessionStorage.removeItem("trip-bridge"); state.selectedDate = null; state.proposal = null;
       render(); toast("已在浏览器中打开行程；没有上传到服务器。");
     } catch (error) { toast(`导入失败：${error.message}`); }
     event.target.value = "";
@@ -591,19 +637,23 @@ function wireEvents() {
   $("relax-suggestion").addEventListener("click", () => { $("change-request").value = "把这一天放松一点，但保留所有已预约项目和固定时间。"; });
   $("rain-suggestion").addEventListener("click", () => { $("change-request").value = "准备雨天替代方案，保留已预约项目和固定时间。"; });
   $("generate-button").addEventListener("click", generate);
+  $("handoff-download").addEventListener("click", downloadTrip);
+  $("handoff-button").addEventListener("click", copyHandoff);
   $("discard-button").addEventListener("click", () => { state.proposal = null; $("proposal-panel").hidden = true; render(); toast("已放弃提案，原行程没有变化。"); });
   $("apply-button").addEventListener("click", applyProposal);
 }
 
 async function boot() {
   wireEvents();
+  setInterval(syncTrip, 5000);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") syncTrip(); });
   const hash = new URLSearchParams(location.hash.replace(/^#/, ""));
   const port = Number(hash.get("port")); const token = hash.get("token");
   if (Number.isInteger(port) && port >= 1024 && port <= 65535 && token && token.length >= 32) {
     state.candidate = { port, token };
     sessionStorage.setItem("trip-bridge", JSON.stringify(state.candidate));
     history.replaceState(null, "", location.pathname + location.search);
-    setStatus("检测到本机工作台链接。点击「连接本机 Codex」并允许浏览器连接本机服务。", "连接本机");
+    setStatus("检测到本机工作台链接。点击「连接本机」并允许浏览器连接本机服务。", "连接本机");
   } else {
     try { state.candidate = JSON.parse(sessionStorage.getItem("trip-bridge") || "null"); }
     catch { sessionStorage.removeItem("trip-bridge"); }
@@ -614,7 +664,7 @@ async function boot() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     render(); initMap();
-    if (state.candidate) setStatus("检测到本机工作台链接。点击「未连接 Codex」并允许浏览器连接本机服务。", "连接本机");
+    if (state.candidate) setStatus("检测到本机工作台链接。点击「连接本机」并允许浏览器连接本机服务。", "连接本机");
   } catch (error) {
     $("trip-title").textContent = "暂时无法打开示例";
     setStatus(`示例数据加载失败：${error.message}。可尝试导入自己的 trip.json。`);

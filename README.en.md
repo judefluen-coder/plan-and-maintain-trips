@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-163A63?style=flat-square">
+  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-163A63?style=flat-square">
   <img alt="Any destination" src="https://img.shields.io/badge/Destination-Anywhere-16856B?style=flat-square">
   <img alt="Visual field cards" src="https://img.shields.io/badge/Output-Visual%20field%20cards-D88700?style=flat-square">
   <img alt="Multi-document publishing" src="https://img.shields.io/badge/Publish-Multi--document-7354A5?style=flat-square">
@@ -27,6 +27,32 @@
 > This is not another attraction list. Every schedule, reservation, restaurant, route map, and day-of field card is derived from one canonical trip state. Change one decision, and every affected deliverable stays in sync.
 
 ## See the real workbench first
+
+> **Cross-agent status:** this skill follows the [Agent Skills format](https://github.com/agentskills/agentskills/blob/main/docs/specification.mdx). Agents that can install a Skill and read/write local files can create a `trip.json` for the same visual workbench. The local bridge supports Codex CLI and now has a Claude Code CLI adapter; protocol and safety tests pass, but a live Claude proposal could not complete because the current account returned insufficient balance. A model provider such as DeepSeek is not itself a skill-capable agent.
+
+### Choose your path
+
+| Your tool | Install | Workbench path |
+| --- | --- | --- |
+| Codex CLI / App | Use `npx skills` below or the existing manual method | Import/export JSON; Codex CLI can optionally use the automatic local bridge |
+| Claude Code | Select Claude Code in `npx skills` | JSON handoff; optional CLI bridge requires working model authorization or balance |
+| Kimi Code CLI, Gemini CLI, OpenCode, Cursor, Qwen Code, GitHub Copilot CLI | Select the agent in `npx skills`; invoke the skill using that agent's syntax | Same-machine shared-file workbench refreshes after the agent saves; use JSON handoff across devices |
+| WorkBuddy / CodeBuddy | Use the product's local Skill import for your specific version | Shared-file workbench if it can edit the same local file; otherwise JSON handoff. Direct model invocation is unverified |
+| DeepSeek, Kimi or another model API/web chat | Choose a skill-capable agent that uses the model; the model itself cannot install a local Skill | File/script access is needed for the full workflow |
+
+The [Vercel `skills` CLI](https://github.com/vercel-labs/skills/blob/main/README.md) requires Node.js 22.20+. In your own trip project, run:
+
+```bash
+npx skills add judefluen-coder/plan-and-maintain-trips --skill plan-and-maintain-trips
+```
+
+The repository root is the Skill, so `npx skills` may copy the whole repository. For products that import a local ZIP (such as WorkBuddy/CodeBuddy), download the [v0.3.0 slim Skill ZIP](https://github.com/judefluen-coder/plan-and-maintain-trips/releases/download/v0.3.0/plan-and-maintain-trips-skill.zip), or clone the repo and run `python3 scripts/package_skill.py /outside-the-repo/plan-and-maintain-trips.zip` to package it yourself. Ask your agent to use `plan-and-maintain-trips` and create a `trip.json` outside the Skill folder. Invocation syntax varies: Codex uses `$plan-and-maintain-trips`; Kimi Code CLI uses `/skill:plan-and-maintain-trips`.
+
+**On the same computer, use the shared-file workbench:** run `python3 bridge/server.py --provider manual --trip /absolute/path/to/trip.json` from the installed Skill or repository root. Open the private link it prints. Select a day, write a change request, copy it to your skill-enabled agent, and have the agent edit that same `trip.json`. The workbench refreshes its map and schedule after a valid save. This mode does not call a model from the browser or require a programmable agent CLI.
+
+**Across devices, use JSON handoff:** import the trip into the [workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/). Use the “① 下载交接 JSON” (download handoff JSON) and “② 复制要求给 AI 代理” (copy request for AI agent) buttons, then re-import the agent's updated file. This path does not auto-sync or back up the old file.
+
+Your chosen agent supplies its own model, authorization, and usage allowance. GitHub Pages supplies neither compute nor trip storage. Keep a copy and review hard bookings; shared-file sync does not approve the agent's edits for you. Only Codex CLI and Claude Code CLI have browser-triggered model adapters; other agents do not yet have verified one-click model invocation.
 
 [Open the live workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/) without installing anything. It starts with a redacted [five-day Paris historical case](examples/france-2026/README.md): choose a day on the overview map, then inspect its landmark map and timeline. Tickets, transport, food, and on-the-ground tradeoffs follow the selected day in the field-guide board. Day 2 includes a **browser-only simulated** revision proposal.
 
@@ -81,14 +107,16 @@ Supported outputs:
 ## From the demo to your own trip
 
 1. **Explore first:** open the [Paris workbench](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/), choose a Day tab or map badge, and inspect the field-guide board. The earlier [fictional Lisbon demo](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon) remains available.
-2. **Create your trip:** install the Skill and tell Codex your dates, destinations, preferences, and existing bookings. Have it create your own `trip.json` **outside the Skill directory**. The static website does not yet generate a whole trip from scratch with hosted AI.
-3. **Connect the visual workbench:** make sure the Codex CLI is installed and signed in, then run the command below locally. The bridge prints and opens an online workbench link with a temporary pairing secret; click “未连接 Codex” (“Not connected to Codex”) on the page to connect. Do not share the pairing link. If your browser asks to connect to a local service, approve only the page you trust.
+2. **Create your trip:** install the Skill and tell your agent your dates, destinations, preferences, and existing bookings. Have it create your own `trip.json` **outside the Skill directory**. The static website does not yet generate a whole trip from scratch with hosted AI.
+3. **Connect the visual workbench:** any agent can use JSON import. If you use Codex CLI or Claude Code CLI and want browser-triggered proposals, make sure its model authorization or balance works, then run the command below locally. The bridge prints and opens an online workbench link with a temporary pairing secret; click “连接本机” (“Connect locally”) on the page. Do not share the pairing link. If your browser asks to connect to a local service, approve only the page you trust.
 
    ```bash
    python3 bridge/server.py --trip /absolute/path/to/your/trip.json
    ```
 
-4. **Review before applying:** select one day and describe a change in natural language. Inspect the map, timeline, warnings, and diff; only your confirmation writes back to `trip.json`, with a `.bak` backup. The current bridge revises one day at a time. Model requests use your locally signed-in Codex CLI and your own quota; GitHub Pages supplies neither model compute nor trip storage. See the [workbench setup and safety guide](web/README.md).
+   Claude Code: `python3 bridge/server.py --provider claude --trip /absolute/path/to/your/trip.json`. Its bridge request includes the bundled Skill guidance and disables built-in and MCP tools; your CLI account pays for the model request.
+
+4. **Review before applying:** select one day and describe a change in natural language. Inspect the map, timeline, warnings, and diff; only your confirmation writes back to `trip.json`, with a `.bak` backup. The current bridge revises one day at a time. Model requests use your selected local CLI and your own quota; GitHub Pages supplies neither model compute nor trip storage. See the [workbench setup and safety guide](web/README.md).
 
 For a complete human-readable guide, see the [Paris + French Riviera case](examples/france-2026/README.md), with maps, ticket checklist, transport, food, and hotel-selection logic. For reproducible offline exports, use the fictional [Lisbon → Cascais dataset](examples/lisbon-coast/README.md) and its [live offline-route preview](https://judefluen-coder.github.io/plan-and-maintain-trips/). These examples serve different purposes.
 
@@ -252,7 +280,7 @@ plan-and-maintain-trips/
 │   ├── readme-*.en.{png,svg}    # English visuals
 │   └── workbench-*.jpg         # screenshots of the live workbench
 ├── web/                         # GitHub Pages interactive workbench
-├── bridge/                      # optional local Codex bridge
+├── bridge/                      # optional local Codex / Claude bridge
 ├── references/
 │   ├── state-model.md
 │   ├── research-and-evidence.md

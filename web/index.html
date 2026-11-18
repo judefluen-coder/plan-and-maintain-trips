@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="用地图、逐日时间轴和 Codex 修改提案管理你的旅程。">
+  <meta name="description" content="用地图、逐日时间轴和可复用的 Skill 管理你的旅程。">
   <title>远行策划 · 旅行工作台</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./style.css?v=journey-board-2">
   <script defer src="https://unpkg.com/maplibre-gl@5.16.0/dist/maplibre-gl.js" integrity="sha256-VYO6tYxE3T+h6noUzJ2iAtqHOsDUWrcu2xQoIIYW/XI=" crossorigin="anonymous"></script>
   <script defer src="./poi-icons.js?v=paris-replay"></script>
-  <script defer src="./app.js?v=journey-board-3"></script>
+  <script defer src="./app.js?v=cross-agent-1"></script>
 </head>
 <body>
   <header class="topbar">
@@ -23,10 +23,10 @@
   <main class="shell">
     <section class="masthead" aria-labelledby="trip-title">
       <div class="masthead-main"><p class="eyebrow"><span></span> YOUR JOURNEY / 你的旅程</p><h1 id="trip-title">正在打开旅程…</h1><p id="trip-meta" class="trip-meta">地图、日程与预约，始终来自同一份行程状态。</p></div>
-      <div class="masthead-actions"><span id="data-badge" class="data-badge">示例旅程</span><button id="connect-button" class="connection-button" type="button"><i class="connection-dot"></i><span id="connection-label">未连接 Codex</span><span aria-hidden="true">↗</span></button><button id="import-button" class="plain-button" type="button">导入行程</button><input id="trip-file" type="file" accept=".json,application/json" hidden></div>
+      <div class="masthead-actions"><span id="data-badge" class="data-badge">示例旅程</span><button id="connect-button" class="connection-button" type="button"><i class="connection-dot"></i><span id="connection-label">连接本机</span><span aria-hidden="true">↗</span></button><button id="import-button" class="plain-button" type="button">导入行程</button><input id="trip-file" type="file" accept=".json,application/json" hidden></div>
     </section>
 
-    <section class="status-ribbon" aria-label="工作台状态"><div class="ribbon-icon">◎</div><p id="status-copy">正在载入示例；连接本机 Codex 后，才能生成真实修改提案。</p><button id="status-action" type="button">了解连接方式 <span aria-hidden="true">→</span></button></section>
+    <section class="status-ribbon" aria-label="工作台状态"><div class="ribbon-icon">◎</div><p id="status-copy">正在载入示例；可导入行程，或连接本机共享文件工作台。</p><button id="status-action" type="button">了解使用方式 <span aria-hidden="true">→</span></button></section>
 
     <section id="workspace" class="workspace" aria-label="旅程工作区">
       <div class="atlas-column">
@@ -49,17 +49,17 @@
     <p class="site-note">地图 © OpenStreetMap contributors / OpenFreeMap · 示例与历史回放均不应直接用于当前预订。</p>
   </main>
 
-  <button id="assistant-fab" class="assistant-fab" type="button" aria-controls="assistant-drawer" aria-expanded="false"><span>✳</span> 和 Codex 一起调整 <span aria-hidden="true">↗</span></button>
+  <button id="assistant-fab" class="assistant-fab" type="button" aria-controls="assistant-drawer" aria-expanded="false"><span>✳</span> 调整我的行程 <span aria-hidden="true">↗</span></button>
   <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
   <aside id="assistant-drawer" class="assistant-drawer" aria-labelledby="assistant-title" aria-hidden="true">
-    <div class="drawer-header"><div><p class="section-kicker">PLAN WITH CODEX</p><h2 id="assistant-title">让这一日更合适</h2></div><button id="drawer-close" class="icon-button" type="button" aria-label="关闭调整面板">×</button></div>
-    <div class="drawer-body"><div class="context-card"><span>当前上下文</span><strong id="assistant-context">全程旅程</strong><small>只会提出修改建议，不会直接覆盖你的行程。</small></div><label class="request-label" for="change-request">想改变什么？</label><textarea id="change-request" rows="5" maxlength="700" placeholder="例如：把这一天放松一点，但已预约的博物馆时间不要动。"></textarea><div class="suggestion-row"><button id="relax-suggestion" type="button">节奏轻松一点</button><button id="rain-suggestion" type="button">准备雨天方案</button></div><button id="generate-button" class="generate-button" type="button">生成修改提案 <span aria-hidden="true">→</span></button><p id="generator-note" class="generator-note">未连接时仅可体验 Day 2 的模拟修改；真实生成需要本机 Codex。</p>
-      <div id="proposal-loading" class="proposal-loading" hidden role="status"><span class="loading-pulse"></span><div><strong>Codex 正在整理修改提案…</strong><small>当前行程不会被改写。完成后请先核对预约与时间。</small></div></div>
+    <div class="drawer-header"><div><p class="section-kicker">PLAN YOUR DAY</p><h2 id="assistant-title">让这一日更合适</h2></div><button id="drawer-close" class="icon-button" type="button" aria-label="关闭调整面板">×</button></div>
+    <div class="drawer-body"><div class="context-card"><span>当前上下文</span><strong id="assistant-context">全程旅程</strong><small>只会提出修改建议，不会直接覆盖你的行程。</small></div><label class="request-label" for="change-request">想改变什么？</label><textarea id="change-request" rows="5" maxlength="700" placeholder="例如：把这一天放松一点，但已预约的博物馆时间不要动。"></textarea><div class="suggestion-row"><button id="relax-suggestion" type="button">节奏轻松一点</button><button id="rain-suggestion" type="button">准备雨天方案</button></div><button id="generate-button" class="generate-button" type="button">生成修改提案 <span aria-hidden="true">→</span></button><button id="handoff-download" class="plain-button" type="button">① 下载交接 JSON</button><button id="handoff-button" class="plain-button" type="button">② 复制要求给 AI 代理</button><p id="generator-note" class="generator-note">其他代理：先下载行程 JSON，再复制要求交给已安装 Skill 的代理；完成后重新导入。浏览器不会调用你的模型。</p>
+      <div id="proposal-loading" class="proposal-loading" hidden role="status"><span class="loading-pulse"></span><div><strong>正在整理修改提案…</strong><small>当前行程不会被改写。完成后请先核对预约与时间。</small></div></div>
       <section id="proposal-panel" class="proposal-panel" hidden aria-label="修改提案"><p class="proposal-label">PROPOSED CHANGE / 尚未应用</p><h3 id="proposal-title">修改提案</h3><p id="proposal-summary"></p><div class="diff-heading"><span>当天变化</span><small>与当前行程比较</small></div><div id="proposal-diff" class="proposal-diff"></div><div id="proposal-warnings" class="proposal-warnings" hidden></div><div class="proposal-actions"><button id="discard-button" class="plain-button" type="button">放弃</button><button id="apply-button" class="apply-button" type="button">确认并应用 <span aria-hidden="true">→</span></button></div></section>
     </div>
   </aside>
 
-  <dialog id="connect-dialog" class="connect-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭" value="cancel">×</button><p class="section-kicker">CONNECT YOUR CODEX</p><h2>让工作台连接你的 Codex</h2><p>GitHub Pages 不托管你的行程。本机桥接使用你已登录的 Codex 和配额；生成提案时，行程 JSON 与修改要求会发送给你使用的模型服务，写回本地文件仍须你确认。</p><div class="connect-steps"><div><b>01</b><span>在 Codex 安装本项目的 Skill</span></div><div><b>02</b><span>运行本机桥接，并指定自己的 trip.json</span></div><div><b>03</b><span>用桥接程序给出的链接打开此工作台，点击下方连接</span></div></div><code>python3 bridge/server.py --trip /你的路径/trip.json</code><p class="dialog-footnote">浏览器可能询问是否允许连接本机服务。只有在你主动同意后，工作台才会连接。</p><div class="dialog-actions"><button id="connect-confirm" class="apply-button" type="button">连接本机工作台 →</button></div></form></dialog>
+  <dialog id="connect-dialog" class="connect-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭" value="cancel">×</button><p class="section-kicker">CONNECT YOUR TRIP</p><h2>把自己的旅程带进工作台</h2><p>先让已安装 Skill 的代理生成 trip.json。最通用的同机方式是启动共享文件工作台：代理保存同一文件后，地图和日程自动刷新；网页不会调用模型。</p><div class="connect-steps"><div><b>01</b><span>代理生成并校验 trip.json</span></div><div><b>02</b><span>运行共享文件模式，打开打印的专属链接</span></div><div><b>03</b><span>在工作台复制修改要求，交给代理处理</span></div></div><code>python3 bridge/server.py --provider manual --trip /你的路径/trip.json</code><p>Codex CLI 或 Claude Code CLI 也可改用 <code>--provider codex</code> 或 <code>--provider claude</code>，从网页直接生成待确认提案；这会使用所选代理自己的模型配额。跨设备则使用「导入行程」及 JSON 下载/重新导入。</p><p class="dialog-footnote">浏览器可能询问是否允许连接本机服务；只对你信任的页面授权，不要分享专属链接。</p><div class="dialog-actions"><button id="connect-confirm" class="apply-button" type="button">连接本机桥接 →</button></div></form></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>

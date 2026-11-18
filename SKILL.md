@@ -1,11 +1,13 @@
 ---
 name: plan-and-maintain-trips
-description: Plan, research, revise, audit, and publish executable trips for any destination. Use when Codex needs to design a single-city or multi-city itinerary, compare lodging or transport, manage fixed bookings and changing constraints, distinguish booking availability from unreleased inventory, create route maps and day-of field cards, recheck volatile travel facts, or publish a final travel guide to an available document platform.
+description: Plan, research, revise, audit, and publish executable trips for any destination. Use when a traveler needs a single-city or multi-city itinerary, lodging or transport comparisons, protected bookings, route maps, day-of field cards, current booking checks, or a final travel guide.
 ---
 
 # 远行策划 · Plan and Maintain Trips
 
 Treat a trip as a maintained project, not a one-shot list of attractions. Keep one canonical state, preserve user decisions, verify volatile facts from current sources, and derive every itinerary, checklist, map, and published document from that state.
+
+This skill is agent-neutral. If the user wants the visual workbench, generate or update a local `trip.json` and direct them to import it at https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/. For a local agent that can edit the same file, `python3 bridge/server.py --provider manual --trip /absolute/path/to/trip.json` opens a workbench that refreshes after the agent saves; this mode never calls a model from the browser. Keep the file outside the skill and validate it after edits. An agent-specific automatic proposal bridge is optional; never imply that every agent can be driven directly from the browser. See `web/README.md` for the modes and boundaries.
 
 ## Start the project
 

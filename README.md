@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img alt="Codex 远行策划 Skill" src="https://img.shields.io/badge/Codex-%E8%BF%9C%E8%A1%8C%E7%AD%96%E5%88%92-163A63?style=flat-square">
+  <img alt="跨代理 远行策划 Skill" src="https://img.shields.io/badge/Agent%20Skill-%E8%BF%9C%E8%A1%8C%E7%AD%96%E5%88%92-163A63?style=flat-square">
   <img alt="目的地覆盖全球" src="https://img.shields.io/badge/%E7%9B%AE%E7%9A%84%E5%9C%B0-%E5%85%A8%E7%90%83-16856B?style=flat-square">
   <img alt="输出每日攻略图" src="https://img.shields.io/badge/%E8%BE%93%E5%87%BA-%E6%AF%8F%E6%97%A5%E6%94%BB%E7%95%A5%E5%9B%BE-D88700?style=flat-square">
   <img alt="支持多文档发布" src="https://img.shields.io/badge/%E5%8F%91%E5%B8%83-%E5%A4%9A%E6%96%87%E6%A1%A3-7354A5?style=flat-square">
@@ -25,6 +25,32 @@
 > 不是再生成一份“景点清单”。所有日程、预约、餐厅、路线图和当天执行卡，都由同一份行程状态派生；改动一个决定，其余产物会跟着同步。
 
 ## 先看真正能操作的工作台
+
+> **跨平台使用说明：**这是一份遵循 [Agent Skills 开放格式](https://github.com/agentskills/agentskills/blob/main/docs/specification.mdx)的旅行规划 Skill，不限于 Codex。能安装 Skill 且可读写本地文件的代理，均可生成 `trip.json`，导入同一个工作台查看；本机自动提案桥接支持 Codex CLI，并新增 Claude Code CLI 适配器（协议与校验测试已通过，当前账号余额不足，未完成真实生成测试）。DeepSeek 等模型服务不是可安装 Skill 的代理，需通过支持它们的代理运行。
+
+### 选你的入口
+
+| 你使用的工具 | 安装 Skill | 与工作台的连接 |
+| --- | --- | --- |
+| Codex CLI / App | 下方 `npx skills` 或原有手动安装 | 导入/导出 JSON；Codex CLI 可选自动提案桥接 |
+| [Claude Code](https://code.claude.com/docs/en/skills) | `npx skills` 选择 Claude Code | JSON 交接；CLI 可选自动提案桥接，需有效模型授权或余额 |
+| [Kimi Code CLI](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/skills.html)、[Gemini CLI](https://geminicli.com/docs/cli/skills/)、[OpenCode](https://opencode.ai/docs/skills/)、[Cursor](https://cursor.com/docs/skills)、[Qwen Code](https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/)、[GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) | 用 `npx skills` 选择对应代理；按该代理的方式调用 Skill | 同机可连接共享文件工作台，代理保存后自动刷新；跨设备用 JSON 交接 |
+| [WorkBuddy / CodeBuddy](https://cloud.tencent.cn/document/product/1831/137452) | 使用产品的本地 Skill 导入能力，具体位置以所用版本为准 | 能编辑同机文件时可用共享文件工作台；否则用 JSON 交接，未验证模型直连 |
+| DeepSeek、Kimi 等模型 API / 网页聊天 | 模型本身不能安装本地 Skill；选一个支持 Skill 的代理运行 | 由代理生成 JSON；网页聊天若无文件与脚本能力不能完成完整工作流 |
+
+安装器使用 [Vercel `skills` CLI](https://github.com/vercel-labs/skills/blob/main/README.md)，需要 Node.js 22.20+。在自己的旅程项目目录运行（安装器会让你选择代理；`-g` 可改为用户级安装）：
+
+```bash
+npx skills add judefluen-coder/plan-and-maintain-trips --skill plan-and-maintain-trips
+```
+
+本仓库根目录就是 Skill，因此 `npx skills` 可能复制整仓库。需要本地 ZIP 导入（如 WorkBuddy/CodeBuddy）时，可下载 [v0.3.0 精简 Skill ZIP](https://github.com/judefluen-coder/plan-and-maintain-trips/releases/download/v0.3.0/plan-and-maintain-trips-skill.zip)；也可克隆仓库后运行 `python3 scripts/package_skill.py /仓库外/plan-and-maintain-trips.zip` 自行打包。安装后在代理对话里说“使用 plan-and-maintain-trips Skill，为我生成旅程 `trip.json`”，让代理在 Skill 目录外保存文件。具体调用语法随代理变化，例如 Codex 用 `$plan-and-maintain-trips`，Kimi Code CLI 用 `/skill:plan-and-maintain-trips`；不要把这些写法互换。
+
+**同一台电脑上，推荐共享文件工作台：**在安装目录或仓库根目录运行 `python3 bridge/server.py --provider manual --trip /你的绝对路径/trip.json`，打开它给出的专属链接并连接。选一天、写下调整要求、点“复制要求给 AI 代理”，把文字发给已安装 Skill 的代理；代理修改同一份 `trip.json` 后，工作台会自动刷新地图与日程。这种模式不从网页调用模型，也不要求代理提供可编程 CLI。请让代理写完后运行校验；工作台只自动展示校验通过的文件。
+
+**不同设备或不能共享文件时，使用 JSON 交接：**打开[工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)导入 `trip.json`。调整时依次点“① 下载交接 JSON”“② 复制要求给 AI 代理”，完成后重新导入。此路径不会自动同步或备份旧文件。
+
+这些跨代理路径使用你所选代理自己的模型、授权和费用；GitHub Pages 不提供算力，也不保存行程。共享文件模式会读本机文件，但不会替你批准代理改动；保留上一版并核对硬预约。Codex CLI 与 Claude Code CLI 桥接可由网页发起本机模型调用；其他代理尚无已验证的一键模型直连。
 
 [打开远行策划工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)即可体验，无需安装。默认进入[巴黎五日历史案例](examples/france-2026/README.md)：在总图点 Day，下钻到当天地图和时间轴；订票、交通、餐食与临场取舍会在下方执行看板同步切换。Day 2 还可以体验**仅在浏览器内生效**的模拟修改提案。
 
@@ -79,14 +105,16 @@
 ## 从示例走到自己的旅程
 
 1. **先体验：**打开[巴黎工作台](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/)，点击 Day 标签或地图圆章，下钻后在「执行看板」查看完整信息。旧的[里斯本虚构示例](https://judefluen-coder.github.io/plan-and-maintain-trips/workbench/?demo=lisbon)仍可切换。
-2. **创建自己的计划：**安装 Skill 后，在 Codex 对话中描述日期、目的地、偏好和已有预约，让它在 Skill 目录**之外**生成自己的 `trip.json`。网页目前不提供从零生成整段旅程的托管式 AI。
-3. **连接可视化工作台：**确认本机已安装并登录 Codex CLI，再运行下方命令。桥接会打印并打开带临时配对凭据的线上工作台链接；在页面点「未连接 Codex」完成连接。不要分享配对链接。浏览器若询问是否允许连接本机服务，只对你信任的页面授权。
+2. **创建自己的计划：**安装 Skill 后，在你使用的代理对话中描述日期、目的地、偏好和已有预约，让它在 Skill 目录**之外**生成自己的 `trip.json`。网页目前不提供从零生成整段旅程的托管式 AI。
+3. **连接可视化工作台：**所有代理都可以直接导入 JSON。若使用 Codex CLI 或 Claude Code CLI 且需要网页内自动提案，确认本机 CLI 已安装并拥有可用的模型配额，再运行下方命令。桥接会打印并打开带临时配对凭据的线上工作台链接；在页面点「连接本机」完成连接。不要分享配对链接。浏览器若询问是否允许连接本机服务，只对你信任的页面授权。
 
    ```bash
    python3 bridge/server.py --trip /你的绝对路径/trip.json
    ```
 
-4. **检查后再修改：**选一天，用自然语言提出调整；先看地图、时间轴和差异预览，确认后才写回本地 `trip.json`，并留 `.bak` 备份。目前一次只调整一天。模型请求使用你本机已登录的 Codex CLI 和自己的配额；GitHub Pages 不提供模型算力，也不保存你的行程。详见[工作台使用与安全说明](web/README.md)。
+   Claude Code 用户改用 `python3 bridge/server.py --provider claude --trip /你的绝对路径/trip.json`。Claude 桥接将 Skill 指导随请求发送，并禁用内置与 MCP 工具；本机 CLI 的授权或余额仍由用户自己承担。
+
+4. **检查后再修改：**选一天，用自然语言提出调整；先看地图、时间轴和差异预览，确认后才写回本地 `trip.json`，并留 `.bak` 备份。目前一次只调整一天。模型请求使用你所选 CLI 和自己的配额；GitHub Pages 不提供模型算力，也不保存你的行程。详见[工作台使用与安全说明](web/README.md)。
 
 想研究完整旅行攻略而非网页演示，可阅读[巴黎＋蔚蓝海岸案例](examples/france-2026/README.md)，其中有高清路线图、订票清单、交通、餐厅与酒店选址。想离线重跑脚本与导出文件，则用[虚构的 Lisbon → Cascais 数据](examples/lisbon-coast/README.md)和[在线离线路线页](https://judefluen-coder.github.io/plan-and-maintain-trips/)；两种案例用途不同。
 
@@ -248,7 +276,7 @@ plan-and-maintain-trips/
 │   ├── readme-*.en.{png,svg}    # English visuals
 │   └── workbench-*.jpg         # 真实工作台截图
 ├── web/                         # GitHub Pages 交互工作台
-├── bridge/                      # 可选本机 Codex 桥接
+├── bridge/                      # 可选本机 Codex / Claude 桥接
 ├── references/
 │   ├── state-model.md
 │   ├── research-and-evidence.md

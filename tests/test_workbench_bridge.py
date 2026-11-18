@@ -90,6 +90,41 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(status, 409)
         self.assertEqual("Changed in Codex", json.loads(self.trip_path.read_text(encoding="utf-8"))["trip"]["title"])
 
+    def test_claude_bridge_uses_same_validation_boundary(self) -> None:
+        self.server.provider = "claude"
+        self.server.cli_bin = sys.executable
+        status, health = self.request("/api/health")
+        self.assertEqual(status, 200)
+        self.assertEqual(health["provider"], "claude")
+        self.assertTrue(health["provider_available"])
+        day = copy.deepcopy(self.data["days"][1])
+        day["items"][0]["start"] = "11:00"
+        with patch.object(bridge, "run_claude", return_value={"summary": "移动预约", "day": day, "warnings": []}):
+            status, rejected = self.request("/api/propose", {"date": day["date"], "request": "把当天安排晚一些"})
+        self.assertEqual(status, 422)
+        self.assertIn("硬预约", " ".join(rejected["details"]))
+        self.assertEqual(self.data, json.loads(self.trip_path.read_text(encoding="utf-8")))
+
+    def test_manual_bridge_reads_external_agent_changes_without_model(self) -> None:
+        self.server.provider = "manual"
+        self.server.cli_bin = None
+        status, health = self.request("/api/health")
+        self.assertEqual(status, 200)
+        self.assertTrue(health["provider_available"])
+        self.assertFalse(health["can_propose"])
+        self.assertEqual(health["trip_path"], str(self.trip_path.resolve()))
+        status, before = self.request("/api/trip")
+        self.assertEqual(status, 200)
+        self.assertEqual(before["validation_errors"], [])
+        self.data["trip"]["title"] = "Edited by another agent"
+        self.trip_path.write_text(json.dumps(self.data), encoding="utf-8")
+        status, after = self.request("/api/trip")
+        self.assertEqual(status, 200)
+        self.assertNotEqual(before["version"], after["version"])
+        self.assertEqual(after["trip"]["trip"]["title"], "Edited by another agent")
+        status, _ = self.request("/api/propose", {"date": self.data["days"][0]["date"], "request": "放松当天安排"})
+        self.assertEqual(status, 409)
+
 
 if __name__ == "__main__":
     unittest.main()
