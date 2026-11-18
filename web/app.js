@@ -502,7 +502,7 @@ function showProposal(result, before, proposalId = null) {
 async function api(path, method = "GET", body = undefined) {
   const bridge = state.bridge || state.candidate;
   if (!bridge) throw new Error("缺少本机连接信息；请先启动 bridge/server.py 并使用它给出的链接。 ");
-  const response = await fetch(`http://127.0.0.1:${bridge.port}/api/${path}`, { method, headers: { "Content-Type": "application/json", "X-Trip-Token": bridge.token }, body: body ? JSON.stringify(body) : undefined, cache: "no-store" });
+  const response = await fetch(`http://127.0.0.1:${bridge.port}/api/${path}`, { method, headers: { "Content-Type": "application/json", "X-Trip-Token": bridge.token }, body: body ? JSON.stringify(body) : undefined, cache: "no-store", targetAddressSpace: "loopback" });
   const value = await response.json();
   if (!response.ok) throw new Error(value.details?.length ? `${value.error}：${value.details.join("；")}` : value.error || `HTTP ${response.status}`);
   return value;
@@ -526,7 +526,10 @@ async function connect() {
     state.externalUpdate = false;
     state.data = result.trip; state.source = "bridge"; state.selectedDate = null; state.proposal = null;
     $("connect-dialog").close(); render(); toast(state.canPropose ? `已连接 ${state.providerLabel}。修改前仍会要求你确认。` : "已连接本机行程。代理保存文件后，工作台会自动刷新。");
-  } catch (error) { toast(`连接失败：${error.message}`); }
+  } catch (error) {
+    const hint = error instanceof TypeError ? "请检查桥接是否仍在运行，并在浏览器网站设置中允许此页面访问本机／回环网络后重试。" : error.message;
+    toast(`连接失败：${hint}`);
+  }
   finally { $("connect-confirm").disabled = false; }
 }
 
